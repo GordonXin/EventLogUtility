@@ -42,3 +42,5 @@ Build/Products/Debug/EventLogUtility.app/Contents/Resources/Document.nib
 EventLogUtility.xcodeproj/project.xcworkspace/xcuserdata/gordonxin.xcuserdatad/UserInterfaceState.xcuserstate
 
 *.xcuserstate
+
+EventLogUtility/View/BaseView~.m

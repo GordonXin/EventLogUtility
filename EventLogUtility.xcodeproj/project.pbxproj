@@ -16,6 +16,9 @@
 		70A71A061C33737200A60EBC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A051C33737200A60EBC /* BaseViewController.m */; };
 		70A71A0A1C33767300A60EBC /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A081C33767300A60EBC /* DocumentViewController.m */; };
 		70A71A0E1C3376BD00A60EBC /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A71A0D1C3376BD00A60EBC /* Document.xib */; };
+		70A71A161C337CCF00A60EBC /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A141C337CCF00A60EBC /* MasterViewController.m */; };
+		70A71A191C337D1000A60EBC /* MasterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A71A181C337D1000A60EBC /* MasterView.xib */; };
+		70A71A1C1C337DBE00A60EBC /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A1B1C337DBE00A60EBC /* BaseView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,11 @@
 		70A71A071C33767300A60EBC /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentViewController.h; path = Controller/ViewController/DocumentView/DocumentViewController.h; sourceTree = "<group>"; };
 		70A71A081C33767300A60EBC /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentViewController.m; path = Controller/ViewController/DocumentView/DocumentViewController.m; sourceTree = "<group>"; };
 		70A71A0D1C3376BD00A60EBC /* Document.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Document.xib; path = SupportingFiles/Nib/DocumentView/Document.xib; sourceTree = "<group>"; };
+		70A71A131C337CCF00A60EBC /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = Controller/ViewController/MasterView/MasterViewController.h; sourceTree = "<group>"; };
+		70A71A141C337CCF00A60EBC /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = Controller/ViewController/MasterView/MasterViewController.m; sourceTree = "<group>"; };
+		70A71A181C337D1000A60EBC /* MasterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterView.xib; path = SupportingFiles/Nib/MasterView/MasterView.xib; sourceTree = "<group>"; };
+		70A71A1A1C337DBE00A60EBC /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseView.h; path = View/BaseView.h; sourceTree = "<group>"; };
+		70A71A1B1C337DBE00A60EBC /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseView.m; path = View/BaseView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +172,8 @@
 		70A719F31C336FDF00A60EBC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				70A71A1A1C337DBE00A60EBC /* BaseView.h */,
+				70A71A1B1C337DBE00A60EBC /* BaseView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -189,6 +199,7 @@
 		70A719F61C33700C00A60EBC /* MasterView */ = {
 			isa = PBXGroup;
 			children = (
+				70A71A181C337D1000A60EBC /* MasterView.xib */,
 				70A719F81C33701700A60EBC /* SearchView */,
 			);
 			name = MasterView;
@@ -242,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				70A719FF1C33704700A60EBC /* SearchView */,
+				70A71A131C337CCF00A60EBC /* MasterViewController.h */,
+				70A71A141C337CCF00A60EBC /* MasterViewController.m */,
 			);
 			name = MasterView;
 			sourceTree = "<group>";
@@ -396,6 +409,7 @@
 			files = (
 				70A71A0E1C3376BD00A60EBC /* Document.xib in Resources */,
 				70A719CB1C336DEC00A60EBC /* Assets.xcassets in Resources */,
+				70A71A191C337D1000A60EBC /* MasterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,8 +436,10 @@
 			files = (
 				70A71A031C33707300A60EBC /* Document.m in Sources */,
 				70A71A061C33737200A60EBC /* BaseViewController.m in Sources */,
+				70A71A1C1C337DBE00A60EBC /* BaseView.m in Sources */,
 				70A719C31C336DEC00A60EBC /* main.m in Sources */,
 				70A71A0A1C33767300A60EBC /* DocumentViewController.m in Sources */,
+				70A71A161C337CCF00A60EBC /* MasterViewController.m in Sources */,
 				70A719C01C336DEC00A60EBC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
