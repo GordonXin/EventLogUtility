@@ -44,20 +44,20 @@
 -(void)awakeFromDocument:(Document *)document;
 
 #pragma mark subview controllers methods
--(void)addSubviewController:(NSViewController *)aController;
+-(void)addSubviewController:(BaseViewController *)aController;
 
--(void)addSubviewController:(NSViewController *)aController
+-(void)addSubviewController:(BaseViewController *)aController
              withIdentifier:(NSString *)aIdentifier;
 
 @property (nonatomic, readonly, copy) NSArray *subviewControllers;
 
 @property (nonatomic, readonly, copy) NSArray *subViewControllerIdentifers;
 
--(id)subviewControllerWithIdentifier:(NSString *)aIdentifier;
+-(BaseViewController *)subviewControllerWithIdentifier:(NSString *)aIdentifier;
 
--(id)subviewControllerAtIndex:(NSUInteger)index;
+-(BaseViewController *)subviewControllerAtIndex:(NSUInteger)index;
 
--(void)removeSubviewController:(NSViewController *)aController;
+-(void)removeSubviewController:(BaseViewController *)aController;
 
 -(void)removeAllSubviewControllers;
 

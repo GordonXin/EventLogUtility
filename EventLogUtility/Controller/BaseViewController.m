@@ -133,7 +133,7 @@
 }
 
 #pragma mark subview controllers methods
--(void)addSubviewController:(NSViewController *)aController
+-(void)addSubviewController:(BaseViewController *)aController
 {
     if (!aController)
     {
@@ -143,14 +143,11 @@
     {
         return;
     }
-    if ([aController respondsToSelector:@selector(setSuperViewController:)])
-    {
-        [aController performSelector:@selector(setSuperViewController:) withObject:self];
-    }
+    [aController setSuperViewController:self];
     [_arySubviewControllers addObject:aController];
 }
 
--(void)addSubviewController:(NSViewController *)aController
+-(void)addSubviewController:(BaseViewController *)aController
              withIdentifier:(NSString *)aIdentifier
 {
     if (!aController)
@@ -161,10 +158,7 @@
     {
         return;
     }
-    if ([aController respondsToSelector:@selector(setSuperViewController:)])
-    {
-        [aController performSelector:@selector(setSuperViewController:) withObject:self];
-    }
+    [aController setSuperViewController:self];
     [aController setIdentifier:aIdentifier];
     [_arySubviewControllers addObject:aController];
 }
@@ -184,7 +178,7 @@
     return [NSArray arrayWithArray:ary];
 }
 
--(id)subviewControllerWithIdentifier:(NSString *)aIdentifier
+-(BaseViewController *)subviewControllerWithIdentifier:(NSString *)aIdentifier
 {
     if ([aIdentifier length])
     {
@@ -192,14 +186,14 @@
         {
             if ([[aController identifier] isEqualToString:aIdentifier])
             {
-                return aController;
+                return (BaseViewController *)aController;
             }
         }
     }
     return nil;
 }
 
--(id)subviewControllerAtIndex:(NSUInteger)index
+-(BaseViewController *)subviewControllerAtIndex:(NSUInteger)index
 {
     if (index < [_arySubviewControllers count])
     {
@@ -208,7 +202,7 @@
     return nil;
 }
 
--(void)removeSubviewController:(NSViewController *)aController
+-(void)removeSubviewController:(BaseViewController *)aController
 {
     if (!aController)
     {
@@ -218,12 +212,19 @@
     {
         return;
     }
+    [aController setSuperViewController:nil];
+    [aController setDocument:nil];
     [_arySubviewControllers removeObject:aController];
 }
 
 -(void)removeAllSubviewControllers
 {
-    [_arySubviewControllers removeAllObjects];
+    NSArray *array = [self subviewControllers];
+    
+    for (BaseViewController * aController in array)
+    {
+        [self removeSubviewController:aController];
+    }
 }
 
 #pragma mark data

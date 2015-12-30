@@ -7,7 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BaseViewController.h"
 
-@interface MasterViewController : NSViewController
+extern NSString * const kFileListIdentifier;
+extern NSString * const kSearchIdentifier;
+extern NSString * const kResultIdentifier;
+
+@interface MasterViewController : BaseViewController
 
 @end
