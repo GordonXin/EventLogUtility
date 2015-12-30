@@ -32,3 +32,5 @@ Build/Products/Debug/EventLogUtility.app/Contents/PkgInfo
 *.xcuserstate
 
 *.xcuserstate
+
+Build/Products/Debug/EventLogUtility.app/Contents/Resources/Document.nib

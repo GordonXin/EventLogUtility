@@ -14,6 +14,8 @@
 		70A719E41C336DEC00A60EBC /* EventLogUtilityUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A719E31C336DEC00A60EBC /* EventLogUtilityUITests.m */; };
 		70A71A031C33707300A60EBC /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A021C33707300A60EBC /* Document.m */; };
 		70A71A061C33737200A60EBC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A051C33737200A60EBC /* BaseViewController.m */; };
+		70A71A0A1C33767300A60EBC /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A081C33767300A60EBC /* DocumentViewController.m */; };
+		70A71A0E1C3376BD00A60EBC /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A71A0D1C3376BD00A60EBC /* Document.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,9 @@
 		70A71A021C33707300A60EBC /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Document.m; path = Model/Document/Document.m; sourceTree = "<group>"; };
 		70A71A041C33737200A60EBC /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = Controller/BaseViewController.h; sourceTree = "<group>"; };
 		70A71A051C33737200A60EBC /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = Controller/BaseViewController.m; sourceTree = "<group>"; };
+		70A71A071C33767300A60EBC /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentViewController.h; path = Controller/ViewController/DocumentView/DocumentViewController.h; sourceTree = "<group>"; };
+		70A71A081C33767300A60EBC /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentViewController.m; path = Controller/ViewController/DocumentView/DocumentViewController.m; sourceTree = "<group>"; };
+		70A71A0D1C3376BD00A60EBC /* Document.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Document.xib; path = SupportingFiles/Nib/DocumentView/Document.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +155,6 @@
 		70A719F21C336FD800A60EBC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				70A71A041C33737200A60EBC /* BaseViewController.h */,
-				70A71A051C33737200A60EBC /* BaseViewController.m */,
 				70A719FA1C33702800A60EBC /* WindowController */,
 				70A719F91C33702300A60EBC /* ViewController */,
 			);
@@ -168,6 +171,7 @@
 		70A719F41C336FFB00A60EBC /* Nib */ = {
 			isa = PBXGroup;
 			children = (
+				70A71A0C1C3376AC00A60EBC /* DocumentView */,
 				70A719F71C33701200A60EBC /* StatusView */,
 				70A719F61C33700C00A60EBC /* MasterView */,
 				70A719F51C33700500A60EBC /* ContentView */,
@@ -207,10 +211,12 @@
 		70A719F91C33702300A60EBC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				70A71A041C33737200A60EBC /* BaseViewController.h */,
+				70A71A051C33737200A60EBC /* BaseViewController.m */,
+				70A719FB1C33703000A60EBC /* DocumentVIew */,
 				70A719FE1C33704200A60EBC /* StatusView */,
 				70A719FD1C33703D00A60EBC /* ContentView */,
 				70A719FC1C33703700A60EBC /* MasterView */,
-				70A719FB1C33703000A60EBC /* DocumentVIew */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 		70A719FA1C33702800A60EBC /* WindowController */ = {
 			isa = PBXGroup;
 			children = (
+				70A71A0F1C33773A00A60EBC /* DocumentWindow */,
 			);
 			name = WindowController;
 			sourceTree = "<group>";
@@ -225,6 +232,8 @@
 		70A719FB1C33703000A60EBC /* DocumentVIew */ = {
 			isa = PBXGroup;
 			children = (
+				70A71A071C33767300A60EBC /* DocumentViewController.h */,
+				70A71A081C33767300A60EBC /* DocumentViewController.m */,
 			);
 			name = DocumentVIew;
 			sourceTree = "<group>";
@@ -265,6 +274,21 @@
 				70A71A021C33707300A60EBC /* Document.m */,
 			);
 			name = Document;
+			sourceTree = "<group>";
+		};
+		70A71A0C1C3376AC00A60EBC /* DocumentView */ = {
+			isa = PBXGroup;
+			children = (
+				70A71A0D1C3376BD00A60EBC /* Document.xib */,
+			);
+			name = DocumentView;
+			sourceTree = "<group>";
+		};
+		70A71A0F1C33773A00A60EBC /* DocumentWindow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DocumentWindow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70A71A0E1C3376BD00A60EBC /* Document.xib in Resources */,
 				70A719CB1C336DEC00A60EBC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +423,7 @@
 				70A71A031C33707300A60EBC /* Document.m in Sources */,
 				70A71A061C33737200A60EBC /* BaseViewController.m in Sources */,
 				70A719C31C336DEC00A60EBC /* main.m in Sources */,
+				70A71A0A1C33767300A60EBC /* DocumentViewController.m in Sources */,
 				70A719C01C336DEC00A60EBC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
