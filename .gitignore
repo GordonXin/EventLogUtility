@@ -10,3 +10,25 @@ Build/Intermediates/EventLogUtility.build/Debug/EventLogUtility.build/dgph~
 Build/Intermediates/EventLogUtility.build/Debug/EventLogUtilityTests.build/dgph
 
 Build/Intermediates/EventLogUtility.build/Debug/EventLogUtilityUITests.build/dgph
+
+Build/Intermediates/EventLogUtility.build/Debug/EventLogUtility.build/assetcatalog_dependencies
+
+*.plist
+
+*.d
+
+*.dia
+
+*.o
+
+*.dat
+
+Build/Products/Debug/EventLogUtility.app/Contents/_CodeSignature/CodeResources
+
+Build/Products/Debug/EventLogUtility.app/Contents/MacOS/EventLogUtility
+
+Build/Products/Debug/EventLogUtility.app/Contents/PkgInfo
+
+*.xcuserstate
+
+*.xcuserstate

@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		70A719C01C336DEC00A60EBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A719BF1C336DEC00A60EBC /* AppDelegate.m */; };
 		70A719C31C336DEC00A60EBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A719C21C336DEC00A60EBC /* main.m */; };
-		70A719C61C336DEC00A60EBC /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A719C51C336DEC00A60EBC /* Document.m */; };
-		70A719C91C336DEC00A60EBC /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A719C71C336DEC00A60EBC /* Document.xib */; };
 		70A719CB1C336DEC00A60EBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A719CA1C336DEC00A60EBC /* Assets.xcassets */; };
-		70A719CE1C336DEC00A60EBC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A719CC1C336DEC00A60EBC /* MainMenu.xib */; };
 		70A719D91C336DEC00A60EBC /* EventLogUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A719D81C336DEC00A60EBC /* EventLogUtilityTests.m */; };
 		70A719E41C336DEC00A60EBC /* EventLogUtilityUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A719E31C336DEC00A60EBC /* EventLogUtilityUITests.m */; };
+		70A71A031C33707300A60EBC /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A021C33707300A60EBC /* Document.m */; };
+		70A71A061C33737200A60EBC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A051C33737200A60EBC /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +38,7 @@
 		70A719BE1C336DEC00A60EBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70A719BF1C336DEC00A60EBC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		70A719C21C336DEC00A60EBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		70A719C41C336DEC00A60EBC /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
-		70A719C51C336DEC00A60EBC /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
-		70A719C81C336DEC00A60EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
 		70A719CA1C336DEC00A60EBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		70A719CD1C336DEC00A60EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		70A719CF1C336DEC00A60EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70A719D41C336DEC00A60EBC /* EventLogUtilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventLogUtilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A719D81C336DEC00A60EBC /* EventLogUtilityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventLogUtilityTests.m; sourceTree = "<group>"; };
@@ -51,6 +46,10 @@
 		70A719DF1C336DEC00A60EBC /* EventLogUtilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventLogUtilityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A719E31C336DEC00A60EBC /* EventLogUtilityUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventLogUtilityUITests.m; sourceTree = "<group>"; };
 		70A719E51C336DEC00A60EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70A71A011C33707300A60EBC /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Document.h; path = Model/Document/Document.h; sourceTree = "<group>"; };
+		70A71A021C33707300A60EBC /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Document.m; path = Model/Document/Document.m; sourceTree = "<group>"; };
+		70A71A041C33737200A60EBC /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = Controller/BaseViewController.h; sourceTree = "<group>"; };
+		70A71A051C33737200A60EBC /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = Controller/BaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +102,9 @@
 			children = (
 				70A719BE1C336DEC00A60EBC /* AppDelegate.h */,
 				70A719BF1C336DEC00A60EBC /* AppDelegate.m */,
-				70A719C41C336DEC00A60EBC /* Document.h */,
-				70A719C51C336DEC00A60EBC /* Document.m */,
-				70A719C71C336DEC00A60EBC /* Document.xib */,
-				70A719CA1C336DEC00A60EBC /* Assets.xcassets */,
-				70A719CC1C336DEC00A60EBC /* MainMenu.xib */,
-				70A719CF1C336DEC00A60EBC /* Info.plist */,
+				70A719F11C336FCF00A60EBC /* Model */,
+				70A719F31C336FDF00A60EBC /* View */,
+				70A719F21C336FD800A60EBC /* Controller */,
 				70A719C11C336DEC00A60EBC /* Supporting Files */,
 			);
 			path = EventLogUtility;
@@ -117,6 +113,9 @@
 		70A719C11C336DEC00A60EBC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70A719F41C336FFB00A60EBC /* Nib */,
+				70A719CA1C336DEC00A60EBC /* Assets.xcassets */,
+				70A719CF1C336DEC00A60EBC /* Info.plist */,
 				70A719C21C336DEC00A60EBC /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +137,134 @@
 				70A719E51C336DEC00A60EBC /* Info.plist */,
 			);
 			path = EventLogUtilityUITests;
+			sourceTree = "<group>";
+		};
+		70A719F11C336FCF00A60EBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				70A71A001C33706000A60EBC /* Document */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		70A719F21C336FD800A60EBC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				70A71A041C33737200A60EBC /* BaseViewController.h */,
+				70A71A051C33737200A60EBC /* BaseViewController.m */,
+				70A719FA1C33702800A60EBC /* WindowController */,
+				70A719F91C33702300A60EBC /* ViewController */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		70A719F31C336FDF00A60EBC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		70A719F41C336FFB00A60EBC /* Nib */ = {
+			isa = PBXGroup;
+			children = (
+				70A719F71C33701200A60EBC /* StatusView */,
+				70A719F61C33700C00A60EBC /* MasterView */,
+				70A719F51C33700500A60EBC /* ContentView */,
+			);
+			name = Nib;
+			sourceTree = "<group>";
+		};
+		70A719F51C33700500A60EBC /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ContentView;
+			sourceTree = "<group>";
+		};
+		70A719F61C33700C00A60EBC /* MasterView */ = {
+			isa = PBXGroup;
+			children = (
+				70A719F81C33701700A60EBC /* SearchView */,
+			);
+			name = MasterView;
+			sourceTree = "<group>";
+		};
+		70A719F71C33701200A60EBC /* StatusView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = StatusView;
+			sourceTree = "<group>";
+		};
+		70A719F81C33701700A60EBC /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SearchView;
+			sourceTree = "<group>";
+		};
+		70A719F91C33702300A60EBC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				70A719FE1C33704200A60EBC /* StatusView */,
+				70A719FD1C33703D00A60EBC /* ContentView */,
+				70A719FC1C33703700A60EBC /* MasterView */,
+				70A719FB1C33703000A60EBC /* DocumentVIew */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		70A719FA1C33702800A60EBC /* WindowController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = WindowController;
+			sourceTree = "<group>";
+		};
+		70A719FB1C33703000A60EBC /* DocumentVIew */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DocumentVIew;
+			sourceTree = "<group>";
+		};
+		70A719FC1C33703700A60EBC /* MasterView */ = {
+			isa = PBXGroup;
+			children = (
+				70A719FF1C33704700A60EBC /* SearchView */,
+			);
+			name = MasterView;
+			sourceTree = "<group>";
+		};
+		70A719FD1C33703D00A60EBC /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ContentView;
+			sourceTree = "<group>";
+		};
+		70A719FE1C33704200A60EBC /* StatusView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = StatusView;
+			sourceTree = "<group>";
+		};
+		70A719FF1C33704700A60EBC /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SearchView;
+			sourceTree = "<group>";
+		};
+		70A71A001C33706000A60EBC /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				70A71A011C33707300A60EBC /* Document.h */,
+				70A71A021C33707300A60EBC /* Document.m */,
+			);
+			name = Document;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,8 +371,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				70A719CB1C336DEC00A60EBC /* Assets.xcassets in Resources */,
-				70A719C91C336DEC00A60EBC /* Document.xib in Resources */,
-				70A719CE1C336DEC00A60EBC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +395,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70A719C61C336DEC00A60EBC /* Document.m in Sources */,
+				70A71A031C33707300A60EBC /* Document.m in Sources */,
+				70A71A061C33737200A60EBC /* BaseViewController.m in Sources */,
 				70A719C31C336DEC00A60EBC /* main.m in Sources */,
 				70A719C01C336DEC00A60EBC /* AppDelegate.m in Sources */,
 			);
@@ -306,25 +432,6 @@
 			targetProxy = 70A719E01C336DEC00A60EBC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		70A719C71C336DEC00A60EBC /* Document.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70A719C81C336DEC00A60EBC /* Base */,
-			);
-			name = Document.xib;
-			sourceTree = "<group>";
-		};
-		70A719CC1C336DEC00A60EBC /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70A719CD1C336DEC00A60EBC /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		70A719E61C336DEC00A60EBC /* Debug */ = {
