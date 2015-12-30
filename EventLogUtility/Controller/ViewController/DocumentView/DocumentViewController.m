@@ -34,6 +34,16 @@
     [self addSubviewController:aController withIdentifier:@"Master"];
 }
 
+-(void)awakeFromDocument:(Document *)document
+{
+    [super awakeFromDocument:document];
+    
+    for (BaseViewController *aController in [self subviewControllers])
+    {
+        [aController awakeFromDocument:document];
+    }
+}
+
 -(void)setNavigateController:(NavigateBaseViewController *)navigateController
 {
     _navigateController = navigateController;

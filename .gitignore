@@ -50,3 +50,9 @@ Build/Products/Debug/EventLogUtility.app/Contents/Resources/FileListView.nib
 Build/Products/Debug/EventLogUtility.app/Contents/Resources/MasterView.nib
 
 Build/Products/Debug/EventLogUtility.app/Contents/Resources/MasterView.nib
+
+Build/Products/Debug/EventLogUtility.app/Contents/Resources/MainMenu.nib
+
+Build/Products/Debug/EventLogUtility.app/Contents/Resources/MasterView.nib
+
+*.xcbkptlist

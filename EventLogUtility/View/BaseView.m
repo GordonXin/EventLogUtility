@@ -7,6 +7,7 @@
 //
 
 #import "BaseView.h"
+#import "ColorUtility.h"
 
 @interface BaseView ()
 {
@@ -48,8 +49,8 @@
 
 -(void)baseInitInner
 {
-    [self setBackgroundColor:nil];
-    [self setBorderColor:nil];
+    [self setBackgroundColor:[ColorUtility backgroundColor]];
+    [self setBorderColor:[ColorUtility borderColor]];
     
     [self setHasLeftBorder:NO];
     [self setHasRightBorder:NO];

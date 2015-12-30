@@ -21,6 +21,8 @@
 		70A71A1C1C337DBE00A60EBC /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A1B1C337DBE00A60EBC /* BaseView.m */; };
 		70A71A251C338C8100A60EBC /* FileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A231C338C8100A60EBC /* FileListViewController.m */; };
 		70A71A281C338CB800A60EBC /* FileListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A71A271C338CB800A60EBC /* FileListView.xib */; };
+		70A71A371C33AD5E00A60EBC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A71A361C33AD5E00A60EBC /* MainMenu.xib */; };
+		70A71A3A1C33AFFC00A60EBC /* ColorUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71A391C33AFFC00A60EBC /* ColorUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,9 @@
 		70A71A221C338C8100A60EBC /* FileListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileListViewController.h; path = Controller/ViewController/MasterView/FileListViewController.h; sourceTree = "<group>"; };
 		70A71A231C338C8100A60EBC /* FileListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileListViewController.m; path = Controller/ViewController/MasterView/FileListViewController.m; sourceTree = "<group>"; };
 		70A71A271C338CB800A60EBC /* FileListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FileListView.xib; path = SupportingFiles/Nib/MasterView/FileListView.xib; sourceTree = "<group>"; };
+		70A71A361C33AD5E00A60EBC /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = SupportingFiles/Nib/MainMenu.xib; sourceTree = "<group>"; };
+		70A71A381C33AFFC00A60EBC /* ColorUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtility.h; sourceTree = "<group>"; };
+		70A71A391C33AFFC00A60EBC /* ColorUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +125,8 @@
 			children = (
 				70A719BE1C336DEC00A60EBC /* AppDelegate.h */,
 				70A719BF1C336DEC00A60EBC /* AppDelegate.m */,
+				70A71A381C33AFFC00A60EBC /* ColorUtility.h */,
+				70A71A391C33AFFC00A60EBC /* ColorUtility.m */,
 				70A719F11C336FCF00A60EBC /* Model */,
 				70A719F31C336FDF00A60EBC /* View */,
 				70A719F21C336FD800A60EBC /* Controller */,
@@ -186,9 +193,10 @@
 		70A719F41C336FFB00A60EBC /* Nib */ = {
 			isa = PBXGroup;
 			children = (
+				70A71A361C33AD5E00A60EBC /* MainMenu.xib */,
 				70A71A0C1C3376AC00A60EBC /* DocumentView */,
-				70A719F71C33701200A60EBC /* StatusView */,
 				70A719F61C33700C00A60EBC /* MasterView */,
+				70A719F71C33701200A60EBC /* StatusView */,
 				70A719F51C33700500A60EBC /* ContentView */,
 			);
 			name = Nib;
@@ -231,9 +239,9 @@
 				70A71A041C33737200A60EBC /* BaseViewController.h */,
 				70A71A051C33737200A60EBC /* BaseViewController.m */,
 				70A719FB1C33703000A60EBC /* DocumentVIew */,
+				70A719FC1C33703700A60EBC /* MasterView */,
 				70A719FE1C33704200A60EBC /* StatusView */,
 				70A719FD1C33703D00A60EBC /* ContentView */,
-				70A719FC1C33703700A60EBC /* MasterView */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -416,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70A71A0E1C3376BD00A60EBC /* Document.xib in Resources */,
+				70A71A371C33AD5E00A60EBC /* MainMenu.xib in Resources */,
 				70A719CB1C336DEC00A60EBC /* Assets.xcassets in Resources */,
 				70A71A281C338CB800A60EBC /* FileListView.xib in Resources */,
 				70A71A191C337D1000A60EBC /* MasterView.xib in Resources */,
@@ -446,6 +455,7 @@
 				70A71A031C33707300A60EBC /* Document.m in Sources */,
 				70A71A061C33737200A60EBC /* BaseViewController.m in Sources */,
 				70A71A1C1C337DBE00A60EBC /* BaseView.m in Sources */,
+				70A71A3A1C33AFFC00A60EBC /* ColorUtility.m in Sources */,
 				70A719C31C336DEC00A60EBC /* main.m in Sources */,
 				70A71A0A1C33767300A60EBC /* DocumentViewController.m in Sources */,
 				70A71A161C337CCF00A60EBC /* MasterViewController.m in Sources */,
@@ -660,6 +670,7 @@
 				70A719EA1C336DEC00A60EBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70A719EB1C336DEC00A60EBC /* Build configuration list for PBXNativeTarget "EventLogUtilityTests" */ = {
 			isa = XCConfigurationList;
@@ -668,6 +679,7 @@
 				70A719ED1C336DEC00A60EBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70A719EE1C336DEC00A60EBC /* Build configuration list for PBXNativeTarget "EventLogUtilityUITests" */ = {
 			isa = XCConfigurationList;
@@ -676,6 +688,7 @@
 				70A719F01C336DEC00A60EBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
