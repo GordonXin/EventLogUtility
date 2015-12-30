@@ -20,8 +20,8 @@
 - (instancetype)init
 {
     self = [super init];
-    if (self) {
-        // Add your subclass-specific initialization here.
+    if (self)
+    {
     }
     return self;
 }
@@ -29,7 +29,6 @@
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
     [super windowControllerDidLoadNib:aController];
-    // Add any code here that needs to be executed once the windowController has loaded the document's window.
 }
 
 + (BOOL)autosavesInPlace

@@ -11,7 +11,6 @@
 @interface BaseViewController ()
 {
     NSMutableArray      *_arySubviewControllers;
-    BOOL                 _isAppeared;
     BOOL                 _isDealloced;
 }
 
@@ -55,7 +54,6 @@
 -(void)baseInitInner
 {
     _arySubviewControllers = [NSMutableArray array];
-    _isAppeared = NO;
     _isDealloced = NO;
 }
 
@@ -68,12 +66,6 @@
 -(void)viewWillAppear
 {
     [super viewWillDisappear];
-    
-    if (!_isAppeared)
-    {
-        _isAppeared = YES;
-        [self awakeFromView];
-    }
 }
 
 -(void)viewDidAppear
@@ -120,9 +112,14 @@
     
 }
 
--(void)awakeFromView
+-(void)awakeFromDocument:(Document *)document
 {
+    if (!document)
+    {
+        return;
+    }
     
+    [self setDocument:document];
 }
 
 -(NSString *)identifier

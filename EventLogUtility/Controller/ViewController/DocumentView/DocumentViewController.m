@@ -8,7 +8,7 @@
 
 #import "DocumentViewController.h"
 
-@interface DocumentViewController ()
+@interface DocumentViewController () <NavigateDelegate>
 
 @property (weak) IBOutlet NSView *masterView;
 
@@ -23,7 +23,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do view setup here.
+}
+
+-(void)navigateController:(BaseViewController *)aController
+                didSelect:(NSString *)name
+{
+
 }
 
 @end

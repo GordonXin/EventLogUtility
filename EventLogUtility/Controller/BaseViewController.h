@@ -41,7 +41,7 @@
 
 -(void)prepareDealloc;
 
--(void)awakeFromView;
+-(void)awakeFromDocument:(Document *)document;
 
 #pragma mark subview controllers methods
 -(void)addSubviewController:(NSViewController *)aController;
@@ -66,5 +66,20 @@
 
 #pragma mark data
 @property (nonatomic, readwrite, weak) Document *document;
+
+@end
+
+@protocol NavigateDelegate <NSObject>
+
+@required
+
+-(void)navigateController:(BaseViewController *)aController
+                didSelect:(NSString *)name;
+
+@optional
+
+-(BOOL)navigateController:(BaseViewController *)aController
+             shouldSelect:(NSString *)name;
+
 
 @end
