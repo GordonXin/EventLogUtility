@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70A719C01C336DEC00A60EBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A719BF1C336DEC00A60EBC /* AppDelegate.m */; };
+		70A719C31C336DEC00A60EBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A719C21C336DEC00A60EBC /* main.m */; };
+		70A719C61C336DEC00A60EBC /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A719C51C336DEC00A60EBC /* Document.m */; };
+		70A719C91C336DEC00A60EBC /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A719C71C336DEC00A60EBC /* Document.xib */; };
+		70A719CB1C336DEC00A60EBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A719CA1C336DEC00A60EBC /* Assets.xcassets */; };
+		70A719CE1C336DEC00A60EBC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A719CC1C336DEC00A60EBC /* MainMenu.xib */; };
+		70A719D91C336DEC00A60EBC /* EventLogUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A719D81C336DEC00A60EBC /* EventLogUtilityTests.m */; };
+		70A719E41C336DEC00A60EBC /* EventLogUtilityUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A719E31C336DEC00A60EBC /* EventLogUtilityUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70A719D51C336DEC00A60EBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A719B31C336DEC00A60EBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70A719BA1C336DEC00A60EBC;
+			remoteInfo = EventLogUtility;
+		};
+		70A719E01C336DEC00A60EBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A719B31C336DEC00A60EBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70A719BA1C336DEC00A60EBC;
+			remoteInfo = EventLogUtility;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		70A719BB1C336DEC00A60EBC /* EventLogUtility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventLogUtility.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70A719BE1C336DEC00A60EBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		70A719BF1C336DEC00A60EBC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		70A719C21C336DEC00A60EBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		70A719C41C336DEC00A60EBC /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		70A719C51C336DEC00A60EBC /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		70A719C81C336DEC00A60EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		70A719CA1C336DEC00A60EBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70A719CD1C336DEC00A60EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		70A719CF1C336DEC00A60EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70A719D41C336DEC00A60EBC /* EventLogUtilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventLogUtilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70A719D81C336DEC00A60EBC /* EventLogUtilityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventLogUtilityTests.m; sourceTree = "<group>"; };
+		70A719DA1C336DEC00A60EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70A719DF1C336DEC00A60EBC /* EventLogUtilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventLogUtilityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70A719E31C336DEC00A60EBC /* EventLogUtilityUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventLogUtilityUITests.m; sourceTree = "<group>"; };
+		70A719E51C336DEC00A60EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70A719B81C336DEC00A60EBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A719D11C336DEC00A60EBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A719DC1C336DEC00A60EBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70A719B21C336DEC00A60EBC = {
+			isa = PBXGroup;
+			children = (
+				70A719BD1C336DEC00A60EBC /* EventLogUtility */,
+				70A719D71C336DEC00A60EBC /* EventLogUtilityTests */,
+				70A719E21C336DEC00A60EBC /* EventLogUtilityUITests */,
+				70A719BC1C336DEC00A60EBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70A719BC1C336DEC00A60EBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70A719BB1C336DEC00A60EBC /* EventLogUtility.app */,
+				70A719D41C336DEC00A60EBC /* EventLogUtilityTests.xctest */,
+				70A719DF1C336DEC00A60EBC /* EventLogUtilityUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70A719BD1C336DEC00A60EBC /* EventLogUtility */ = {
+			isa = PBXGroup;
+			children = (
+				70A719BE1C336DEC00A60EBC /* AppDelegate.h */,
+				70A719BF1C336DEC00A60EBC /* AppDelegate.m */,
+				70A719C41C336DEC00A60EBC /* Document.h */,
+				70A719C51C336DEC00A60EBC /* Document.m */,
+				70A719C71C336DEC00A60EBC /* Document.xib */,
+				70A719CA1C336DEC00A60EBC /* Assets.xcassets */,
+				70A719CC1C336DEC00A60EBC /* MainMenu.xib */,
+				70A719CF1C336DEC00A60EBC /* Info.plist */,
+				70A719C11C336DEC00A60EBC /* Supporting Files */,
+			);
+			path = EventLogUtility;
+			sourceTree = "<group>";
+		};
+		70A719C11C336DEC00A60EBC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70A719C21C336DEC00A60EBC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70A719D71C336DEC00A60EBC /* EventLogUtilityTests */ = {
+			isa = PBXGroup;
+			children = (
+				70A719D81C336DEC00A60EBC /* EventLogUtilityTests.m */,
+				70A719DA1C336DEC00A60EBC /* Info.plist */,
+			);
+			path = EventLogUtilityTests;
+			sourceTree = "<group>";
+		};
+		70A719E21C336DEC00A60EBC /* EventLogUtilityUITests */ = {
+			isa = PBXGroup;
+			children = (
+				70A719E31C336DEC00A60EBC /* EventLogUtilityUITests.m */,
+				70A719E51C336DEC00A60EBC /* Info.plist */,
+			);
+			path = EventLogUtilityUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70A719BA1C336DEC00A60EBC /* EventLogUtility */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70A719E81C336DEC00A60EBC /* Build configuration list for PBXNativeTarget "EventLogUtility" */;
+			buildPhases = (
+				70A719B71C336DEC00A60EBC /* Sources */,
+				70A719B81C336DEC00A60EBC /* Frameworks */,
+				70A719B91C336DEC00A60EBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EventLogUtility;
+			productName = EventLogUtility;
+			productReference = 70A719BB1C336DEC00A60EBC /* EventLogUtility.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70A719D31C336DEC00A60EBC /* EventLogUtilityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70A719EB1C336DEC00A60EBC /* Build configuration list for PBXNativeTarget "EventLogUtilityTests" */;
+			buildPhases = (
+				70A719D01C336DEC00A60EBC /* Sources */,
+				70A719D11C336DEC00A60EBC /* Frameworks */,
+				70A719D21C336DEC00A60EBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70A719D61C336DEC00A60EBC /* PBXTargetDependency */,
+			);
+			name = EventLogUtilityTests;
+			productName = EventLogUtilityTests;
+			productReference = 70A719D41C336DEC00A60EBC /* EventLogUtilityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		70A719DE1C336DEC00A60EBC /* EventLogUtilityUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70A719EE1C336DEC00A60EBC /* Build configuration list for PBXNativeTarget "EventLogUtilityUITests" */;
+			buildPhases = (
+				70A719DB1C336DEC00A60EBC /* Sources */,
+				70A719DC1C336DEC00A60EBC /* Frameworks */,
+				70A719DD1C336DEC00A60EBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70A719E11C336DEC00A60EBC /* PBXTargetDependency */,
+			);
+			name = EventLogUtilityUITests;
+			productName = EventLogUtilityUITests;
+			productReference = 70A719DF1C336DEC00A60EBC /* EventLogUtilityUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70A719B31C336DEC00A60EBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Sapphire;
+				TargetAttributes = {
+					70A719BA1C336DEC00A60EBC = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					70A719D31C336DEC00A60EBC = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 70A719BA1C336DEC00A60EBC;
+					};
+					70A719DE1C336DEC00A60EBC = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 70A719BA1C336DEC00A60EBC;
+					};
+				};
+			};
+			buildConfigurationList = 70A719B61C336DEC00A60EBC /* Build configuration list for PBXProject "EventLogUtility" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70A719B21C336DEC00A60EBC;
+			productRefGroup = 70A719BC1C336DEC00A60EBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70A719BA1C336DEC00A60EBC /* EventLogUtility */,
+				70A719D31C336DEC00A60EBC /* EventLogUtilityTests */,
+				70A719DE1C336DEC00A60EBC /* EventLogUtilityUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70A719B91C336DEC00A60EBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A719CB1C336DEC00A60EBC /* Assets.xcassets in Resources */,
+				70A719C91C336DEC00A60EBC /* Document.xib in Resources */,
+				70A719CE1C336DEC00A60EBC /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A719D21C336DEC00A60EBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A719DD1C336DEC00A60EBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70A719B71C336DEC00A60EBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A719C61C336DEC00A60EBC /* Document.m in Sources */,
+				70A719C31C336DEC00A60EBC /* main.m in Sources */,
+				70A719C01C336DEC00A60EBC /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A719D01C336DEC00A60EBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A719D91C336DEC00A60EBC /* EventLogUtilityTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A719DB1C336DEC00A60EBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A719E41C336DEC00A60EBC /* EventLogUtilityUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70A719D61C336DEC00A60EBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70A719BA1C336DEC00A60EBC /* EventLogUtility */;
+			targetProxy = 70A719D51C336DEC00A60EBC /* PBXContainerItemProxy */;
+		};
+		70A719E11C336DEC00A60EBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70A719BA1C336DEC00A60EBC /* EventLogUtility */;
+			targetProxy = 70A719E01C336DEC00A60EBC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		70A719C71C336DEC00A60EBC /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70A719C81C336DEC00A60EBC /* Base */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		70A719CC1C336DEC00A60EBC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70A719CD1C336DEC00A60EBC /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70A719E61C336DEC00A60EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		70A719E71C336DEC00A60EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		70A719E91C336DEC00A60EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EventLogUtility/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sapphire.EventLogUtility;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		70A719EA1C336DEC00A60EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EventLogUtility/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sapphire.EventLogUtility;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		70A719EC1C336DEC00A60EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EventLogUtilityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sapphire.EventLogUtilityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventLogUtility.app/Contents/MacOS/EventLogUtility";
+			};
+			name = Debug;
+		};
+		70A719ED1C336DEC00A60EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EventLogUtilityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sapphire.EventLogUtilityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventLogUtility.app/Contents/MacOS/EventLogUtility";
+			};
+			name = Release;
+		};
+		70A719EF1C336DEC00A60EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EventLogUtilityUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sapphire.EventLogUtilityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EventLogUtility;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		70A719F01C336DEC00A60EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EventLogUtilityUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sapphire.EventLogUtilityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EventLogUtility;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70A719B61C336DEC00A60EBC /* Build configuration list for PBXProject "EventLogUtility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A719E61C336DEC00A60EBC /* Debug */,
+				70A719E71C336DEC00A60EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70A719E81C336DEC00A60EBC /* Build configuration list for PBXNativeTarget "EventLogUtility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A719E91C336DEC00A60EBC /* Debug */,
+				70A719EA1C336DEC00A60EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		70A719EB1C336DEC00A60EBC /* Build configuration list for PBXNativeTarget "EventLogUtilityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A719EC1C336DEC00A60EBC /* Debug */,
+				70A719ED1C336DEC00A60EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		70A719EE1C336DEC00A60EBC /* Build configuration list for PBXNativeTarget "EventLogUtilityUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A719EF1C336DEC00A60EBC /* Debug */,
+				70A719F01C336DEC00A60EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70A719B31C336DEC00A60EBC /* Project object */;
+}
