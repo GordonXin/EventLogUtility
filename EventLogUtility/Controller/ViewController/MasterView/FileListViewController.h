@@ -1,5 +1,5 @@
 //
-//  DocumentViewController.h
+//  FileListViewController.h
 //  EventLogUtility
 //
 //  Created by GordonXIn on 12/30/15.
@@ -9,8 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "BaseViewController.h"
 
-@interface DocumentViewController : BaseViewController
-
-@property (nonatomic, readwrite, weak) NavigateBaseViewController *navigateController;
+@interface FileListViewController : NavigateBaseViewController
 
 @end

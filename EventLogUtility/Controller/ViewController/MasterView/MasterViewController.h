@@ -15,4 +15,8 @@ extern NSString * const kResultIdentifier;
 
 @interface MasterViewController : BaseViewController
 
+-(void)displayView:(NSString *)name;
+
+
+
 @end

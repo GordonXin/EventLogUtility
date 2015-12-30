@@ -81,5 +81,10 @@
 -(BOOL)navigateController:(BaseViewController *)aController
              shouldSelect:(NSString *)name;
 
+@end
+
+@interface NavigateBaseViewController : BaseViewController
+
+@property (nonatomic, readwrite, weak) id<NavigateDelegate> navigateDelegate;
 
 @end

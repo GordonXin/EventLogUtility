@@ -7,6 +7,7 @@
 //
 
 #import "MasterViewController.h"
+#import "FileListViewController.h"
 #import "BaseView.h"
 
 NSString * const kFileListIdentifier = @"FileListController";
@@ -58,17 +59,36 @@ NSString * const kResultIdentifier = @"ResultController";
 
 @implementation MasterViewController
 
+-(NSString *)nibName
+{
+    return @"MasterView";
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    BaseViewController *aController = [self subviewControllerWithIdentifier:kFileListIdentifier];
-    if (aController)
-    {
-        
-    }
+    [self addSubviewController:[[FileListViewController alloc] initWithNibName:nil bundle:nil]
+                withIdentifier:kFileListIdentifier];
     
     [self navigateController:[self navigateViewController] didSelect:kFileListIdentifier];
+}
+
+-(void)setSuperViewController:(BaseViewController *)superViewController
+{
+    [super setSuperViewController:superViewController];
+    
+    if ([self superViewController])
+    {
+        if ([[self superViewController] respondsToSelector:@selector(setNavigateViewController:)])
+        {
+            BaseViewController *aController = [self subviewControllerWithIdentifier:kFileListIdentifier];
+            if (aController && [aController isKindOfClass:[NavigateBaseViewController class]])
+            {
+                [[self superViewController] performSelector:@selector(setNavigateViewController:) withObject:aController];
+            }
+        }
+    }
 }
 
 -(void)awakeFromDocument:(Document *)document
@@ -116,6 +136,11 @@ NSString * const kResultIdentifier = @"ResultController";
     [[target view] setAutoresizingMask:NSViewHeightSizable|NSViewWidthSizable];
     [[target view] setTranslatesAutoresizingMaskIntoConstraints:YES];
     [[self presentView] addSubview:[target view]];
+}
+
+-(void)displayView:(NSString *)name
+{
+    [self navigateController:[self navigateViewController] didSelect:name];
 }
 
 @end

@@ -230,3 +230,7 @@
 #pragma mark data
 
 @end
+
+@implementation NavigateBaseViewController
+
+@end

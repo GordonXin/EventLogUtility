@@ -44,3 +44,9 @@ EventLogUtility.xcodeproj/project.xcworkspace/xcuserdata/gordonxin.xcuserdatad/U
 *.xcuserstate
 
 EventLogUtility/View/BaseView~.m
+
+Build/Products/Debug/EventLogUtility.app/Contents/Resources/FileListView.nib
+
+Build/Products/Debug/EventLogUtility.app/Contents/Resources/MasterView.nib
+
+Build/Products/Debug/EventLogUtility.app/Contents/Resources/MasterView.nib
