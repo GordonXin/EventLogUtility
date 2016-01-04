@@ -18,6 +18,9 @@
 
 @implementation BaseView
 
+@dynamic height;
+@dynamic width;
+
 #pragma mark initialization
 
 -(instancetype)init
@@ -114,7 +117,7 @@
 {
     if (hasMouseTracking == _hasMouseTracking) return;
     
-    int defaultOption = (NSTrackingActiveAlways | NSTrackingInVisibleRect | NSTrackingMouseEnteredAndExited);
+    int defaultOption = (NSTrackingActiveAlways | NSTrackingInVisibleRect | NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved);
     
     if (hasMouseTracking)
     {
@@ -229,16 +232,16 @@
 
 -(void)setHeight:(CGFloat)height
 {
-    NSSize size = self.bounds.size;
+    NSSize size = self.frame.size;
     size.height = height;
-    [self setBoundsSize:size];
+    [self setFrameSize:size];
 }
 
 -(void)setWidth:(CGFloat)width
 {
-    NSSize size = self.bounds.size;
+    NSSize size = self.frame.size;
     size.width = width;
-    [self setBoundsSize:size];
+    [self setFrameSize:size];
 }
 
 -(void)setFrameX:(CGFloat)x
@@ -252,6 +255,16 @@
     CGPoint origin = self.frame.origin;
     origin.y = y;
     [self setFrameOrigin:origin];
+}
+
+-(CGFloat)height
+{
+    return NSHeight([self frame]);
+}
+
+-(CGFloat)width
+{
+    return NSWidth([self frame]);
 }
 
 @end

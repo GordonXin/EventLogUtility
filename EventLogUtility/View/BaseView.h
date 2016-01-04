@@ -52,6 +52,10 @@
 -(void)setFrameX:(CGFloat)x;
 -(void)setFrameY:(CGFloat)y;
 
+@property (nonatomic, readonly, assign) CGFloat height;
+
+@property (nonatomic, readonly, assign) CGFloat width;
+
 
 @end
 

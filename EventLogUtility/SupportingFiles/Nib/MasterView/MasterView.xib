@@ -44,6 +44,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="userClickButton:" target="n5Z-YV-Oah" id="zOc-RA-1xd"/>
+                            </connections>
                         </button>
                         <button identifier="ResultController" translatesAutoresizingMaskIntoConstraints="NO" id="80R-n2-MnF">
                             <rect key="frame" x="130" y="5" width="20" height="20"/>
@@ -55,6 +58,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="userClickButton:" target="n5Z-YV-Oah" id="LGa-WS-p6u"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

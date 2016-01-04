@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "FileListViewController.h"
+#import "SearchViewController.h"
 #import "BaseView.h"
 
 NSString * const kFileListIdentifier = @"FileListController";
@@ -70,6 +71,8 @@ NSString * const kResultIdentifier = @"ResultController";
     
     [self addSubviewController:[[FileListViewController alloc] initWithNibName:nil bundle:nil]
                 withIdentifier:kFileListIdentifier];
+    [self addSubviewController:[[SearchViewController alloc] initWithNibName:nil bundle:nil]
+                withIdentifier:kSearchIdentifier];
     
     [self navigateController:[self navigateViewController] didSelect:kFileListIdentifier];
 }
@@ -136,6 +139,7 @@ NSString * const kResultIdentifier = @"ResultController";
     [[target view] setAutoresizingMask:NSViewHeightSizable|NSViewWidthSizable];
     [[target view] setTranslatesAutoresizingMaskIntoConstraints:YES];
     [[self presentView] addSubview:[target view]];
+    NSLog(@"MasterView target, x=%f y=%f width=%f, height=%f", [target view].frame.origin.x, [target view].frame.origin.y, [target view].frame.size.width, [target view].frame.size.height);
 }
 
 -(void)displayView:(NSString *)name

@@ -233,4 +233,9 @@
 
 @implementation NavigateBaseViewController
 
+-(void)addItem:(id)item
+{
+
+}
+
 @end

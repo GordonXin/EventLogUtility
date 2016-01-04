@@ -81,10 +81,18 @@
 -(BOOL)navigateController:(BaseViewController *)aController
              shouldSelect:(NSString *)name;
 
+-(BOOL)navigateController:(BaseViewController *)aController
+              shouldClose:(NSString *)name;
+
+-(void)navigateController:(BaseViewController *)aController
+                 didClose:(NSString *)name;
+
 @end
 
 @interface NavigateBaseViewController : BaseViewController
 
 @property (nonatomic, readwrite, weak) id<NavigateDelegate> navigateDelegate;
+
+-(void)addItem:(id)item;
 
 @end
