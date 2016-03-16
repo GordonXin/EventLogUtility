@@ -62,3 +62,7 @@ Build/Products/Debug/EventLogUtility.app/Contents/Resources/MasterView.nib
 Build/Products/Debug/EventLogUtility.app/Contents/Resources/MasterView.nib
 
 Build/Products/Debug/EventLogUtility.app/Contents/Resources/SearchView.nib
+
+Build/Intermediates/EventLogUtility.build/Debug/EventLogUtilityTests.build/dgph~
+
+Build/Intermediates/EventLogUtility.build/Debug/EventLogUtilityUITests.build/dgph~
