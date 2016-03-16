@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700B0ADA1C99464A005FF81D /* LMFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B0AD91C99464A005FF81D /* LMFileHelper.m */; };
+		700B0ADE1C994A1B005FF81D /* LMConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B0ADD1C994A1B005FF81D /* LMConstant.m */; };
 		709F45EF1C8FC19300728265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F45EE1C8FC19300728265 /* main.m */; };
 		709F45F71C8FC19300728265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709F45F61C8FC19300728265 /* Assets.xcassets */; };
 		709F46051C8FC19300728265 /* EventLogUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46041C8FC19300728265 /* EventLogUtilityTests.m */; };
@@ -19,7 +21,7 @@
 		709F46471C8FC65800728265 /* LMNotificationNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46461C8FC65800728265 /* LMNotificationNames.m */; };
 		709F464E1C8FD8E500728265 /* LMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F464D1C8FD8E500728265 /* LMBaseViewController.m */; };
 		709F46581C8FDB8500728265 /* LMDocumentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46571C8FDB8500728265 /* LMDocumentWindowController.m */; };
-		709F465C1C8FF59900728265 /* LMFileContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F465B1C8FF59900728265 /* LMFileContent.m */; };
+		709F465C1C8FF59900728265 /* LMFileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F465B1C8FF59900728265 /* LMFileStorage.m */; };
 		709F465F1C9007EA00728265 /* LMFileContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F465E1C9007EA00728265 /* LMFileContentManager.m */; };
 		709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46621C900FFF00728265 /* LMErrorDifinition.m */; };
 		709F46671C90180600728265 /* LMFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46661C90180600728265 /* LMFileReader.m */; };
@@ -44,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		700B0AD81C99464A005FF81D /* LMFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileHelper.h; path = Model/LMFileHelper.h; sourceTree = "<group>"; };
+		700B0AD91C99464A005FF81D /* LMFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileHelper.m; path = Model/LMFileHelper.m; sourceTree = "<group>"; };
+		700B0ADC1C994A1B005FF81D /* LMConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMConstant.h; path = Utility/Constants/LMConstant.h; sourceTree = "<group>"; };
+		700B0ADD1C994A1B005FF81D /* LMConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMConstant.m; path = Utility/Constants/LMConstant.m; sourceTree = "<group>"; };
 		709F45E71C8FC19300728265 /* EventLogUtility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventLogUtility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		709F45EE1C8FC19300728265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		709F45F61C8FC19300728265 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,9 +74,9 @@
 		709F464D1C8FD8E500728265 /* LMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMBaseViewController.m; path = "Controller/View Controller/Base/LMBaseViewController.m"; sourceTree = "<group>"; };
 		709F46561C8FDB8500728265 /* LMDocumentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMDocumentWindowController.h; path = "Controller/Window Controller/Document/LMDocumentWindowController.h"; sourceTree = "<group>"; };
 		709F46571C8FDB8500728265 /* LMDocumentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMDocumentWindowController.m; path = "Controller/Window Controller/Document/LMDocumentWindowController.m"; sourceTree = "<group>"; };
-		709F465A1C8FF59900728265 /* LMFileContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileContent.h; path = "Model/File Content/LMFileContent.h"; sourceTree = "<group>"; };
-		709F465B1C8FF59900728265 /* LMFileContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileContent.m; path = "Model/File Content/LMFileContent.m"; sourceTree = "<group>"; };
-		709F465D1C9007EA00728265 /* LMFileContentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileContentManager.h; path = "Model/File Content/LMFileContentManager.h"; sourceTree = "<group>"; };
+		709F465A1C8FF59900728265 /* LMFileStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileStorage.h; path = "Model/File Content/LMFileStorage.h"; sourceTree = "<group>"; };
+		709F465B1C8FF59900728265 /* LMFileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileStorage.m; path = "Model/File Content/LMFileStorage.m"; sourceTree = "<group>"; };
+		709F465D1C9007EA00728265 /* LMFileStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileStorageManager.h; path = "Model/File Content/LMFileStorageManager.h"; sourceTree = "<group>"; };
 		709F465E1C9007EA00728265 /* LMFileContentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileContentManager.m; path = "Model/File Content/LMFileContentManager.m"; sourceTree = "<group>"; };
 		709F46611C900FFF00728265 /* LMErrorDifinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMErrorDifinition.h; path = Utility/Error/LMErrorDifinition.h; sourceTree = "<group>"; };
 		709F46621C900FFF00728265 /* LMErrorDifinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMErrorDifinition.m; path = Utility/Error/LMErrorDifinition.m; sourceTree = "<group>"; };
@@ -105,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		700B0ADB1C9949E6005FF81D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				700B0ADC1C994A1B005FF81D /* LMConstant.h */,
+				700B0ADD1C994A1B005FF81D /* LMConstant.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		709F45DE1C8FC19200728265 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +187,8 @@
 			children = (
 				709F46641C9017F400728265 /* File Reader */,
 				709F46591C8FF57300728265 /* File Content */,
+				700B0AD81C99464A005FF81D /* LMFileHelper.h */,
+				700B0AD91C99464A005FF81D /* LMFileHelper.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -264,6 +281,7 @@
 		709F463C1C8FC3F300728265 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				700B0ADB1C9949E6005FF81D /* Constants */,
 				709F46601C900FE700728265 /* Error */,
 				709F46441C8FC64B00728265 /* Notification */,
 				709F463D1C8FC40500728265 /* Color */,
@@ -317,9 +335,9 @@
 		709F46591C8FF57300728265 /* File Content */ = {
 			isa = PBXGroup;
 			children = (
-				709F465A1C8FF59900728265 /* LMFileContent.h */,
-				709F465B1C8FF59900728265 /* LMFileContent.m */,
-				709F465D1C9007EA00728265 /* LMFileContentManager.h */,
+				709F465A1C8FF59900728265 /* LMFileStorage.h */,
+				709F465B1C8FF59900728265 /* LMFileStorage.m */,
+				709F465D1C9007EA00728265 /* LMFileStorageManager.h */,
 				709F465E1C9007EA00728265 /* LMFileContentManager.m */,
 			);
 			name = "File Content";
@@ -484,7 +502,9 @@
 				709F466A1C901D6000728265 /* LMDataMonitorFileReader.m in Sources */,
 				709F462D1C8FC2C100728265 /* AppDelegate.m in Sources */,
 				709F464E1C8FD8E500728265 /* LMBaseViewController.m in Sources */,
-				709F465C1C8FF59900728265 /* LMFileContent.m in Sources */,
+				700B0ADA1C99464A005FF81D /* LMFileHelper.m in Sources */,
+				709F465C1C8FF59900728265 /* LMFileStorage.m in Sources */,
+				700B0ADE1C994A1B005FF81D /* LMConstant.m in Sources */,
 				709F46671C90180600728265 /* LMFileReader.m in Sources */,
 				709F45EF1C8FC19300728265 /* main.m in Sources */,
 			);

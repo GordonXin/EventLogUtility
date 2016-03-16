@@ -9,19 +9,15 @@
 #import "LMDataMonitorFileReader.h"
 #import <Cocoa/Cocoa.h>
 
+#pragma mark -
 @implementation LMDataMonitorFileReader
+#pragma mark -
 
--(NSDictionary *)defaultOpenFileOptions
+#pragma mark        constant
+#pragma mark -
+-(NSArray *)fileExtensions
 {
-    return @{
-             NSCharacterEncodingDocumentOption : [NSNumber numberWithUnsignedInt:(unsigned int)NSUTF8StringEncoding],
-             NSDocumentTypeDocumentOption : NSPlainTextDocumentType,
-             };
-}
-
--(NSUInteger)defaultTryOpenFileSize
-{
-    return 1 * 1024 * 1024;
+    return @[@"Log", @"log", @"LOG"];
 }
 
 @end

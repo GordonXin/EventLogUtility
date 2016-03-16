@@ -9,82 +9,29 @@
 #import "LMFileReader.h"
 #import <Cocoa/Cocoa.h>
 #import "LMErrorDifinition.h"
+#import "LMFileHelper.h"
 
-@implementation LMFileReaderFactory
-
-+(NSArray*)supportedFileTypes
-{
-    return @[@"LMDataMonitorFileReader"];
-}
-
-+(id)createFileReaderWithFileURL:(NSURL *)absoluteURL error:(NSError *__autoreleasing *)outError
-{
-    NSArray *supported = [LMFileReaderFactory supportedFileTypes];
-    
-    for (NSString *aName in supported)
-    {
-        Class className = NSClassFromString(aName);
-        if ([LMFileReaderFactory tryReadFileWithURL:absoluteURL classType:className])
-        {
-            return [[className alloc] init];
-        }
-    }
-    
-    return nil;
-}
-
-+(BOOL)tryReadFileWithURL:(NSURL *)absoluteURL classType:(Class)classType
-{
-    @try
-    {
-        NSError *outError = nil;
-        
-        NSFileHandle *fileHanle = [NSFileHandle fileHandleForReadingFromURL:absoluteURL error:&outError];
-        if (!fileHanle)
-        {
-            return NO;
-        }
-        if (outError)
-        {
-            return NO;
-        }
-        
-        unsigned long long fileSize = [fileHanle seekToEndOfFile];
-        LMFileReader *reader = (LMFileReader *)[[classType alloc] init];
-        NSUInteger readSize = [reader defaultTryOpenFileSize];
-        
-        if (readSize > fileSize)
-        {
-            readSize = (NSUInteger)fileSize;
-        }
-        
-        NSData *fileData = [fileHanle readDataOfLength:readSize];
-        if (!fileData)
-        {
-            return NO;
-        }
-        if (!fileData.length)
-        {
-            return NO;
-        }
-        
-        NSStringEncoding encoding = (NSStringEncoding)[[[reader defaultOpenFileOptions] objectForKey:NSCharacterEncodingDocumentOption] unsignedIntValue];
-        
-        NSString *fileString = [[NSString alloc] initWithBytesNoCopy:fileData.bytes length:fileData.length encoding:encoding freeWhenDone:NO];
-        
-    }
-    @catch (NSException *exception)
-    {
-        if (*outError == nil)
-        {
-            
-        }
-    }
-}
-
-@end
-
+#pragma mark -
 @implementation LMFileReader
+#pragma mark -
+
+#pragma mark        File Type Specific
+#pragma mark -
+
+static NSArray *_supportedReaderNames = nil;
++(NSArray *)supportedReaderNames
+{
+    if (_supportedReaderNames == nil)
+    {
+        _supportedReaderNames = @[@"LMDataMonitorFileReader"];
+    }
+    return _supportedReaderNames;
+}
+
+-(NSArray *)fileExtensions
+{
+    return @[];
+}
 
 -(NSDictionary *)defaultOpenFileOptions
 {
@@ -98,5 +45,185 @@
 {
     return 1 * 1024 * 1024;
 }
+
+-(NSString *)fileType
+{
+    return @"Unknown type";
+}
+
+-(BOOL)isFormatMathOnData:(NSData *)data
+{
+    return NO;
+}
+
+#pragma mark -
+#pragma mark        class method
+#pragma mark -
+
+static NSArray *_supportedFileExtensions = nil;
++(NSArray *)supportedFileExtensions
+{
+    if (_supportedFileExtensions == nil)
+    {
+        NSArray *readers = [[self class] supportedReaderNames];
+        NSMutableDictionary *extensions = [NSMutableDictionary dictionary];
+
+        for (NSString *str in readers)
+        {
+            @autoreleasepool
+            {
+                Class className = NSClassFromString(str);
+                if (!className)
+                {
+                    continue;
+                }
+                
+                if (![className isSubclassOfClass:[LMFileReader class]])
+                {
+                    continue;
+                }
+                
+                LMFileReader *instance = [[className alloc] init];
+                if (!instance)
+                {
+                    continue;
+                }
+                
+                NSArray *subAry = [instance fileExtensions];
+                for (NSString *ext in subAry)
+                {
+                    if ([extensions objectForKey:ext] != nil)
+                    {
+                        [extensions setObject:ext forKey:ext];
+                    }
+                }
+            }
+        }
+        
+        _supportedFileExtensions = [extensions allValues];
+    }
+    return _supportedFileExtensions;
+}
+
++(id)createReaderForFileWithURL:(NSURL *)absoluteURL error:(NSError *__autoreleasing *)outError
+{
+    if (!absoluteURL || ![absoluteURL.path length])
+    {
+        if (!*outError)
+        {
+            *outError = [NSError errorWithDomain:kLMErrorDomainName
+                                            code:kLMErrorCodeUnknown.integerValue
+                                        userInfo:@{NSLocalizedDescriptionKey:@"createReaderForFileWithURL: invalid absolute URL"}];
+            return nil;
+        }
+    }
+    
+    if ([LMFileHelper fileExistsAtURL:absoluteURL] == NO)
+    {
+        if (!*outError)
+        {
+            *outError = [NSError errorWithDomain:kLMErrorDomainName
+                                            code:kLMErrorCodeUnknown.integerValue
+                                        userInfo:@{NSLocalizedDescriptionKey:[NSString stringWithFormat:@"File doesn't exist at path: %@", absoluteURL.path]}];
+            return nil;
+        }
+    }
+    
+    NSString *cleanFileExtension = [[absoluteURL.lastPathComponent componentsSeparatedByString:@"."] objectAtIndex:1];
+    
+    if (!cleanFileExtension || ![cleanFileExtension length])
+    {
+        if (!*outError)
+        {
+            *outError = [NSError errorWithDomain:kLMErrorDomainName
+                                            code:kLMErrorCodeUnknown.integerValue
+                                        userInfo:@{NSLocalizedDescriptionKey:[NSString stringWithFormat:@"%@ get empty file extension", NSStringFromSelector(_cmd)]}];
+            return nil;
+        }
+    }
+    
+    NSArray *extensions = [[self class] supportedFileExtensions];
+    if (![extensions containsObject:cleanFileExtension])
+    {
+        if (!*outError)
+        {
+            *outError = [NSError errorWithDomain:kLMErrorDomainName
+                                            code:kLMErrorCodeUnknown.integerValue
+                                        userInfo:@{NSLocalizedDescriptionKey:[NSString stringWithFormat:@"%@ get illegal file extension %@ (legal:%@)", NSStringFromSelector(_cmd), cleanFileExtension, extensions]}];
+            return nil;
+        }
+    }
+    
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingFromURL:absoluteURL error:outError];
+    if (!fileHandle)
+    {
+        if (!*outError)
+        {
+            *outError = [NSError errorWithDomain:kLMErrorDomainName
+                                            code:kLMErrorCodeUnknown.integerValue
+                                        userInfo:@{NSLocalizedDescriptionKey:[NSString stringWithFormat:@"File doesn't exist at path: %@", absoluteURL.path]}];
+            return nil;
+        }
+    }
+    if (*outError)
+    {
+        // an error already there
+        return nil;
+    }
+    
+    NSArray *readerNames = [[self class] supportedReaderNames];
+    for (NSString *readerName in readerNames)
+    {
+        @autoreleasepool
+        {
+            Class className = NSClassFromString(readerName);
+            if (!className)
+            {
+                continue;
+            }
+            
+            LMFileReader *reader = [[className alloc] init];
+            if (!reader)
+            {
+                continue;
+            }
+            
+            // move to begin of file
+            [fileHandle seekToFileOffset:0];
+            
+            unsigned long long sizeToRead = [reader defaultTryOpenFileSize];
+            if (sizeToRead <= 0)
+            {
+                continue;
+            }
+            
+            unsigned long long sizeOfFile = [LMFileHelper fileSizeWithHandle:fileHandle];
+            if (sizeToRead > sizeOfFile)
+            {
+                sizeToRead = sizeOfFile;
+            }
+            
+            // read a small piece of file
+            NSData *fileData = [fileHandle readDataOfLength:sizeToRead];
+            if (!fileData)
+            {
+                continue;
+            }
+            if (fileData.length != sizeToRead)
+            {
+                continue;
+            }
+            
+            if ([reader isFormatMathOnData:fileData])
+            {
+                return reader;
+            }
+        }
+        
+    }
+    
+    return nil;
+}
+
 
 @end

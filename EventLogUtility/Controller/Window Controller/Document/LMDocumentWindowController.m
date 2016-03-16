@@ -42,7 +42,7 @@
 {
     _documentUUID = [uuid copy];
     
-    Document *doc = nil;
+    //Document *doc = nil;
     
     
 }

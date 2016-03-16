@@ -1,5 +1,5 @@
 //
-//  LMFileContent.h
+//  LMFileStorage.h
 //  EventLogUtility
 //
 //  Created by GordonXIn on 3/9/16.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
-@interface LMFileContent : NSObject
+@interface LMFileStorage : NSObject
 
 @property (nonatomic, readwrite, assign) BOOL            isMutable;
 

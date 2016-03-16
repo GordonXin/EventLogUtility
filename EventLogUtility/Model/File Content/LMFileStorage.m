@@ -1,18 +1,18 @@
 //
-//  LMFileContent.m
+//  LMFile.m
 //  EventLogUtility
 //
 //  Created by GordonXIn on 3/9/16.
 //  Copyright © 2016 Sapphire. All rights reserved.
 //
 
-#import "LMFileContent.h"
+#import "LMFileStorage.h"
 
-@interface LMFileContent ()
+@interface LMFileStorage ()
 
 @end
 
-@implementation LMFileContent
+@implementation LMFileStorage
 
 #pragma mark -
 #pragma mark        init methods
