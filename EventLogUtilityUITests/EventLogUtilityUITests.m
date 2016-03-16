@@ -2,8 +2,8 @@
 //  EventLogUtilityUITests.m
 //  EventLogUtilityUITests
 //
-//  Created by GordonXIn on 12/30/15.
-//  Copyright © 2015 Sapphire. All rights reserved.
+//  Created by GordonXIn on 3/9/16.
+//  Copyright © 2016 Sapphire. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

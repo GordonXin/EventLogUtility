@@ -1,5 +1,5 @@
 //
-//  main.m
+//  Document.h
 //  EventLogUtility
 //
 //  Created by GordonXIn on 3/9/16.
@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-int main(int argc, const char * argv[]) {
-    return NSApplicationMain(argc, argv);
-}
+@interface Document : NSDocument
+
+@property (nonatomic, readonly, copy) NSString *documentUUID;
+
+@end
+

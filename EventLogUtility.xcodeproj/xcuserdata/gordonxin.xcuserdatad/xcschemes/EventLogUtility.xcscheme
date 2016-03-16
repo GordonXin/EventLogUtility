@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "70A719BA1C336DEC00A60EBC"
+               BlueprintIdentifier = "709F45E61C8FC19300728265"
                BuildableName = "EventLogUtility.app"
                BlueprintName = "EventLogUtility"
                ReferencedContainer = "container:EventLogUtility.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "70A719D31C336DEC00A60EBC"
+               BlueprintIdentifier = "709F45FF1C8FC19300728265"
                BuildableName = "EventLogUtilityTests.xctest"
                BlueprintName = "EventLogUtilityTests"
                ReferencedContainer = "container:EventLogUtility.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "70A719DE1C336DEC00A60EBC"
+               BlueprintIdentifier = "709F460A1C8FC19300728265"
                BuildableName = "EventLogUtilityUITests.xctest"
                BlueprintName = "EventLogUtilityUITests"
                ReferencedContainer = "container:EventLogUtility.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70A719BA1C336DEC00A60EBC"
+            BlueprintIdentifier = "709F45E61C8FC19300728265"
             BuildableName = "EventLogUtility.app"
             BlueprintName = "EventLogUtility"
             ReferencedContainer = "container:EventLogUtility.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70A719BA1C336DEC00A60EBC"
+            BlueprintIdentifier = "709F45E61C8FC19300728265"
             BuildableName = "EventLogUtility.app"
             BlueprintName = "EventLogUtility"
             ReferencedContainer = "container:EventLogUtility.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70A719BA1C336DEC00A60EBC"
+            BlueprintIdentifier = "709F45E61C8FC19300728265"
             BuildableName = "EventLogUtility.app"
             BlueprintName = "EventLogUtility"
             ReferencedContainer = "container:EventLogUtility.xcodeproj">
