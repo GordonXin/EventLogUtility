@@ -1,49 +1,50 @@
 //
-//  LMFileReader.m
+//  LMFileReaderManager.m
 //  EventLogUtility
 //
-//  Created by GordonXIn on 3/9/16.
+//  Created by GordonXIn on 3/21/16.
 //  Copyright © 2016 Sapphire. All rights reserved.
 //
 
+#import "LMFileReaderManager.h"
 #import "LMFileReader.h"
-#import <Cocoa/Cocoa.h>
-#import "LMErrorDifinition.h"
 #import "LMFileHelper.h"
+#import "LMErrorDifinition.h"
 
-#pragma mark -
-@implementation LMFileReader
-#pragma mark -
+@interface LMFileReaderManager ()
+{
+    NSArray *_readersArray;
+}
+
+@end
+
+@implementation LMFileReaderManager
+
+static LMFileReaderManager *_sharedManager = nil;
++(instancetype)sharedManager
+{
+    if (_sharedManager == nil)
+    {
+        _sharedManager = [[LMFileReaderManager alloc] init];
+    }
+    return _sharedManager;
+}
 
 -(instancetype)init
 {
-    if (self  = [super init])
+    if (self = [super init])
     {
-        
+        [self initSupportedReaders];
     }
     return self;
 }
 
--(NSDictionary *)openFileOptions
+-(void)initSupportedReaders
 {
-    return @{
-             NSCharacterEncodingDocumentOption : [NSNumber numberWithUnsignedInt:(unsigned int)NSUTF8StringEncoding],
-             NSDocumentTypeDocumentOption : NSPlainTextDocumentType,
-             };
+    _readersArray = @[@"LMDataMonitorFileReader"];
 }
 
--(NSUInteger)tryOpenSize
-{
-    return 1 * 1024 * 1024;
-}
-
--(NSString *)fileType
-{
-    return @"unknonw type";
-}
-
-
-+(id)createReaderForFileWithURL:(NSURL *)absoluteURL error:(NSError *__autoreleasing *)outError
+-(id)fileReaderForURL:(NSURL *)absoluteURL error:(NSError *__autoreleasing *)outError
 {
     if (!absoluteURL || ![absoluteURL.path length])
     {
@@ -51,7 +52,7 @@
         {
             *outError = [NSError errorWithDomain:kLMErrorDomainName
                                             code:kLMErrorCodeUnknown.integerValue
-                                        userInfo:@{NSLocalizedDescriptionKey:@"createReaderForFileWithURL: invalid absolute URL"}];
+                                        userInfo:@{NSLocalizedDescriptionKey:@"invalid input URL"}];
             return nil;
         }
     }
@@ -63,31 +64,6 @@
             *outError = [NSError errorWithDomain:kLMErrorDomainName
                                             code:kLMErrorCodeUnknown.integerValue
                                         userInfo:@{NSLocalizedDescriptionKey:[NSString stringWithFormat:@"File doesn't exist at path: %@", absoluteURL.path]}];
-            return nil;
-        }
-    }
-    
-    NSString *cleanFileExtension = [[absoluteURL.lastPathComponent componentsSeparatedByString:@"."] objectAtIndex:1];
-    
-    if (!cleanFileExtension || ![cleanFileExtension length])
-    {
-        if (!*outError)
-        {
-            *outError = [NSError errorWithDomain:kLMErrorDomainName
-                                            code:kLMErrorCodeUnknown.integerValue
-                                        userInfo:@{NSLocalizedDescriptionKey:[NSString stringWithFormat:@"%@ get empty file extension", NSStringFromSelector(_cmd)]}];
-            return nil;
-        }
-    }
-    
-    NSArray *extensions = [[self class] supportedFileExtensions];
-    if (![extensions containsObject:cleanFileExtension])
-    {
-        if (!*outError)
-        {
-            *outError = [NSError errorWithDomain:kLMErrorDomainName
-                                            code:kLMErrorCodeUnknown.integerValue
-                                        userInfo:@{NSLocalizedDescriptionKey:[NSString stringWithFormat:@"%@ get illegal file extension %@ (legal:%@)", NSStringFromSelector(_cmd), cleanFileExtension, extensions]}];
             return nil;
         }
     }
@@ -163,5 +139,20 @@
     return nil;
 }
 
+-(BOOL)readFileHandle:(NSFileHandle *)fileHandle withReader:(Class)readerClass
+{
+    if (![readerClass isSubclassOfClass:[LMFileReader class]])
+    {
+        NSLog(@"%@, invalid reader class: %@", NSStringFromSelector(_cmd), readerClass);
+        return NO;
+    }
+    
+    LMFileReader *reader = [[readerClass alloc] init];
+    if (reader == nil)
+    {
+        NSLog(@"%@, can't create instance of reader class: %@", NSStringFromSelector(_cmd), readerClass);
+        return NO;
+    }
+}
 
 @end

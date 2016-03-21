@@ -12,6 +12,7 @@
 		700C9C751C9F85330088488E /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C741C9F85330088488E /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		700C9C871C9FD5E90088488E /* LMFileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C841C9FD5E90088488E /* LMFileStorage.m */; };
 		700C9C881C9FD5E90088488E /* LMFileStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C861C9FD5E90088488E /* LMFileStorageManager.m */; };
+		700C9C8B1C9FF2370088488E /* LMFileReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C8A1C9FF2370088488E /* LMFileReaderManager.m */; };
 		709F45EF1C8FC19300728265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F45EE1C8FC19300728265 /* main.m */; };
 		709F45F71C8FC19300728265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709F45F61C8FC19300728265 /* Assets.xcassets */; };
 		709F46051C8FC19300728265 /* EventLogUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46041C8FC19300728265 /* EventLogUtilityTests.m */; };
@@ -57,6 +58,8 @@
 		700C9C841C9FD5E90088488E /* LMFileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileStorage.m; path = "Model/File Storage/LMFileStorage.m"; sourceTree = "<group>"; };
 		700C9C851C9FD5E90088488E /* LMFileStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileStorageManager.h; path = "Model/File Storage/LMFileStorageManager.h"; sourceTree = "<group>"; };
 		700C9C861C9FD5E90088488E /* LMFileStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileStorageManager.m; path = "Model/File Storage/LMFileStorageManager.m"; sourceTree = "<group>"; };
+		700C9C891C9FF2370088488E /* LMFileReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileReaderManager.h; path = "Model/File Reader/LMFileReaderManager.h"; sourceTree = "<group>"; };
+		700C9C8A1C9FF2370088488E /* LMFileReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileReaderManager.m; path = "Model/File Reader/LMFileReaderManager.m"; sourceTree = "<group>"; };
 		709F45E71C8FC19300728265 /* EventLogUtility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventLogUtility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		709F45EE1C8FC19300728265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		709F45F61C8FC19300728265 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -368,6 +371,8 @@
 		709F46641C9017F400728265 /* File Reader */ = {
 			isa = PBXGroup;
 			children = (
+				700C9C891C9FF2370088488E /* LMFileReaderManager.h */,
+				700C9C8A1C9FF2370088488E /* LMFileReaderManager.m */,
 				709F46651C90180600728265 /* LMFileReader.h */,
 				709F46661C90180600728265 /* LMFileReader.m */,
 				709F46681C901D6000728265 /* LMDataMonitorFileReader.h */,
@@ -513,6 +518,7 @@
 				700C9C751C9F85330088488E /* RegexKitLite.m in Sources */,
 				709F46581C8FDB8500728265 /* LMDocumentWindowController.m in Sources */,
 				709F46311C8FC2D600728265 /* Document.m in Sources */,
+				700C9C8B1C9FF2370088488E /* LMFileReaderManager.m in Sources */,
 				709F466A1C901D6000728265 /* LMDataMonitorFileReader.m in Sources */,
 				709F462D1C8FC2C100728265 /* AppDelegate.m in Sources */,
 				709F464E1C8FD8E500728265 /* LMBaseViewController.m in Sources */,
