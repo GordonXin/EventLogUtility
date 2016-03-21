@@ -18,16 +18,6 @@
 #pragma mark        File Type Specific
 #pragma mark -
 
-static NSArray *_supportedReaderNames = nil;
-+(NSArray *)supportedReaderNames
-{
-    if (_supportedReaderNames == nil)
-    {
-        _supportedReaderNames = @[@"LMDataMonitorFileReader"];
-    }
-    return _supportedReaderNames;
-}
-
 -(NSArray *)fileExtensions
 {
     return @[];

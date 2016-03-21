@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		700B0ADA1C99464A005FF81D /* LMFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B0AD91C99464A005FF81D /* LMFileHelper.m */; };
 		700B0ADE1C994A1B005FF81D /* LMConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B0ADD1C994A1B005FF81D /* LMConstant.m */; };
+		700C9C751C9F85330088488E /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C741C9F85330088488E /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		700C9C871C9FD5E90088488E /* LMFileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C841C9FD5E90088488E /* LMFileStorage.m */; };
+		700C9C881C9FD5E90088488E /* LMFileStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C861C9FD5E90088488E /* LMFileStorageManager.m */; };
 		709F45EF1C8FC19300728265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F45EE1C8FC19300728265 /* main.m */; };
 		709F45F71C8FC19300728265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709F45F61C8FC19300728265 /* Assets.xcassets */; };
 		709F46051C8FC19300728265 /* EventLogUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46041C8FC19300728265 /* EventLogUtilityTests.m */; };
@@ -21,8 +24,6 @@
 		709F46471C8FC65800728265 /* LMNotificationNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46461C8FC65800728265 /* LMNotificationNames.m */; };
 		709F464E1C8FD8E500728265 /* LMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F464D1C8FD8E500728265 /* LMBaseViewController.m */; };
 		709F46581C8FDB8500728265 /* LMDocumentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46571C8FDB8500728265 /* LMDocumentWindowController.m */; };
-		709F465C1C8FF59900728265 /* LMFileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F465B1C8FF59900728265 /* LMFileStorage.m */; };
-		709F465F1C9007EA00728265 /* LMFileContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F465E1C9007EA00728265 /* LMFileContentManager.m */; };
 		709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46621C900FFF00728265 /* LMErrorDifinition.m */; };
 		709F46671C90180600728265 /* LMFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46661C90180600728265 /* LMFileReader.m */; };
 		709F466A1C901D6000728265 /* LMDataMonitorFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46691C901D6000728265 /* LMDataMonitorFileReader.m */; };
@@ -50,6 +51,12 @@
 		700B0AD91C99464A005FF81D /* LMFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileHelper.m; path = Model/LMFileHelper.m; sourceTree = "<group>"; };
 		700B0ADC1C994A1B005FF81D /* LMConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMConstant.h; path = Utility/Constants/LMConstant.h; sourceTree = "<group>"; };
 		700B0ADD1C994A1B005FF81D /* LMConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMConstant.m; path = Utility/Constants/LMConstant.m; sourceTree = "<group>"; };
+		700C9C731C9F85330088488E /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = Utility/Regex/RegexKitLite.h; sourceTree = "<group>"; };
+		700C9C741C9F85330088488E /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = Utility/Regex/RegexKitLite.m; sourceTree = "<group>"; };
+		700C9C831C9FD5E90088488E /* LMFileStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileStorage.h; path = "Model/File Storage/LMFileStorage.h"; sourceTree = "<group>"; };
+		700C9C841C9FD5E90088488E /* LMFileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileStorage.m; path = "Model/File Storage/LMFileStorage.m"; sourceTree = "<group>"; };
+		700C9C851C9FD5E90088488E /* LMFileStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileStorageManager.h; path = "Model/File Storage/LMFileStorageManager.h"; sourceTree = "<group>"; };
+		700C9C861C9FD5E90088488E /* LMFileStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileStorageManager.m; path = "Model/File Storage/LMFileStorageManager.m"; sourceTree = "<group>"; };
 		709F45E71C8FC19300728265 /* EventLogUtility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventLogUtility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		709F45EE1C8FC19300728265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		709F45F61C8FC19300728265 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,10 +81,6 @@
 		709F464D1C8FD8E500728265 /* LMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMBaseViewController.m; path = "Controller/View Controller/Base/LMBaseViewController.m"; sourceTree = "<group>"; };
 		709F46561C8FDB8500728265 /* LMDocumentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMDocumentWindowController.h; path = "Controller/Window Controller/Document/LMDocumentWindowController.h"; sourceTree = "<group>"; };
 		709F46571C8FDB8500728265 /* LMDocumentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMDocumentWindowController.m; path = "Controller/Window Controller/Document/LMDocumentWindowController.m"; sourceTree = "<group>"; };
-		709F465A1C8FF59900728265 /* LMFileStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileStorage.h; path = "Model/File Content/LMFileStorage.h"; sourceTree = "<group>"; };
-		709F465B1C8FF59900728265 /* LMFileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileStorage.m; path = "Model/File Content/LMFileStorage.m"; sourceTree = "<group>"; };
-		709F465D1C9007EA00728265 /* LMFileStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileStorageManager.h; path = "Model/File Content/LMFileStorageManager.h"; sourceTree = "<group>"; };
-		709F465E1C9007EA00728265 /* LMFileContentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileContentManager.m; path = "Model/File Content/LMFileContentManager.m"; sourceTree = "<group>"; };
 		709F46611C900FFF00728265 /* LMErrorDifinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMErrorDifinition.h; path = Utility/Error/LMErrorDifinition.h; sourceTree = "<group>"; };
 		709F46621C900FFF00728265 /* LMErrorDifinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMErrorDifinition.m; path = Utility/Error/LMErrorDifinition.m; sourceTree = "<group>"; };
 		709F46651C90180600728265 /* LMFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileReader.h; path = "Model/File Reader/LMFileReader.h"; sourceTree = "<group>"; };
@@ -118,6 +121,15 @@
 				700B0ADD1C994A1B005FF81D /* LMConstant.m */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		700C9C721C9F84D40088488E /* Regex */ = {
+			isa = PBXGroup;
+			children = (
+				700C9C731C9F85330088488E /* RegexKitLite.h */,
+				700C9C741C9F85330088488E /* RegexKitLite.m */,
+			);
+			name = Regex;
 			sourceTree = "<group>";
 		};
 		709F45DE1C8FC19200728265 = {
@@ -186,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				709F46641C9017F400728265 /* File Reader */,
-				709F46591C8FF57300728265 /* File Content */,
+				709F46591C8FF57300728265 /* File Storage */,
 				700B0AD81C99464A005FF81D /* LMFileHelper.h */,
 				700B0AD91C99464A005FF81D /* LMFileHelper.m */,
 			);
@@ -281,6 +293,7 @@
 		709F463C1C8FC3F300728265 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				700C9C721C9F84D40088488E /* Regex */,
 				700B0ADB1C9949E6005FF81D /* Constants */,
 				709F46601C900FE700728265 /* Error */,
 				709F46441C8FC64B00728265 /* Notification */,
@@ -332,15 +345,15 @@
 			name = Document;
 			sourceTree = "<group>";
 		};
-		709F46591C8FF57300728265 /* File Content */ = {
+		709F46591C8FF57300728265 /* File Storage */ = {
 			isa = PBXGroup;
 			children = (
-				709F465A1C8FF59900728265 /* LMFileStorage.h */,
-				709F465B1C8FF59900728265 /* LMFileStorage.m */,
-				709F465D1C9007EA00728265 /* LMFileStorageManager.h */,
-				709F465E1C9007EA00728265 /* LMFileContentManager.m */,
+				700C9C831C9FD5E90088488E /* LMFileStorage.h */,
+				700C9C841C9FD5E90088488E /* LMFileStorage.m */,
+				700C9C851C9FD5E90088488E /* LMFileStorageManager.h */,
+				700C9C861C9FD5E90088488E /* LMFileStorageManager.m */,
 			);
-			name = "File Content";
+			name = "File Storage";
 			sourceTree = "<group>";
 		};
 		709F46601C900FE700728265 /* Error */ = {
@@ -493,19 +506,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700C9C871C9FD5E90088488E /* LMFileStorage.m in Sources */,
 				709F46431C8FC51300728265 /* LMColorUtlity.m in Sources */,
 				709F46471C8FC65800728265 /* LMNotificationNames.m in Sources */,
 				709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */,
-				709F465F1C9007EA00728265 /* LMFileContentManager.m in Sources */,
+				700C9C751C9F85330088488E /* RegexKitLite.m in Sources */,
 				709F46581C8FDB8500728265 /* LMDocumentWindowController.m in Sources */,
 				709F46311C8FC2D600728265 /* Document.m in Sources */,
 				709F466A1C901D6000728265 /* LMDataMonitorFileReader.m in Sources */,
 				709F462D1C8FC2C100728265 /* AppDelegate.m in Sources */,
 				709F464E1C8FD8E500728265 /* LMBaseViewController.m in Sources */,
 				700B0ADA1C99464A005FF81D /* LMFileHelper.m in Sources */,
-				709F465C1C8FF59900728265 /* LMFileStorage.m in Sources */,
 				700B0ADE1C994A1B005FF81D /* LMConstant.m in Sources */,
 				709F46671C90180600728265 /* LMFileReader.m in Sources */,
+				700C9C881C9FD5E90088488E /* LMFileStorageManager.m in Sources */,
 				709F45EF1C8FC19300728265 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,6 +642,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = EventLogUtility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = Sapphire.EventLogUtility;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -640,6 +655,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = EventLogUtility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = Sapphire.EventLogUtility;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
