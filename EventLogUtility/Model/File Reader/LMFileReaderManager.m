@@ -105,7 +105,7 @@ static LMFileReaderManager *_sharedManager = nil;
             continue;
         }
         
-        if ([reader examFormatOnFileHandle:fileHandle] == YES)
+        if ([reader examFormatOnFileHandle:fileHandle fromURL:absoluteURL] == YES)
         {
             return reader;
         }
@@ -137,41 +137,5 @@ static LMFileReaderManager *_sharedManager = nil;
     return reader;
 }
 
-//-(BOOL)readFileHandle:(NSFileHandle *)fileHandle withReader:(LMFileReader *)reader
-//{
-//    // step 1. Move to file header
-//    [fileHandle seekToFileOffset:0];
-//    
-//    // step 2. Read a small pieice of file
-//    unsigned long long remainSize = [LMFileHelper remainingSizeWithHandle:fileHandle];
-//    unsigned long long readSize = [reader tryOpenSize];
-//    if (readSize > remainSize)
-//    {
-//        readSize = remainSize;
-//    }
-//    NSData *fileData = [fileHandle readDataOfLength:readSize];
-//    if (fileData == nil)
-//    {
-//        LOG(@"Can't read anything from file");
-//        return NO;
-//    }
-//    if (fileData.length != readSize)
-//    {
-//        LOG(@"Actually read %ld bytes but required %lld", fileData.length, readSize);
-//        return NO;
-//    }
-//    
-//    // step 3.convert data to string
-//    NSStringEncoding encoding = [[[reader openFileOptions] objectForKey:NSCharacterEncodingDocumentOption] unsignedIntValue];
-//    NSString *fileString = [[NSString alloc] initWithData:fileData
-//                                                 encoding:encoding];
-//    if (fileString == nil || fileString.length <= 0)
-//    {
-//        LOG(@"Can't convert to string using encoding: %ld", encoding);
-//        return NO;
-//    }
-//    
-//    return NO;
-//}
 
 @end

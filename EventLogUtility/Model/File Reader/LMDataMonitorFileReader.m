@@ -58,17 +58,28 @@ static const unsigned long long _fileSizeForFormatExaming = 10 * 1024; // 10K by
     
     // step 3.convert data to string
     NSStringEncoding encoding = [[[self openFileOptions] objectForKey:NSCharacterEncodingDocumentOption] unsignedIntValue];
-    NSString *fileString = [[NSString alloc] initWithData:fileData
-                                                 encoding:encoding];
+    NSMutableString *fileString = [[NSMutableString alloc] initWithData:fileData
+                                                               encoding:encoding];
     if (fileString == nil || fileString.length <= 0)
     {
         LOG(@"Reader:%@, Can't convert to string using encoding: %ld", NSStringFromClass([self class]), encoding);
         return NO;
     }
     
-    NSString *regex = @"^\\[[0-9a-fA-F]+\\]\\[[0-9]{2}[a-zA-Z]{3}[0-9]{2}\\s+[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}\\]\\s+";
-    fileString 
+    NSString *regexInvalidLineBreak = @"(?:\\r\\n|[\\n\\v\\f\\r\\x85\\p{Zl}\\p{Zp}])(?!\\[)";
+    NSString *replaceForInvalidLineBreak = @"    ";
+    [fileString replaceOccurrencesOfRegex:regexInvalidLineBreak
+                               withString:replaceForInvalidLineBreak
+                                  options:RKLMultiline
+                                    range:NSMakeRange(0, fileString.length)
+                                    error:nil];
     
+    NSString *regexValidLine = @"^\\[.+\\]\\[[0-9]{2}[a-zA-Z]{3}[0-9]{2}\\s+[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}\\]\\s+.+?(?:\\r\\n|[\\n\\v\\f\\r\\x85\\p{Zl}\\p{Zp}])";
+    BOOL isMatch = [fileString isMatchedByRegex:regexValidLine];
+    if (isMatch)
+    {
+        return YES;
+    }
         
     return NO;
 }
