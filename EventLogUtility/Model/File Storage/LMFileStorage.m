@@ -22,7 +22,7 @@
 #pragma mark        init methods
 #pragma mark -
 
--(instancetype)initWithURL:(NSURL *)absoluteURL options:(NSDictionary *)options error:(NSError *__autoreleasing*)outError
+-(instancetype)initWithURL:(NSURL *)absoluteURL error:(NSError *__autoreleasing*)outError
 {
     NSTextStorage *storage = nil;
     

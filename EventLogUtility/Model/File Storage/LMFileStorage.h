@@ -19,14 +19,16 @@
 
 @property (nonatomic, readonly, strong) NSTextStorage       *textStorage;
 
+@property (nonatomic, readonly, copy)   NSDictionary        *fileAttributes;
 
-@property (nonatomic, readonly, copy)   NSString            *parentUUID;
 
-@property (nonatomic, readonly, copy)   NSURL               *parentURL;
+@property (nonatomic, readonly, copy)   NSString            *originUUID;
+
+@property (nonatomic, readonly, copy)   NSURL               *originURL;
 
 
 // init methods
--(instancetype)initWithURL:(NSURL *)absoluteURL options:(NSDictionary *)options error:(NSError *__autoreleasing*)outError;
+-(instancetype)initWithURL:(NSURL *)absoluteURL error:(NSError *__autoreleasing*)outError;
 
 -(instancetype)initFromParent:(LMFileStorage *)parentStorage;
 

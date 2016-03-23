@@ -11,7 +11,6 @@
 #import "LMDataMonitorFileReader.h"
 #import "LMFileHelper.h"
 #import "LMLog.h"
-#import "RegexKitLite.h"
 
 static const unsigned long long _fileSizeForFormatExaming = 10 * 1024; // 10K bytes
 
@@ -44,6 +43,12 @@ static const unsigned long long _fileSizeForFormatExaming = 10 * 1024; // 10K by
     {
         readSize = remainSize;
     }
+    if (readSize <= 0)
+    {
+        LOG(@"Reader:%@, to-read size is 0", NSStringFromClass([self class]));
+        return NO;
+    }
+    
     NSData *fileData = [fileHandle readDataOfLength:readSize];
     if (fileData == nil)
     {
@@ -66,21 +71,20 @@ static const unsigned long long _fileSizeForFormatExaming = 10 * 1024; // 10K by
         return NO;
     }
     
-    NSString *regexInvalidLineBreak = @"(?:\\r\\n|[\\n\\v\\f\\r\\x85\\p{Zl}\\p{Zp}])(?!\\[)";
-    NSString *replaceForInvalidLineBreak = @"    ";
-    [fileString replaceOccurrencesOfRegex:regexInvalidLineBreak
-                               withString:replaceForInvalidLineBreak
-                                  options:RKLMultiline
-                                    range:NSMakeRange(0, fileString.length)
-                                    error:nil];
+    NSError *outError = nil;
+    NSRegularExpression *regexValidLine = [[NSRegularExpression alloc] initWithPattern:@"(?<=\\A|\\r\\n|[\\n\\v\\f\\r\\x85\\p{Zl}\\p{Zp}])\\[[0-9a-fA-F]+?\\]\\[[0-9]{2}[a-zA-Z]{3}[0-9]{2}\\s+?[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}\\]\\s+.+?(?:\\r\\n|[\\n\\v\\f\\r\\x85\\p{Zl}\\p{Zp}])(?=\\[|\\z)" options:NSRegularExpressionDotMatchesLineSeparators error:&outError];
+    if (outError != nil)
+    {
+        LOG(@"Reader:%@, illeagal regular expression on regexValidLine", NSStringFromClass([self class]));
+        return NO;
+    }
     
-    NSString *regexValidLine = @"^\\[.+\\]\\[[0-9]{2}[a-zA-Z]{3}[0-9]{2}\\s+[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}\\]\\s+.+?(?:\\r\\n|[\\n\\v\\f\\r\\x85\\p{Zl}\\p{Zp}])";
-    BOOL isMatch = [fileString isMatchedByRegex:regexValidLine];
-    if (isMatch)
+    NSUInteger count = [regexValidLine numberOfMatchesInString:fileString options:0 range:NSMakeRange(0, fileString.length)];
+    if (count > 0)
     {
         return YES;
     }
-        
+    
     return NO;
 }
 

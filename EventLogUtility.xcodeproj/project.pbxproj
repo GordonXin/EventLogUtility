@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		700B0ADA1C99464A005FF81D /* LMFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B0AD91C99464A005FF81D /* LMFileHelper.m */; };
 		700B0ADE1C994A1B005FF81D /* LMConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B0ADD1C994A1B005FF81D /* LMConstant.m */; };
-		700C9C751C9F85330088488E /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C741C9F85330088488E /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		700C9C871C9FD5E90088488E /* LMFileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C841C9FD5E90088488E /* LMFileStorage.m */; };
 		700C9C881C9FD5E90088488E /* LMFileStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C861C9FD5E90088488E /* LMFileStorageManager.m */; };
 		700C9C8B1C9FF2370088488E /* LMFileReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C8A1C9FF2370088488E /* LMFileReaderManager.m */; };
@@ -53,8 +52,6 @@
 		700B0AD91C99464A005FF81D /* LMFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileHelper.m; path = Model/LMFileHelper.m; sourceTree = "<group>"; };
 		700B0ADC1C994A1B005FF81D /* LMConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMConstant.h; path = Utility/Constants/LMConstant.h; sourceTree = "<group>"; };
 		700B0ADD1C994A1B005FF81D /* LMConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMConstant.m; path = Utility/Constants/LMConstant.m; sourceTree = "<group>"; };
-		700C9C731C9F85330088488E /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = Utility/Regex/RegexKitLite.h; sourceTree = "<group>"; };
-		700C9C741C9F85330088488E /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = Utility/Regex/RegexKitLite.m; sourceTree = "<group>"; };
 		700C9C831C9FD5E90088488E /* LMFileStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileStorage.h; path = "Model/File Storage/LMFileStorage.h"; sourceTree = "<group>"; };
 		700C9C841C9FD5E90088488E /* LMFileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileStorage.m; path = "Model/File Storage/LMFileStorage.m"; sourceTree = "<group>"; };
 		700C9C851C9FD5E90088488E /* LMFileStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileStorageManager.h; path = "Model/File Storage/LMFileStorageManager.h"; sourceTree = "<group>"; };
@@ -127,15 +124,6 @@
 				700B0ADD1C994A1B005FF81D /* LMConstant.m */,
 			);
 			name = Constants;
-			sourceTree = "<group>";
-		};
-		700C9C721C9F84D40088488E /* Regex */ = {
-			isa = PBXGroup;
-			children = (
-				700C9C731C9F85330088488E /* RegexKitLite.h */,
-				700C9C741C9F85330088488E /* RegexKitLite.m */,
-			);
-			name = Regex;
 			sourceTree = "<group>";
 		};
 		709F45DE1C8FC19200728265 = {
@@ -300,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				70A444101CA0DE7F00AACE1D /* Log */,
-				700C9C721C9F84D40088488E /* Regex */,
 				700B0ADB1C9949E6005FF81D /* Constants */,
 				709F46601C900FE700728265 /* Error */,
 				709F46441C8FC64B00728265 /* Notification */,
@@ -528,7 +515,6 @@
 				709F46431C8FC51300728265 /* LMColorUtlity.m in Sources */,
 				709F46471C8FC65800728265 /* LMNotificationNames.m in Sources */,
 				709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */,
-				700C9C751C9F85330088488E /* RegexKitLite.m in Sources */,
 				709F46581C8FDB8500728265 /* LMDocumentWindowController.m in Sources */,
 				709F46311C8FC2D600728265 /* Document.m in Sources */,
 				700C9C8B1C9FF2370088488E /* LMFileReaderManager.m in Sources */,
@@ -662,7 +648,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = EventLogUtility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				OTHER_LDFLAGS = "-licucore";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Sapphire.EventLogUtility;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -675,7 +661,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = EventLogUtility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				OTHER_LDFLAGS = "-licucore";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Sapphire.EventLogUtility;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
