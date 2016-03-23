@@ -11,30 +11,12 @@
 
 @interface LMFileReader : NSObject
 
+// interfaces needs to overide
 -(NSDictionary *)openFileOptions;
-
--(NSUInteger)tryOpenSize;
 
 -(NSString *)fileType;
 
-@end
-
-
-
-
-@interface LMFileReader (classMethods)
-
+-(BOOL)examFormatOnFileHandle:(NSFileHandle *)fileHandle fromURL:(NSURL *)absoluteURL;
 
 @end
 
-@interface LMFileReader (fileTypeSpecific)
-
-
--(NSDictionary *)defaultOpenFileOptions;
-
--(NSUInteger)defaultTryOpenFileSize;
-
-
--(BOOL)isFormatMathOnData:(NSData *)data;
-
-@end

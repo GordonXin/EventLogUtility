@@ -28,6 +28,7 @@
 		709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46621C900FFF00728265 /* LMErrorDifinition.m */; };
 		709F46671C90180600728265 /* LMFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46661C90180600728265 /* LMFileReader.m */; };
 		709F466A1C901D6000728265 /* LMDataMonitorFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46691C901D6000728265 /* LMDataMonitorFileReader.m */; };
+		70A444131CA0DE8F00AACE1D /* LMLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A444121CA0DE8F00AACE1D /* LMLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		709F46661C90180600728265 /* LMFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileReader.m; path = "Model/File Reader/LMFileReader.m"; sourceTree = "<group>"; };
 		709F46681C901D6000728265 /* LMDataMonitorFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMDataMonitorFileReader.h; path = "Model/File Reader/LMDataMonitorFileReader.h"; sourceTree = "<group>"; };
 		709F46691C901D6000728265 /* LMDataMonitorFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMDataMonitorFileReader.m; path = "Model/File Reader/LMDataMonitorFileReader.m"; sourceTree = "<group>"; };
+		70A444111CA0DE8F00AACE1D /* LMLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMLog.h; path = Utility/Log/LMLog.h; sourceTree = "<group>"; };
+		70A444121CA0DE8F00AACE1D /* LMLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMLog.m; path = Utility/Log/LMLog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +299,7 @@
 		709F463C1C8FC3F300728265 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				70A444101CA0DE7F00AACE1D /* Log */,
 				700C9C721C9F84D40088488E /* Regex */,
 				700B0ADB1C9949E6005FF81D /* Constants */,
 				709F46601C900FE700728265 /* Error */,
@@ -379,6 +383,15 @@
 				709F46691C901D6000728265 /* LMDataMonitorFileReader.m */,
 			);
 			name = "File Reader";
+			sourceTree = "<group>";
+		};
+		70A444101CA0DE7F00AACE1D /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				70A444111CA0DE8F00AACE1D /* LMLog.h */,
+				70A444121CA0DE8F00AACE1D /* LMLog.m */,
+			);
+			name = Log;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,6 +540,7 @@
 				709F46671C90180600728265 /* LMFileReader.m in Sources */,
 				700C9C881C9FD5E90088488E /* LMFileStorageManager.m in Sources */,
 				709F45EF1C8FC19300728265 /* main.m in Sources */,
+				70A444131CA0DE8F00AACE1D /* LMLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

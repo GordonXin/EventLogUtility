@@ -12,6 +12,6 @@
 
 +(instancetype)sharedManager;
 
--(id)fileReaderForURL:(NSURL *)absoluteURL error:(NSError *__autoreleasing*)outError;
+-(id)fileReaderForURL:(NSURL *)absoluteURL;
 
 @end

@@ -6,10 +6,13 @@
 //  Copyright © 2016 Sapphire. All rights reserved.
 //
 
+#import <Cocoa/Cocoa.h>
+
 #import "LMFileReaderManager.h"
 #import "LMFileReader.h"
 #import "LMFileHelper.h"
 #import "LMErrorDifinition.h"
+#import "LMLog.h"
 
 @interface LMFileReaderManager ()
 {
@@ -44,115 +47,131 @@ static LMFileReaderManager *_sharedManager = nil;
     _readersArray = @[@"LMDataMonitorFileReader"];
 }
 
--(id)fileReaderForURL:(NSURL *)absoluteURL error:(NSError *__autoreleasing *)outError
+-(id)fileReaderForURL:(NSURL *)absoluteURL
 {
+    LOG(@"Try to find reader for %@", absoluteURL.path);
+    
     if (!absoluteURL || ![absoluteURL.path length])
     {
-        if (!*outError)
-        {
-            *outError = [NSError errorWithDomain:kLMErrorDomainName
-                                            code:kLMErrorCodeUnknown.integerValue
-                                        userInfo:@{NSLocalizedDescriptionKey:@"invalid input URL"}];
-            return nil;
-        }
+        [LMException raiseExceptionWithName:kLMInvalidArgException
+                                   selector:_cmd
+                                     reason:[NSString stringWithFormat:@"%@ found invalid input URL",
+                                             NSStringFromSelector(_cmd)]
+                                   userInfo:@{kLMInvalidArgException_ArgName : @"absoluteURL"}];
+        return nil;
     }
     
     if ([LMFileHelper fileExistsAtURL:absoluteURL] == NO)
     {
-        if (!*outError)
-        {
-            *outError = [NSError errorWithDomain:kLMErrorDomainName
-                                            code:kLMErrorCodeUnknown.integerValue
-                                        userInfo:@{NSLocalizedDescriptionKey:[NSString stringWithFormat:@"File doesn't exist at path: %@", absoluteURL.path]}];
-            return nil;
-        }
-    }
-    
-    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingFromURL:absoluteURL error:outError];
-    if (!fileHandle)
-    {
-        if (!*outError)
-        {
-            *outError = [NSError errorWithDomain:kLMErrorDomainName
-                                            code:kLMErrorCodeUnknown.integerValue
-                                        userInfo:@{NSLocalizedDescriptionKey:[NSString stringWithFormat:@"File doesn't exist at path: %@", absoluteURL.path]}];
-            return nil;
-        }
-    }
-    if (*outError)
-    {
-        // an error already there
+        [LMException raiseExceptionWithName:kLMFileException
+                                   selector:_cmd
+                                     reason:[NSString stringWithFormat:@"File doesn't exist at path: %@", absoluteURL.path]
+                                   userInfo:@{}];
         return nil;
     }
     
-    NSArray *readerNames = [[self class] supportedReaderNames];
-    for (NSString *readerName in readerNames)
+    NSError *outError = nil;
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingFromURL:absoluteURL error:&outError];
+    if (fileHandle == nil || outError != nil)
     {
-        @autoreleasepool
+        if (outError != nil)
         {
-            Class className = NSClassFromString(readerName);
-            if (!className)
-            {
-                continue;
-            }
-            
-            LMFileReader *reader = [[className alloc] init];
-            if (!reader)
-            {
-                continue;
-            }
-            
-            // move to begin of file
-            [fileHandle seekToFileOffset:0];
-            
-            unsigned long long sizeToRead = [reader defaultTryOpenFileSize];
-            if (sizeToRead <= 0)
-            {
-                continue;
-            }
-            
-            unsigned long long sizeOfFile = [LMFileHelper fileSizeWithHandle:fileHandle];
-            if (sizeToRead > sizeOfFile)
-            {
-                sizeToRead = sizeOfFile;
-            }
-            
-            // read a small piece of file
-            NSData *fileData = [fileHandle readDataOfLength:sizeToRead];
-            if (!fileData)
-            {
-                continue;
-            }
-            if (fileData.length != sizeToRead)
-            {
-                continue;
-            }
-            
-            if ([reader isFormatMathOnData:fileData])
-            {
-                return reader;
-            }
+            [LMException raiseExceptionWithName:kLMFileException
+                                       selector:_cmd
+                                         reason:[NSString stringWithFormat:@"reading file at %@ failed because %@",
+                                                 absoluteURL.path,
+                                                 [outError.userInfo objectForKey:NSLocalizedDescriptionKey]]
+                                       userInfo:@{}];
+            return nil;
+        }
+        else
+        {
+            [LMException raiseExceptionWithName:kLMFileException
+                                       selector:_cmd
+                                         reason:[NSString stringWithFormat:@"reading file at %@ failed because unknown reason",
+                                                 absoluteURL.path]
+                                       userInfo:@{}];
+            return nil;
+        }
+    }
+    
+    for (NSString *className in _readersArray)
+    {
+        LOG(@"Try to find file using %@", className);
+        
+        LMFileReader *reader = [self createReaderWithName:className];
+        if (reader == nil)
+        {
+            continue;
         }
         
+        if ([reader examFormatOnFileHandle:fileHandle] == YES)
+        {
+            return reader;
+        }
     }
     
-    return nil;
+    LOG(@"Can't find correct reader for file at %@, create default reader instead", absoluteURL.path);
+    
+    // create reader for unknown file type
+    return [[LMFileReader alloc] init];
 }
 
--(BOOL)readFileHandle:(NSFileHandle *)fileHandle withReader:(Class)readerClass
+-(LMFileReader *)createReaderWithName:(NSString *)className
 {
-    if (![readerClass isSubclassOfClass:[LMFileReader class]])
+    Class classType = NSClassFromString(className);
+    
+    if (![classType isSubclassOfClass:[LMFileReader class]])
     {
-        NSLog(@"%@, invalid reader class: %@", NSStringFromSelector(_cmd), readerClass);
-        return NO;
+        LOG(@"Invalid reader class: %@", className);
+        return nil;
     }
     
-    LMFileReader *reader = [[readerClass alloc] init];
-    if (reader == nil)
+    LMFileReader *reader = [[classType alloc] init];
+    if (reader ==nil)
     {
-        NSLog(@"%@, can't create instance of reader class: %@", NSStringFromSelector(_cmd), readerClass);
-        return NO;
+        LOG(@"Can't create instance of reader class: %@", className);
+        return nil;
     }
+    
+    return reader;
 }
+
+//-(BOOL)readFileHandle:(NSFileHandle *)fileHandle withReader:(LMFileReader *)reader
+//{
+//    // step 1. Move to file header
+//    [fileHandle seekToFileOffset:0];
+//    
+//    // step 2. Read a small pieice of file
+//    unsigned long long remainSize = [LMFileHelper remainingSizeWithHandle:fileHandle];
+//    unsigned long long readSize = [reader tryOpenSize];
+//    if (readSize > remainSize)
+//    {
+//        readSize = remainSize;
+//    }
+//    NSData *fileData = [fileHandle readDataOfLength:readSize];
+//    if (fileData == nil)
+//    {
+//        LOG(@"Can't read anything from file");
+//        return NO;
+//    }
+//    if (fileData.length != readSize)
+//    {
+//        LOG(@"Actually read %ld bytes but required %lld", fileData.length, readSize);
+//        return NO;
+//    }
+//    
+//    // step 3.convert data to string
+//    NSStringEncoding encoding = [[[reader openFileOptions] objectForKey:NSCharacterEncodingDocumentOption] unsignedIntValue];
+//    NSString *fileString = [[NSString alloc] initWithData:fileData
+//                                                 encoding:encoding];
+//    if (fileString == nil || fileString.length <= 0)
+//    {
+//        LOG(@"Can't convert to string using encoding: %ld", encoding);
+//        return NO;
+//    }
+//    
+//    return NO;
+//}
 
 @end
