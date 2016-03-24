@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LMErrorDifinition.h"
 
 
 @interface LMFileReader : NSObject
 
-// interfaces needs to overide
--(NSDictionary *)openFileOptions;
-
 -(NSString *)fileType;
 
--(BOOL)examFormatOnFileHandle:(NSFileHandle *)fileHandle fromURL:(NSURL *)absoluteURL;
+-(LMResult *)checkFileFormat:(NSString *)fileString range:(NSRange)range;
+
+-(LMResult *)numberOfLines:(NSString *)fileString range:(NSRange)range;
 
 @end
 

@@ -11,4 +11,6 @@
 
 @interface LMDataMonitorFileReader : LMFileReader
 
++(NSArray *)allowedFileTypes;
+
 @end

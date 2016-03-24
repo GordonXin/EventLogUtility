@@ -8,15 +8,15 @@
 
 #import "LMFileStorage.h"
 #import "LMErrorDifinition.h"
+#import "LMFileReader.h"
+#import "LMFileReaderFactory.h"
+#import "LMLog.h"
 
 @interface LMFileStorage ()
 
 @end
 
 @implementation LMFileStorage
-
-@dynamic isMutable;
-@dynamic fileType;
 
 #pragma mark -
 #pragma mark        init methods
@@ -25,66 +25,75 @@
 -(instancetype)initWithURL:(NSURL *)absoluteURL error:(NSError *__autoreleasing*)outError
 {
     NSTextStorage *storage = nil;
+    NSDictionary *dicAttributes = nil;
     
     @try
     {
         storage = [[NSTextStorage alloc] initWithURL:absoluteURL
-                                             options:options
-                                  documentAttributes:nil
+                                             options:@{}
+                                  documentAttributes:&dicAttributes
                                                error:outError];
     }
     @catch (NSException *exception)
     {
-        if (*outError == nil)
+        if (outError)
         {
-            *outError = [NSError errorWithDomain:kLMErrorDomainName code:kLMErrorCodeUnknown.integerValue userInfo:@{NSLocalizedDescriptionKey : exception.reason}];
+            *outError = [LMError errorWithDescription:exception.reason];
         }
         
+        return nil;
+    }
+    
+    if (storage == nil)
+    {
+        if (outError && *outError == nil)
+        {
+            *outError = [LMError errorWithDescription:[NSString stringWithFormat:@"%@ Can't create instance", LOCATOR]];
+        }
         return nil;
     }
     
     if (self = [super init])
     {
         _UUID = [[NSUUID UUID] UUIDString];
-        _parentUUID = [_UUID copy];
-        _parentURL = [absoluteURL copy];
+        
+        _originUUID = [_UUID copy];
+        _originURL = [absoluteURL copy];
         
         _textStorage = storage;
+        _fileAttributes = dicAttributes;
+        
+        _alowsWriting = NO;
+        
+        [self initReader];
     }
     return self;
 }
 
--(instancetype)initFromParent:(LMFileStorage *)parentStorage
+-(instancetype)initFromStorage:(LMFileStorage *)aStorage
 {
     NSTextStorage *storage = [[NSTextStorage alloc] initWithString:@""];
     
     if (self = [super init])
     {
         _UUID = [[NSUUID UUID] UUIDString];
-        _parentUUID = [parentStorage parentUUID];
-        _parentURL = [parentStorage parentURL];
+        
+        _originURL = [aStorage originURL];
+        _originUUID = [aStorage originUUID];
         
         _textStorage = storage;
+        _fileAttributes = [aStorage fileAttributes];
+        
+        _alowsWriting = YES;
+        
+        [self initReader];
     }
     return self;
 }
 
-
-#pragma mark -
-#pragma mark        property
-#pragma mark -
-
--(BOOL)isMutable
+-(void)initReader
 {
-    if ([_UUID isEqualToString:_parentUUID])
-        return NO;
-    
-    return YES;
-}
-
--(NSString *)fileType
-{
-    return @"Unknown";
+    _reader = [LMFileReaderFactory fileReaderForString:_textStorage.mutableString];
 }
 
 @end

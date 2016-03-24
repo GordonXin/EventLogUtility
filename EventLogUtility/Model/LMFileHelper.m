@@ -18,11 +18,35 @@
     if (![abosulteURL.path length])
         return NO;
     
+    if (!abosulteURL.isFileURL)
+        return NO;
+    
     BOOL isDir = YES;
     if ([[NSFileManager defaultManager] fileExistsAtPath:abosulteURL.path isDirectory:&isDir] == NO)
         return NO;
     
     if (isDir)
+        return NO;
+    
+    return YES;
+}
+
++(BOOL)directoryExistAtURL:(NSURL *)absoluteURL
+{
+    if (!absoluteURL)
+        return NO;
+    
+    if (![absoluteURL.path length])
+        return NO;
+    
+    if (!absoluteURL.isFileURL)
+        return NO;
+    
+    BOOL isDir = NO;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:absoluteURL.path isDirectory:&isDir] == NO)
+        return NO;
+    
+    if (!isDir)
         return NO;
     
     return YES;

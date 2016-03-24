@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="LMDocumentWindowController">
+        <customObject id="-2" userLabel="File's Owner" customClass="Document">
             <connections>
                 <outlet property="contentView" destination="znD-6I-hyN" id="bq7-ls-krG"/>
                 <outlet property="masterView" destination="fJp-fW-PfX" id="r2C-oV-bKL"/>
@@ -19,7 +19,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="133" y="235" width="592" height="444"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="768"/>
             <value key="minSize" type="size" width="94" height="86"/>
             <view key="contentView" id="gIp-Ho-8D9">
                 <rect key="frame" x="0.0" y="0.0" width="592" height="444"/>
@@ -31,12 +31,15 @@
                             <customView identifier="MasterView" fixedFrame="YES" id="fJp-fW-PfX">
                                 <rect key="frame" x="0.0" y="0.0" width="141" height="414"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
                             </customView>
                             <customView identifier="ContentView" fixedFrame="YES" id="znD-6I-hyN">
                                 <rect key="frame" x="142" y="0.0" width="450" height="414"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
                             </customView>
                         </subviews>
+                        <animations/>
                         <holdingPriorities>
                             <real value="250"/>
                             <real value="250"/>
@@ -47,6 +50,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="m6F-vh-eO2"/>
                         </constraints>
+                        <animations/>
                     </customView>
                 </subviews>
                 <constraints>
@@ -58,6 +62,7 @@
                     <constraint firstAttribute="trailing" secondItem="vRc-1Z-osW" secondAttribute="trailing" id="hSi-ix-rnr"/>
                     <constraint firstItem="vRc-1Z-osW" firstAttribute="top" secondItem="EWi-Wz-q0z" secondAttribute="bottom" id="zlv-zJ-iE1"/>
                 </constraints>
+                <animations/>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>

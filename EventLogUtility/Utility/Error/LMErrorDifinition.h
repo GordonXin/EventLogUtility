@@ -28,32 +28,50 @@ extern NSString * const kLMFileException;
 #pragma mark -
 
 extern NSString * const kLMErrorDomainName;
-extern NSString * const kLMWarnDomainName;
 
 extern NSString * const kLMErrorCodeUnknown;
 
 @interface LMError : NSError
 
-// error
-+(instancetype)errorWithCode:(NSInteger)errorCode infoDescription:(NSString *)info;
++(instancetype)errorWithDescription:(NSString *)description;
 
-+(instancetype)errorWithCode:(NSInteger)errorCode info:(NSDictionary *)info;
++(instancetype)errorWithCode:(NSInteger)errorCode description:(NSString *)description;
 
-// warn
-+(instancetype)warnWithCode:(NSInteger)warnCode infoDescription:(NSString *)info;
-
-+(instancetype)warnWithCode:(NSInteger)warnCode info:(NSDictionary *)info;
++(instancetype)errorWithCode:(NSInteger)errorCode description:(NSString *)description info:(NSDictionary *)info;
 
 @end
+
+
+#pragma mark -
+#pragma mark        result class
+#pragma mark -
+
+extern const NSInteger kLMResultFail;
+extern const NSInteger kLMResultFalse;
+extern const NSInteger kLMResultTrue;
 
 @interface LMResult : NSObject
 
 // true
-+(instancetype)success;
++(instancetype)ASSTrue;
 
-+(instancetype)successWithInfo:(NSDictionary *)info;
++(instancetype)ASSTrueWithInfo:(id)info;
 
 // false
-+(instancetype)
++(instancetype)ASSFalse;
+
++(instancetype)ASSFalseWithInfo:(id)info;
+
+// fail
++(instancetype)ASSFailWithError:(LMError *)error;
+
+// judge
++(BOOL)isTrue:(LMResult *)result;
++(BOOL)isFalse:(LMResult *)result;
++(BOOL)isFail:(LMResult *)result;
+
+@property (nonatomic, readonly, assign)     NSInteger       result;
+@property (nonatomic, readonly, copy)       id              info;
+@property (nonatomic, readonly, copy)       LMError         *error;
 
 @end

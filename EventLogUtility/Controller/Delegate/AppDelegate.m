@@ -7,18 +7,43 @@
 //
 
 #import "AppDelegate.h"
+#import "DocumentController.h"
+#import "LMFileStorageManager.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, readwrite, weak) IBOutlet NSWindow *mainWindow;
 
 @end
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+-(instancetype)init
+{
+    if (self = [super init])
+    {
+        // register custom Document Controller
+        [DocumentController sharedDocumentController];
+        
+        // init file storage manager
+        [LMFileStorageManager sharedManager];
+    }
+    return self;
 }
 
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
+-(BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
+{
+    // untitled document will be used as a convinient entrance
+    return YES;
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+    [_mainWindow.windowController close];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
     // Insert code here to tear down your application
 }
 

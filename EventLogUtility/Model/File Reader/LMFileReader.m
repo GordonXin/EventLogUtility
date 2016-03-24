@@ -10,10 +10,9 @@
 #import <Cocoa/Cocoa.h>
 #import "LMErrorDifinition.h"
 #import "LMFileHelper.h"
+#import "LMLog.h"
 
-#pragma mark -
 @implementation LMFileReader
-#pragma mark -
 
 -(instancetype)init
 {
@@ -42,6 +41,34 @@
                                userInfo:@{}];
     
     return NO;
+}
+
+-(LMResult *)checkFileFormat:(NSString *)fileString range:(NSRange)range
+{
+    return [LMResult ASSFailWithError:[LMError errorWithDescription:[NSString stringWithFormat:@"Base class(%@) doesn't implement method(%@)",
+                                                                     NSStringFromClass([self class]),
+                                                                     NSStringFromSelector(_cmd)]]];
+}
+
+-(LMResult *)numberOfLines:(NSString *)fileString range:(NSRange)range
+{
+    LMError *outError = nil;
+    NSRegularExpression *regexLineBreak = [NSRegularExpression regularExpressionWithPattern:@"^.+?$" options:0 error:&outError];
+    if (regexLineBreak == nil || outError != nil)
+    {
+        if (outError == nil)
+        {
+            outError = [LMError errorWithDescription:[NSString stringWithFormat:@"%@ Can't init regex 'regexLineBreak'", LOCATOR]];
+        }
+        return [LMResult ASSFailWithError:outError];
+    }
+    
+    NSArray<NSTextCheckingResult *> *matches = [regexLineBreak matchesInString:fileString options:0 range:range];
+    if (matches == nil)
+    {
+        matches = [NSArray array];
+    }
+    return [LMResult ASSTrueWithInfo:matches];
 }
 
 @end

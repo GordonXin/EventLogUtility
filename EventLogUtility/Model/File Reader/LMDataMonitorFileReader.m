@@ -11,19 +11,13 @@
 #import "LMDataMonitorFileReader.h"
 #import "LMFileHelper.h"
 #import "LMLog.h"
+#import "LMErrorDifinition.h"
 
-static const unsigned long long _fileSizeForFormatExaming = 10 * 1024; // 10K bytes
-
-#pragma mark -
 @implementation LMDataMonitorFileReader
-#pragma mark -
 
--(NSDictionary *)openFileOptions
++(NSArray *)allowedFileTypes
 {
-    return @{
-             NSCharacterEncodingDocumentOption : [NSNumber numberWithUnsignedInt:(unsigned int)NSUTF8StringEncoding],
-             NSDocumentTypeDocumentOption : NSPlainTextDocumentType,
-             };
+    return @[@"log", @"Log", @"LOG"];
 }
 
 -(NSString *)fileType
@@ -31,61 +25,44 @@ static const unsigned long long _fileSizeForFormatExaming = 10 * 1024; // 10K by
     return @"Data Monitor Log";
 }
 
--(BOOL)examFormatOnFileHandle:(NSFileHandle *)fileHandle fromURL:(NSURL *)absoluteURL
+-(LMResult *)checkFileFormat:(NSString *)fileString range:(NSRange)range
 {
-    // step 1. Move to file header
-    [fileHandle seekToFileOffset:0];
-    
-    // step 2. Read a small pieice of file
-    unsigned long long remainSize = [LMFileHelper remainingSizeWithHandle:fileHandle];
-    unsigned long long readSize = _fileSizeForFormatExaming;
-    if (readSize > remainSize)
-    {
-        readSize = remainSize;
-    }
-    if (readSize <= 0)
-    {
-        LOG(@"Reader:%@, to-read size is 0", NSStringFromClass([self class]));
-        return NO;
-    }
-    
-    NSData *fileData = [fileHandle readDataOfLength:readSize];
-    if (fileData == nil)
-    {
-        LOG(@"Reader:%@, Can't read anything from file", NSStringFromClass([self class]));
-        return NO;
-    }
-    if (fileData.length != readSize)
-    {
-        LOG(@"Reader:%@, Actually read %ld bytes but required %lld", NSStringFromClass([self class]), fileData.length, readSize);
-        return NO;
-    }
-    
-    // step 3.convert data to string
-    NSStringEncoding encoding = [[[self openFileOptions] objectForKey:NSCharacterEncodingDocumentOption] unsignedIntValue];
-    NSMutableString *fileString = [[NSMutableString alloc] initWithData:fileData
-                                                               encoding:encoding];
     if (fileString == nil || fileString.length <= 0)
     {
-        LOG(@"Reader:%@, Can't convert to string using encoding: %ld", NSStringFromClass([self class]), encoding);
-        return NO;
+        return [LMResult ASSFailWithError:[LMError errorWithDescription:[NSString stringWithFormat:@"%@.%@ invaid input file string", NSStringFromClass([self class]), NSStringFromSelector(_cmd)]]];
     }
     
     NSError *outError = nil;
     NSRegularExpression *regexValidLine = [[NSRegularExpression alloc] initWithPattern:@"(?<=\\A|\\r\\n|[\\n\\v\\f\\r\\x85\\p{Zl}\\p{Zp}])\\[[0-9a-fA-F]+?\\]\\[[0-9]{2}[a-zA-Z]{3}[0-9]{2}\\s+?[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}\\]\\s+.+?(?:\\r\\n|[\\n\\v\\f\\r\\x85\\p{Zl}\\p{Zp}])(?=\\[|\\z)" options:NSRegularExpressionDotMatchesLineSeparators error:&outError];
     if (outError != nil)
     {
-        LOG(@"Reader:%@, illeagal regular expression on regexValidLine", NSStringFromClass([self class]));
-        return NO;
+        return [LMResult ASSFailWithError:[LMError errorWithDescription:[NSString stringWithFormat:@"%@.%@ invalid regex for regexValidLine(%@)", NSStringFromClass([self class]), NSStringFromSelector(_cmd), regexValidLine.pattern]]];
     }
     
-    NSUInteger count = [regexValidLine numberOfMatchesInString:fileString options:0 range:NSMakeRange(0, fileString.length)];
-    if (count > 0)
+    NSTextCheckingResult *result = [regexValidLine firstMatchInString:fileString options:0 range:range];
+    if (result == nil || result.range.location == NSNotFound || result.range.length <= 0)
     {
-        return YES;
+        return [LMResult ASSFalse];
     }
     
-    return NO;
+    return [LMResult ASSTrue];
+}
+
+-(LMResult *)numberOfLines:(NSString *)fileString range:(NSRange)range
+{
+    LMError *outError = nil;
+    NSRegularExpression *regexValidLine = [[NSRegularExpression alloc] initWithPattern:@"(?<=\\A|\\r\\n|[\\n\\v\\f\\r\\x85\\p{Zl}\\p{Zp}])\\[[0-9a-fA-F]+?\\]\\[[0-9]{2}[a-zA-Z]{3}[0-9]{2}\\s+?[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}\\]\\s+.+?(?:\\r\\n|[\\n\\v\\f\\r\\x85\\p{Zl}\\p{Zp}])(?=\\[|\\z)" options:NSRegularExpressionDotMatchesLineSeparators error:&outError];
+    if (outError != nil)
+    {
+        return [LMResult ASSFailWithError:[LMError errorWithDescription:[NSString stringWithFormat:@"%@.%@ invalid regex for regexValidLine(%@)", NSStringFromClass([self class]), NSStringFromSelector(_cmd), regexValidLine.pattern]]];
+    }
+    
+    NSArray<NSTextCheckingResult *> *matches = [regexValidLine matchesInString:fileString options:0 range:range];
+    if (matches == nil)
+    {
+        matches = [NSArray array];
+    }
+    return [LMResult ASSTrueWithInfo:matches];
 }
 
 @end

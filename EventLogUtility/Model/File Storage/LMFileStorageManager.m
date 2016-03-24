@@ -9,6 +9,7 @@
 #import "LMErrorDifinition.h"
 #import "LMFileStorageManager.h"
 #import "LMFileStorage.h"
+#import "LMFileHelper.h"
 
 @interface LMFileStorageManager()
 {
@@ -23,6 +24,7 @@
 #pragma mark -
 #pragma mark        init methods
 #pragma mark -
+
 -(instancetype)init
 {
     if (self = [super init])
@@ -37,6 +39,7 @@
 #pragma mark -
 #pragma mark        singleton method
 #pragma mark -
+
 static LMFileStorageManager *sharedManager = nil;
 +(instancetype)sharedManager
 {
@@ -47,37 +50,50 @@ static LMFileStorageManager *sharedManager = nil;
     return sharedManager;
 }
 
--(NSDictionary *)defaultOpenFileOptions
-{
-    return @{
-             NSCharacterEncodingDocumentOption : [NSNumber numberWithUnsignedInt:(unsigned int)NSUTF8StringEncoding],
-             NSDocumentTypeDocumentOption : NSPlainTextDocumentType,
-             };
-}
-
 #pragma mark - 
 #pragma mark        create file storage
 #pragma mark -
+
 -(LMFileStorage *)createFileStorageWithURL:(NSURL *)absoluteURL error:(NSError *__autoreleasing *)outError
 {
+    if (absoluteURL == nil || absoluteURL.isFileURL == NO)
+    {
+        // invalid URL
+        if (outError)
+        {
+            *outError = [LMError errorWithDescription:[NSString stringWithFormat:@"Invalid input URL:%@", absoluteURL.path]];
+        }
+        return nil;
+    }
+    
+    if ([LMFileHelper fileExistsAtURL:absoluteURL] == NO)
+    {
+        if (outError)
+        {
+            *outError = [LMError errorWithDescription:[NSString stringWithFormat:@"File doesn't exist at URL:%@", absoluteURL.path]];
+        }
+        return nil;
+    }
+    
     LMFileStorage *fileStorage = [self fileStorageWithURL:absoluteURL];
-    if (fileStorage)
+    if (fileStorage != nil)
     {
         // already exist
-        return fileStorage;
+        if (outError)
+        {
+            *outError = [LMError errorWithDescription:[NSString stringWithFormat:@"file at:%@ already opened", absoluteURL.path]];
+        }
+        return nil;
     }
     
     fileStorage = [[LMFileStorage alloc] initWithURL:absoluteURL
-                                             options:[self defaultOpenFileOptions]
                                                error:outError];
     
-    if (!fileStorage)
+    if (fileStorage == nil)
     {
-        if (*outError)
+        if (outError)
         {
-            *outError = [NSError errorWithDomain:kLMErrorDomainName
-                                            code:kLMErrorCodeUnknown.integerValue
-                                        userInfo:@{NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Can't load file at %@ for unknown reason", absoluteURL]}];
+            *outError = [LMError errorWithDescription:[NSString stringWithFormat:@"Can't load file at %@ for unknown reason", absoluteURL.path]];
         }
         return nil;
     }
@@ -88,28 +104,30 @@ static LMFileStorageManager *sharedManager = nil;
     return fileStorage;
 }
 
--(LMFileStorage *)createFileStorageFrom:(LMFileStorage *)fileStorage
+-(LMFileStorage *)createFileStorageFrom:(LMFileStorage *)aStorage
 {
-    if (fileStorage == nil)
+    if (aStorage == nil)
     {
         return nil;
     }
     
-    LMFileStorage *ret = [[LMFileStorage alloc] initFromParent:fileStorage];
+    LMFileStorage *fileStorage = [[LMFileStorage alloc] initFromStorage:aStorage];
     
     // add to dictionary
-    [self addFileStorage:ret];
+    [self addFileStorage:fileStorage];
     
-    return ret;
+    return fileStorage;
 }
 
 
 #pragma mark -
 #pragma mark        file storage management
 #pragma mark - 
+
 -(LMFileStorage *)fileStorageWithUUID:(NSString *)uuid
 {
     LMFileStorage *fileStorage = nil;
+    
     if ([uuid length])
     {
         @synchronized(_lock)
@@ -122,44 +140,41 @@ static LMFileStorageManager *sharedManager = nil;
 
 -(LMFileStorage *)fileStorageWithURL:(NSURL *)absoluteURL
 {
-    if (!absoluteURL || ![absoluteURL.path length])
+    if (absoluteURL && absoluteURL.isFileURL)
     {
-        return nil;
-    }
-    
-    @synchronized(_lock)
-    {
-        for (LMFileStorage *fileStorage in _fileContentDictionary.allValues)
+        @synchronized(_lock)
         {
-            if (   fileStorage
-                && fileStorage.parentURL
-                && [fileStorage.parentURL.path isEqualToString:absoluteURL.path])
+            for (LMFileStorage *fileStorage in _fileContentDictionary.allValues)
             {
-                return fileStorage;
+                if (   fileStorage
+                    && fileStorage.originURL
+                    && [fileStorage.originURL.path isEqualToString:absoluteURL.path])
+                {
+                    return fileStorage;
+                }
             }
         }
     }
+    
     return nil;
 }
 
 -(NSArray *)fileStoragesReferToUUID:(NSString *)UUID
 {
-    if (!UUID || !UUID.length)
-    {
-        return [NSArray array];
-    }
-    
     NSMutableArray *retArray = [NSMutableArray array];
     
-    @synchronized(_lock)
+    if (UUID && UUID.length)
     {
-        for (LMFileStorage *fileStorage in _fileContentDictionary)
+        @synchronized(_lock)
         {
-            if (   fileStorage
-                && fileStorage.parentUUID
-                && [fileStorage.parentUUID isEqualToString:UUID])
+            for (LMFileStorage *fileStorage in _fileContentDictionary)
             {
-                [retArray addObject:fileStorage];
+                if (   fileStorage
+                    && fileStorage.originUUID
+                    && [fileStorage.originUUID isEqualToString:UUID])
+                {
+                    [retArray addObject:fileStorage];
+                }
             }
         }
     }
@@ -169,26 +184,24 @@ static LMFileStorageManager *sharedManager = nil;
 
 -(NSArray *)fileStoragesReferToURL:(NSURL *)absoluteURL
 {
-    if (!absoluteURL || !absoluteURL.path || !absoluteURL.path.length)
-    {
-        return [NSArray array];
-    }
-    
     NSMutableArray *retArray = [NSMutableArray array];
     
-    @synchronized(_lock)
+    if (absoluteURL && absoluteURL.isFileURL)
     {
-        for (LMFileStorage *fileStorage in _fileContentDictionary)
+        @synchronized(_lock)
         {
-            if (    fileStorage
-                && fileStorage.parentURL
-                && [fileStorage.parentURL.path isEqualToString:absoluteURL.parameterString])
+            for (LMFileStorage *fileStorage in _fileContentDictionary)
             {
-                [retArray addObject:fileStorage];
+                if (    fileStorage
+                    && fileStorage.originURL
+                    && [fileStorage.originURL.path isEqualToString:absoluteURL.parameterString])
+                {
+                    [retArray addObject:fileStorage];
+                }
             }
         }
-        
     }
+    
     return [NSArray arrayWithArray:retArray];
 }
 
@@ -231,13 +244,10 @@ static LMFileStorageManager *sharedManager = nil;
         return;
     }
     
-    if (fileStoreage.isMutable == NO)
+    NSArray *referenceArray = [self fileStoragesReferToUUID:fileStoreage.UUID];
+    for (LMFileStorage *aStorage in referenceArray)
     {
-        NSArray *referenceArray = [self fileStoragesReferToUUID:fileStoreage.UUID];
-        for (LMFileStorage *aStorage in referenceArray)
-        {
-            [self _removeFileStorage:aStorage];
-        }
+        [self _removeFileStorage:aStorage];
     }
     
     [self _removeFileStorage:fileStoreage];

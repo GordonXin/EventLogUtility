@@ -11,7 +11,7 @@
 		700B0ADE1C994A1B005FF81D /* LMConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B0ADD1C994A1B005FF81D /* LMConstant.m */; };
 		700C9C871C9FD5E90088488E /* LMFileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C841C9FD5E90088488E /* LMFileStorage.m */; };
 		700C9C881C9FD5E90088488E /* LMFileStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C861C9FD5E90088488E /* LMFileStorageManager.m */; };
-		700C9C8B1C9FF2370088488E /* LMFileReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C8A1C9FF2370088488E /* LMFileReaderManager.m */; };
+		700C9C8B1C9FF2370088488E /* LMFileReaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C9C8A1C9FF2370088488E /* LMFileReaderFactory.m */; };
 		709F45EF1C8FC19300728265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F45EE1C8FC19300728265 /* main.m */; };
 		709F45F71C8FC19300728265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709F45F61C8FC19300728265 /* Assets.xcassets */; };
 		709F46051C8FC19300728265 /* EventLogUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46041C8FC19300728265 /* EventLogUtilityTests.m */; };
@@ -23,11 +23,13 @@
 		709F46431C8FC51300728265 /* LMColorUtlity.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46421C8FC51300728265 /* LMColorUtlity.m */; };
 		709F46471C8FC65800728265 /* LMNotificationNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46461C8FC65800728265 /* LMNotificationNames.m */; };
 		709F464E1C8FD8E500728265 /* LMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F464D1C8FD8E500728265 /* LMBaseViewController.m */; };
-		709F46581C8FDB8500728265 /* LMDocumentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46571C8FDB8500728265 /* LMDocumentWindowController.m */; };
 		709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46621C900FFF00728265 /* LMErrorDifinition.m */; };
 		709F46671C90180600728265 /* LMFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46661C90180600728265 /* LMFileReader.m */; };
 		709F466A1C901D6000728265 /* LMDataMonitorFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46691C901D6000728265 /* LMDataMonitorFileReader.m */; };
 		70A444131CA0DE8F00AACE1D /* LMLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A444121CA0DE8F00AACE1D /* LMLog.m */; };
+		DC9DBD211CA3835C0066BA67 /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD201CA3835C0066BA67 /* DocumentController.m */; };
+		DC9DBD241CA38F070066BA67 /* EntranceDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD231CA38F070066BA67 /* EntranceDocument.m */; };
+		DC9DBD2A1CA38FA30066BA67 /* EntranceDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD291CA38FA30066BA67 /* EntranceDocument.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +58,8 @@
 		700C9C841C9FD5E90088488E /* LMFileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileStorage.m; path = "Model/File Storage/LMFileStorage.m"; sourceTree = "<group>"; };
 		700C9C851C9FD5E90088488E /* LMFileStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileStorageManager.h; path = "Model/File Storage/LMFileStorageManager.h"; sourceTree = "<group>"; };
 		700C9C861C9FD5E90088488E /* LMFileStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileStorageManager.m; path = "Model/File Storage/LMFileStorageManager.m"; sourceTree = "<group>"; };
-		700C9C891C9FF2370088488E /* LMFileReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileReaderManager.h; path = "Model/File Reader/LMFileReaderManager.h"; sourceTree = "<group>"; };
-		700C9C8A1C9FF2370088488E /* LMFileReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileReaderManager.m; path = "Model/File Reader/LMFileReaderManager.m"; sourceTree = "<group>"; };
+		700C9C891C9FF2370088488E /* LMFileReaderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileReaderFactory.h; path = "Model/File Reader/LMFileReaderFactory.h"; sourceTree = "<group>"; };
+		700C9C8A1C9FF2370088488E /* LMFileReaderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileReaderFactory.m; path = "Model/File Reader/LMFileReaderFactory.m"; sourceTree = "<group>"; };
 		709F45E71C8FC19300728265 /* EventLogUtility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventLogUtility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		709F45EE1C8FC19300728265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		709F45F61C8FC19300728265 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,8 +82,6 @@
 		709F46461C8FC65800728265 /* LMNotificationNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMNotificationNames.m; path = Utility/Notification/LMNotificationNames.m; sourceTree = "<group>"; };
 		709F464C1C8FD8E500728265 /* LMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMBaseViewController.h; path = "Controller/View Controller/Base/LMBaseViewController.h"; sourceTree = "<group>"; };
 		709F464D1C8FD8E500728265 /* LMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMBaseViewController.m; path = "Controller/View Controller/Base/LMBaseViewController.m"; sourceTree = "<group>"; };
-		709F46561C8FDB8500728265 /* LMDocumentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMDocumentWindowController.h; path = "Controller/Window Controller/Document/LMDocumentWindowController.h"; sourceTree = "<group>"; };
-		709F46571C8FDB8500728265 /* LMDocumentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMDocumentWindowController.m; path = "Controller/Window Controller/Document/LMDocumentWindowController.m"; sourceTree = "<group>"; };
 		709F46611C900FFF00728265 /* LMErrorDifinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMErrorDifinition.h; path = Utility/Error/LMErrorDifinition.h; sourceTree = "<group>"; };
 		709F46621C900FFF00728265 /* LMErrorDifinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMErrorDifinition.m; path = Utility/Error/LMErrorDifinition.m; sourceTree = "<group>"; };
 		709F46651C90180600728265 /* LMFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileReader.h; path = "Model/File Reader/LMFileReader.h"; sourceTree = "<group>"; };
@@ -90,6 +90,11 @@
 		709F46691C901D6000728265 /* LMDataMonitorFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMDataMonitorFileReader.m; path = "Model/File Reader/LMDataMonitorFileReader.m"; sourceTree = "<group>"; };
 		70A444111CA0DE8F00AACE1D /* LMLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMLog.h; path = Utility/Log/LMLog.h; sourceTree = "<group>"; };
 		70A444121CA0DE8F00AACE1D /* LMLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMLog.m; path = Utility/Log/LMLog.m; sourceTree = "<group>"; };
+		DC9DBD1F1CA3835C0066BA67 /* DocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentController.h; path = Controller/Document/DocumentController.h; sourceTree = "<group>"; };
+		DC9DBD201CA3835C0066BA67 /* DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentController.m; path = Controller/Document/DocumentController.m; sourceTree = "<group>"; };
+		DC9DBD221CA38F070066BA67 /* EntranceDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntranceDocument.h; path = Controller/Document/EntranceDocument.h; sourceTree = "<group>"; };
+		DC9DBD231CA38F070066BA67 /* EntranceDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntranceDocument.m; path = Controller/Document/EntranceDocument.m; sourceTree = "<group>"; };
+		DC9DBD291CA38FA30066BA67 /* EntranceDocument.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EntranceDocument.xib; path = "Supporting Files/Nib/Document/EntranceDocument.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +236,10 @@
 			children = (
 				709F462F1C8FC2D600728265 /* Document.h */,
 				709F46301C8FC2D600728265 /* Document.m */,
+				DC9DBD221CA38F070066BA67 /* EntranceDocument.h */,
+				DC9DBD231CA38F070066BA67 /* EntranceDocument.m */,
+				DC9DBD1F1CA3835C0066BA67 /* DocumentController.h */,
+				DC9DBD201CA3835C0066BA67 /* DocumentController.m */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -280,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				709F46381C8FC39100728265 /* DocumentWindow.xib */,
+				DC9DBD291CA38FA30066BA67 /* EntranceDocument.xib */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -333,8 +343,6 @@
 		709F46551C8FDB5800728265 /* Document */ = {
 			isa = PBXGroup;
 			children = (
-				709F46561C8FDB8500728265 /* LMDocumentWindowController.h */,
-				709F46571C8FDB8500728265 /* LMDocumentWindowController.m */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -362,8 +370,8 @@
 		709F46641C9017F400728265 /* File Reader */ = {
 			isa = PBXGroup;
 			children = (
-				700C9C891C9FF2370088488E /* LMFileReaderManager.h */,
-				700C9C8A1C9FF2370088488E /* LMFileReaderManager.m */,
+				700C9C891C9FF2370088488E /* LMFileReaderFactory.h */,
+				700C9C8A1C9FF2370088488E /* LMFileReaderFactory.m */,
 				709F46651C90180600728265 /* LMFileReader.h */,
 				709F46661C90180600728265 /* LMFileReader.m */,
 				709F46681C901D6000728265 /* LMDataMonitorFileReader.h */,
@@ -484,6 +492,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9DBD2A1CA38FA30066BA67 /* EntranceDocument.xib in Resources */,
 				709F46391C8FC39100728265 /* DocumentWindow.xib in Resources */,
 				709F45F71C8FC19300728265 /* Assets.xcassets in Resources */,
 				709F463B1C8FC3A500728265 /* MainMenu.xib in Resources */,
@@ -515,9 +524,8 @@
 				709F46431C8FC51300728265 /* LMColorUtlity.m in Sources */,
 				709F46471C8FC65800728265 /* LMNotificationNames.m in Sources */,
 				709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */,
-				709F46581C8FDB8500728265 /* LMDocumentWindowController.m in Sources */,
 				709F46311C8FC2D600728265 /* Document.m in Sources */,
-				700C9C8B1C9FF2370088488E /* LMFileReaderManager.m in Sources */,
+				700C9C8B1C9FF2370088488E /* LMFileReaderFactory.m in Sources */,
 				709F466A1C901D6000728265 /* LMDataMonitorFileReader.m in Sources */,
 				709F462D1C8FC2C100728265 /* AppDelegate.m in Sources */,
 				709F464E1C8FD8E500728265 /* LMBaseViewController.m in Sources */,
@@ -525,8 +533,10 @@
 				700B0ADE1C994A1B005FF81D /* LMConstant.m in Sources */,
 				709F46671C90180600728265 /* LMFileReader.m in Sources */,
 				700C9C881C9FD5E90088488E /* LMFileStorageManager.m in Sources */,
+				DC9DBD241CA38F070066BA67 /* EntranceDocument.m in Sources */,
 				709F45EF1C8FC19300728265 /* main.m in Sources */,
 				70A444131CA0DE8F00AACE1D /* LMLog.m in Sources */,
+				DC9DBD211CA3835C0066BA67 /* DocumentController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

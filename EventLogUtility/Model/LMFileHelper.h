@@ -12,6 +12,8 @@
 
 +(BOOL)fileExistsAtURL:(NSURL *)abosulteURL;
 
++(BOOL)directoryExistAtURL:(NSURL *)absoluteURL;
+
 +(unsigned long long)fileSizeWithHandle:(NSFileHandle *)fileHandle;
 
 +(unsigned long long)remainingSizeWithHandle:(NSFileHandle *)fileHandle;

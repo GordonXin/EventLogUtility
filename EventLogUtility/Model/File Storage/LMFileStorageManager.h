@@ -14,11 +14,9 @@
 
 +(instancetype)sharedManager;
 
--(NSDictionary *)defaultOpenFileOptions;
-
 // create file storage
 -(LMFileStorage *)createFileStorageWithURL:(NSURL *)absoluteURL error:(NSError *__autoreleasing *)outError;
--(LMFileStorage *)createFileStorageFrom:(LMFileStorage *)fileStorage;
+-(LMFileStorage *)createFileStorageFrom:(LMFileStorage *)aStorage;
 
 // contents management
 -(LMFileStorage *)fileStorageWithUUID:(NSString *)uuid;

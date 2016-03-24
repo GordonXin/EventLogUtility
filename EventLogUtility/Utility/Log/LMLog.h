@@ -10,7 +10,10 @@
 
 
 #define LOG(inFormat...) \
-[[LMLog sharedLog] log:NSStringFromSelector(_cmd) msgFormat:inFormat];
+[[LMLog sharedLog] log:NSStringFromSelector(_cmd) msgFormat:inFormat]
+
+#define LOCATOR \
+[NSString stringWithFormat:@"%@.%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd)]
 
 
 @interface LMLog : NSObject

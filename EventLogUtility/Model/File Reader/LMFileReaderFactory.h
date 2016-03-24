@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LMFileReaderManager : NSObject
+@interface LMFileReaderFactory : NSObject
 
-+(instancetype)sharedManager;
++(id)fileReaderForString:(NSString *)fileString;
 
--(id)fileReaderForURL:(NSURL *)absoluteURL;
++(NSArray *)allowedFileTypes;
 
 @end
