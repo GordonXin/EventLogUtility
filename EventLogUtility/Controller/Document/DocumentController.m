@@ -179,4 +179,19 @@ static NSString * const kLMCAMLogPath = @"/vault/cCAM/Tools/Logs";
     }
 }
 
+-(Document *)documentWithUUID:(NSString *)UUID
+{
+    if (UUID && UUID.length > 0)
+    {
+        for (NSDocument *aDocument in self.documents)
+        {
+            if ([aDocument isKindOfClass:[NSDocument class]] && [[(Document *)aDocument documentUUID] isEqualToString:UUID])
+            {
+                return (Document *)aDocument;
+            }
+        }
+    }
+    return nil;
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import "LMBaseViewController.h"
 #import "Document.h"
+#import "DocumentController.h"
 
 #pragma mark -
 @interface LMBaseViewController ()
@@ -24,8 +25,6 @@
 @dynamic subviewControllerCount;
 @dynamic subviewControllers;
 @dynamic subviewControllerIdentifiers;
-@dynamic document;
-@dynamic contentController;
 
 #pragma mark -
 #pragma mark        init methods
@@ -172,18 +171,16 @@
     }
 }
 
+
 #pragma mark -
 #pragma mark        model accessing
 #pragma mark -
 
--(id)document
+-(void)loadViewForDocument:(NSString *)documentUUID
 {
-    return nil;
-}
-
--(id)contentController
-{
-    return nil;
+    Document *doc = [(DocumentController*)[DocumentController sharedDocumentController] documentWithUUID:documentUUID];
+    
+    _document = doc;
 }
 
 @end

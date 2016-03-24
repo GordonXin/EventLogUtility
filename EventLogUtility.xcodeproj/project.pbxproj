@@ -30,6 +30,11 @@
 		DC9DBD211CA3835C0066BA67 /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD201CA3835C0066BA67 /* DocumentController.m */; };
 		DC9DBD241CA38F070066BA67 /* EntranceDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD231CA38F070066BA67 /* EntranceDocument.m */; };
 		DC9DBD2A1CA38FA30066BA67 /* EntranceDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD291CA38FA30066BA67 /* EntranceDocument.xib */; };
+		DC9DBD301CA3C0360066BA67 /* LMFileDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD2E1CA3C0360066BA67 /* LMFileDisplayViewController.m */; };
+		DC9DBD331CA3C0690066BA67 /* FileDisplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD321CA3C0690066BA67 /* FileDisplayViewController.xib */; };
+		DC9DBD361CA3C27E0066BA67 /* LMBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD351CA3C27E0066BA67 /* LMBaseView.m */; };
+		DC9DBD3D1CA3CFAF0066BA67 /* FileTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD3C1CA3CFAF0066BA67 /* FileTextViewController.xib */; };
+		DC9DBD401CA3CFDE0066BA67 /* LMFileTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD3F1CA3CFDE0066BA67 /* LMFileTextViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +100,14 @@
 		DC9DBD221CA38F070066BA67 /* EntranceDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntranceDocument.h; path = Controller/Document/EntranceDocument.h; sourceTree = "<group>"; };
 		DC9DBD231CA38F070066BA67 /* EntranceDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntranceDocument.m; path = Controller/Document/EntranceDocument.m; sourceTree = "<group>"; };
 		DC9DBD291CA38FA30066BA67 /* EntranceDocument.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EntranceDocument.xib; path = "Supporting Files/Nib/Document/EntranceDocument.xib"; sourceTree = "<group>"; };
+		DC9DBD2D1CA3C0360066BA67 /* LMFileDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileDisplayViewController.h; path = "Controller/View Controller/File Display/LMFileDisplayViewController.h"; sourceTree = "<group>"; };
+		DC9DBD2E1CA3C0360066BA67 /* LMFileDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileDisplayViewController.m; path = "Controller/View Controller/File Display/LMFileDisplayViewController.m"; sourceTree = "<group>"; };
+		DC9DBD321CA3C0690066BA67 /* FileDisplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FileDisplayViewController.xib; path = "Supporting Files/Nib/Document/FileDisplayViewController.xib"; sourceTree = "<group>"; };
+		DC9DBD341CA3C27E0066BA67 /* LMBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMBaseView.h; path = View/LMBaseView.h; sourceTree = "<group>"; };
+		DC9DBD351CA3C27E0066BA67 /* LMBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMBaseView.m; path = View/LMBaseView.m; sourceTree = "<group>"; };
+		DC9DBD3C1CA3CFAF0066BA67 /* FileTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FileTextViewController.xib; path = "Supporting Files/Nib/Document/FileTextViewController.xib"; sourceTree = "<group>"; };
+		DC9DBD3E1CA3CFDE0066BA67 /* LMFileTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileTextViewController.h; path = "Controller/View Controller/File Display/LMFileTextViewController.h"; sourceTree = "<group>"; };
+		DC9DBD3F1CA3CFDE0066BA67 /* LMFileTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileTextViewController.m; path = "Controller/View Controller/File Display/LMFileTextViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +231,9 @@
 		709F461F1C8FC28C00728265 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DC9DBD341CA3C27E0066BA67 /* LMBaseView.h */,
+				DC9DBD351CA3C27E0066BA67 /* LMBaseView.m */,
+				DC9DBD371CA3C7630066BA67 /* Document */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -288,8 +304,10 @@
 		709F46371C8FC37000728265 /* Document */ = {
 			isa = PBXGroup;
 			children = (
-				709F46381C8FC39100728265 /* DocumentWindow.xib */,
 				DC9DBD291CA38FA30066BA67 /* EntranceDocument.xib */,
+				709F46381C8FC39100728265 /* DocumentWindow.xib */,
+				DC9DBD321CA3C0690066BA67 /* FileDisplayViewController.xib */,
+				DC9DBD3C1CA3CFAF0066BA67 /* FileTextViewController.xib */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -336,6 +354,7 @@
 		709F464F1C8FD92000728265 /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				DC9DBD2C1CA3BFD40066BA67 /* File Display */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -387,6 +406,32 @@
 				70A444121CA0DE8F00AACE1D /* LMLog.m */,
 			);
 			name = Log;
+			sourceTree = "<group>";
+		};
+		DC9DBD2C1CA3BFD40066BA67 /* File Display */ = {
+			isa = PBXGroup;
+			children = (
+				DC9DBD2D1CA3C0360066BA67 /* LMFileDisplayViewController.h */,
+				DC9DBD2E1CA3C0360066BA67 /* LMFileDisplayViewController.m */,
+				DC9DBD3E1CA3CFDE0066BA67 /* LMFileTextViewController.h */,
+				DC9DBD3F1CA3CFDE0066BA67 /* LMFileTextViewController.m */,
+			);
+			name = "File Display";
+			sourceTree = "<group>";
+		};
+		DC9DBD371CA3C7630066BA67 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				DC9DBD381CA3C76C0066BA67 /* File Display */,
+			);
+			name = Document;
+			sourceTree = "<group>";
+		};
+		DC9DBD381CA3C76C0066BA67 /* File Display */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "File Display";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,9 +538,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC9DBD2A1CA38FA30066BA67 /* EntranceDocument.xib in Resources */,
+				DC9DBD3D1CA3CFAF0066BA67 /* FileTextViewController.xib in Resources */,
 				709F46391C8FC39100728265 /* DocumentWindow.xib in Resources */,
 				709F45F71C8FC19300728265 /* Assets.xcassets in Resources */,
 				709F463B1C8FC3A500728265 /* MainMenu.xib in Resources */,
+				DC9DBD331CA3C0690066BA67 /* FileDisplayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +569,8 @@
 			files = (
 				700C9C871C9FD5E90088488E /* LMFileStorage.m in Sources */,
 				709F46431C8FC51300728265 /* LMColorUtlity.m in Sources */,
+				DC9DBD401CA3CFDE0066BA67 /* LMFileTextViewController.m in Sources */,
+				DC9DBD301CA3C0360066BA67 /* LMFileDisplayViewController.m in Sources */,
 				709F46471C8FC65800728265 /* LMNotificationNames.m in Sources */,
 				709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */,
 				709F46311C8FC2D600728265 /* Document.m in Sources */,
@@ -531,6 +580,7 @@
 				709F464E1C8FD8E500728265 /* LMBaseViewController.m in Sources */,
 				700B0ADA1C99464A005FF81D /* LMFileHelper.m in Sources */,
 				700B0ADE1C994A1B005FF81D /* LMConstant.m in Sources */,
+				DC9DBD361CA3C27E0066BA67 /* LMBaseView.m in Sources */,
 				709F46671C90180600728265 /* LMFileReader.m in Sources */,
 				700C9C881C9FD5E90088488E /* LMFileStorageManager.m in Sources */,
 				DC9DBD241CA38F070066BA67 /* EntranceDocument.m in Sources */,

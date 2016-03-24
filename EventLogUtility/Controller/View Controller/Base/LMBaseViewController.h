@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class Document;
+
 @interface LMBaseViewController : NSViewController
 
 //
@@ -27,10 +29,12 @@
 @property (nonatomic, readwrite, weak)  LMBaseViewController *superviewController;
 @property (nonatomic, readwrite, copy)  NSString    *documentUuid;
 
+// loading for on document
+-(void)loadViewForDocument:(NSString *)documentUUID;
+
 //
 // model accessment
 //
-@property (nonatomic, readonly, weak)   id           document;
-@property (nonatomic, readonly, weak)   id           contentController;
+@property (nonatomic, readonly, weak)   Document    *document;
 
 @end

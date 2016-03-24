@@ -10,6 +10,10 @@
 
 extern NSString * const kLMSavePanelDefaultPathKey;
 
+@class Document;
+
 @interface DocumentController : NSDocumentController
+
+-(Document *)documentWithUUID:(NSString *)UUID;
 
 @end

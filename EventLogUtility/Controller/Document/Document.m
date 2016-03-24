@@ -13,12 +13,19 @@
 #import "LMErrorDifinition.h"
 #import "LMFileStorageManager.h"
 #import "LMFileStorage.h"
+#import "LMBaseView.h"
+#import "LMBaseViewController.h"
+#import "LMFileDisplayViewController.h"
+
 
 @interface Document ()
+{
+    
+}
 
-@property (nonatomic, readwrite, weak) IBOutlet NSView *masterView;
-@property (nonatomic, readwrite, weak) IBOutlet NSView *contentView;
-@property (nonatomic, readwrite, weak) IBOutlet NSView *statusView;
+@property (nonatomic, readwrite, weak) IBOutlet LMBaseView *masterView;
+@property (nonatomic, readwrite, weak) IBOutlet LMBaseView *contentView;
+@property (nonatomic, readwrite, weak) IBOutlet LMBaseView *statusView;
 @property (nonatomic, readwrite, weak) IBOutlet NSSplitView *splitView;
 
 @end
@@ -111,7 +118,45 @@
 {
     [super windowControllerDidLoadNib:aController];
     
+    //[self loadViews];
+}
+
+-(void)loadViews
+{
+    if (![NSThread isMainThread])
+    {
+        [self performSelectorOnMainThread:_cmd withObject:nil waitUntilDone:NO];
+        return;
+    }
     
+    // init file display
+    LMBaseViewController *displayController = [[LMFileDisplayViewController alloc] initWithNibName:nil
+                                                                                            bundle:nil];
+    [self.contentView addSubviewController:displayController];
+    
+    [displayController.view setFrame:self.contentView.bounds];
+    [displayController.view setAutoresizesSubviews:NSViewHeightSizable | NSViewWidthSizable];
+    [displayController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
+    
+    [self.contentView addSubview: displayController.view];
+    
+    NSLog(@"%f, %f, %f, %f", displayController.view.frame.origin.x,
+          displayController.view.frame.origin.x,
+          displayController.view.frame.size.width,
+          displayController.view.frame.size.height);
+    
+    [self loadUUID];
+}
+
+-(void)loadUUID
+{
+    LMBaseViewController *aController = nil;
+    
+    aController = [self.contentView firstViewController];
+    if (aController)
+    {
+        [aController loadViewForDocument:self.documentUUID];
+    }
 }
 
 

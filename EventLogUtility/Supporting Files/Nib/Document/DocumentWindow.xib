@@ -28,12 +28,12 @@
                     <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWi-Wz-q0z">
                         <rect key="frame" x="0.0" y="30" width="592" height="414"/>
                         <subviews>
-                            <customView identifier="MasterView" fixedFrame="YES" id="fJp-fW-PfX">
+                            <customView identifier="MasterView" fixedFrame="YES" id="fJp-fW-PfX" customClass="LMBaseView">
                                 <rect key="frame" x="0.0" y="0.0" width="141" height="414"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </customView>
-                            <customView identifier="ContentView" fixedFrame="YES" id="znD-6I-hyN">
+                            <customView identifier="ContentView" fixedFrame="YES" id="znD-6I-hyN" customClass="LMBaseView">
                                 <rect key="frame" x="142" y="0.0" width="450" height="414"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
@@ -45,7 +45,7 @@
                             <real value="250"/>
                         </holdingPriorities>
                     </splitView>
-                    <customView identifier="StatusView" translatesAutoresizingMaskIntoConstraints="NO" id="vRc-1Z-osW">
+                    <customView identifier="StatusView" translatesAutoresizingMaskIntoConstraints="NO" id="vRc-1Z-osW" customClass="LMBaseView">
                         <rect key="frame" x="0.0" y="0.0" width="592" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="m6F-vh-eO2"/>
