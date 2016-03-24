@@ -13,8 +13,6 @@
 
 @property (nonatomic, readwrite, strong) IBOutlet NSTextView *textView;
 
--(void)loadTextWithUUID:(NSString *)UUID;
-
 -(void)unloadText;
 
 @end

@@ -26,11 +26,11 @@
     [super viewDidLoad];
 }
 
--(void)loadTextWithUUID:(NSString *)UUID
+-(void)loadViewForDocument:(NSString *)documentUUID
 {
-    [self setIdentifier:UUID];
+    [super loadViewForDocument:documentUUID];
     
-    LMFileStorage *aStorage = [[LMFileStorageManager sharedManager] fileStorageWithUUID:UUID];
+    LMFileStorage *aStorage = [[LMFileStorageManager sharedManager] fileStorageWithUUID:documentUUID];
     if (aStorage == nil)
         return;
     
@@ -38,7 +38,8 @@
     if (textStorage == nil)
         return;
     
-    [_textView.layoutManager replaceTextStorage:textStorage];
+    [_textView.layoutManager setTextStorage:textStorage];
+    //[_textView.layoutManager replaceTextStorage:textStorage];
 }
 
 -(void)unloadText

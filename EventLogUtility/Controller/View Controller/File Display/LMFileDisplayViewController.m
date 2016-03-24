@@ -25,7 +25,7 @@
     [super loadViewForDocument:documentUUID];
     
     LMFileTextViewController *textController = [[LMFileTextViewController alloc] initWithNibName:nil bundle:nil];
-    [textController loadTextWithUUID:documentUUID];
+    [textController loadViewForDocument:documentUUID];
     
     [self addTextController:textController];
     [self displayTextController:textController];
@@ -62,10 +62,11 @@
         return;
     }
     
+    [self.view addSubview:aController.view];
+    
     [aController.view setFrame:self.view.bounds];
     [aController.view setAutoresizesSubviews:NSViewHeightSizable | NSViewWidthSizable];
     [aController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
-    [self.view addSubview:aController.view];
 }
 
 

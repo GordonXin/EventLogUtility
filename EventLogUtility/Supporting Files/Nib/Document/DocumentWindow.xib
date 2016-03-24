@@ -6,10 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="Document">
             <connections>
-                <outlet property="contentView" destination="znD-6I-hyN" id="bq7-ls-krG"/>
-                <outlet property="masterView" destination="fJp-fW-PfX" id="r2C-oV-bKL"/>
-                <outlet property="splitView" destination="EWi-Wz-q0z" id="xS3-DR-Yn2"/>
-                <outlet property="statusView" destination="vRc-1Z-osW" id="TYw-4x-gg2"/>
+                <outlet property="viewController" destination="8KU-Hf-FNv" id="Y8C-IV-Gy0"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
         </customObject>
@@ -25,17 +22,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="592" height="444"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWi-Wz-q0z">
-                        <rect key="frame" x="0.0" y="30" width="592" height="414"/>
+                    <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="539-3M-D8t">
+                        <rect key="frame" x="0.0" y="0.0" width="592" height="444"/>
                         <subviews>
-                            <customView identifier="MasterView" fixedFrame="YES" id="fJp-fW-PfX" customClass="LMBaseView">
-                                <rect key="frame" x="0.0" y="0.0" width="141" height="414"/>
+                            <customView fixedFrame="YES" id="x4i-g0-Wrx" customClass="LMBaseView">
+                                <rect key="frame" x="0.0" y="0.0" width="109" height="444"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </customView>
-                            <customView identifier="ContentView" fixedFrame="YES" id="znD-6I-hyN" customClass="LMBaseView">
-                                <rect key="frame" x="142" y="0.0" width="450" height="414"/>
+                            <customView id="2SF-yl-GGt">
+                                <rect key="frame" x="110" y="0.0" width="482" height="444"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Beq-DH-J7e" customClass="LMBaseView">
+                                        <rect key="frame" x="0.0" y="0.0" width="482" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="O6E-ea-O9Z"/>
+                                        </constraints>
+                                        <animations/>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l2y-no-ylF" customClass="LMBaseView">
+                                        <rect key="frame" x="0.0" y="30" width="482" height="414"/>
+                                        <animations/>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Beq-DH-J7e" secondAttribute="bottom" id="a3n-T9-3Kj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Beq-DH-J7e" secondAttribute="trailing" id="osZ-oP-mPA"/>
+                                    <constraint firstItem="Beq-DH-J7e" firstAttribute="leading" secondItem="2SF-yl-GGt" secondAttribute="leading" id="uyD-fh-6gd"/>
+                                </constraints>
                                 <animations/>
                             </customView>
                         </subviews>
@@ -45,22 +60,12 @@
                             <real value="250"/>
                         </holdingPriorities>
                     </splitView>
-                    <customView identifier="StatusView" translatesAutoresizingMaskIntoConstraints="NO" id="vRc-1Z-osW" customClass="LMBaseView">
-                        <rect key="frame" x="0.0" y="0.0" width="592" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="m6F-vh-eO2"/>
-                        </constraints>
-                        <animations/>
-                    </customView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="EWi-Wz-q0z" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="ImR-rz-iVx"/>
-                    <constraint firstItem="EWi-Wz-q0z" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="Lj5-i0-WYZ"/>
-                    <constraint firstAttribute="bottom" secondItem="vRc-1Z-osW" secondAttribute="bottom" id="V6Z-Rw-AGs"/>
-                    <constraint firstItem="vRc-1Z-osW" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="YKR-9F-i2S"/>
-                    <constraint firstAttribute="trailing" secondItem="EWi-Wz-q0z" secondAttribute="trailing" id="fVh-Kz-v9r"/>
-                    <constraint firstAttribute="trailing" secondItem="vRc-1Z-osW" secondAttribute="trailing" id="hSi-ix-rnr"/>
-                    <constraint firstItem="vRc-1Z-osW" firstAttribute="top" secondItem="EWi-Wz-q0z" secondAttribute="bottom" id="zlv-zJ-iE1"/>
+                    <constraint firstItem="539-3M-D8t" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="2Jc-fE-b1A"/>
+                    <constraint firstItem="539-3M-D8t" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="BU5-0U-fPE"/>
+                    <constraint firstAttribute="bottom" secondItem="539-3M-D8t" secondAttribute="bottom" id="Mz8-g7-P3l"/>
+                    <constraint firstAttribute="trailing" secondItem="539-3M-D8t" secondAttribute="trailing" id="oEf-8A-j6T"/>
                 </constraints>
                 <animations/>
             </view>
@@ -69,5 +74,13 @@
             </connections>
             <point key="canvasLocation" x="367" y="415"/>
         </window>
+        <customObject id="8KU-Hf-FNv" customClass="LMDocumentViewController">
+            <connections>
+                <outlet property="contentView" destination="l2y-no-ylF" id="2jC-FB-EoO"/>
+                <outlet property="masterView" destination="x4i-g0-Wrx" id="dJT-bU-hP8"/>
+                <outlet property="splitView" destination="539-3M-D8t" id="P5k-ek-Y0A"/>
+                <outlet property="statusView" destination="Beq-DH-J7e" id="BDz-Gv-5B1"/>
+            </connections>
+        </customObject>
     </objects>
 </document>
