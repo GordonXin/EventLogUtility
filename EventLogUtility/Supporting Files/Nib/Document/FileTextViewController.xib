@@ -6,7 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="LMFileTextViewController">
             <connections>
-                <outlet property="textView" destination="w0v-nk-RbW" id="L2U-t8-nb2"/>
+                <outlet property="textView" destination="w0v-nk-RbW" id="RAa-bC-cw7"/>
                 <outlet property="view" destination="dLI-PZ-kbP" id="4oY-MF-q1o"/>
             </connections>
         </customObject>

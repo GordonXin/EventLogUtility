@@ -24,31 +24,29 @@
 {
     [super loadViewForDocument:documentUUID];
     
-    LMFileTextViewController *textController = [[LMFileTextViewController alloc] initWithNibName:nil bundle:nil];
-    [textController loadViewForDocument:documentUUID];
-    
-    [self addTextController:textController];
-    [self displayTextController:textController];
+    LMFileTextViewController *textController = [self textControllerWithUUID:documentUUID];
+    if (textController)
+    {
+        [self displayTextController:textController];
+    }
 }
 
--(void)addTextController:(LMFileTextViewController *)aController;
+-(LMFileTextViewController *)textControllerWithUUID:(NSString *)UUID
 {
-    if (aController == nil)
+    LMFileTextViewController *textController = (LMFileTextViewController *)[self subviewControllerWithIdentifier:UUID];
+    if (textController == nil)
     {
-        return;
+        textController = [[LMFileTextViewController alloc] initWithNibName:nil bundle:nil];
+        [textController loadView];
+        [textController loadViewForDocument:UUID];
+        [self addSubviewController:textController];
     }
-    
-    id exist = [self subviewControllerWithIdentifier:[aController identifier]];
-    if (exist)
-    {
-        return;
-    }
-    
-    [self addSubviewController:aController];
+    return textController;
 }
 
--(void)displayTextController:(LMFileTextViewController *)aController
+-(void)displayTextController:(LMFileTextViewController *)textController
 {
+    // remove all other views
     if (self.view.subviews.count)
     {
         for (NSView *aView in self.view.subviews)
@@ -57,16 +55,16 @@
         }
     }
     
-    if (aController == nil)
+    if (textController == nil)
     {
         return;
     }
     
-    [self.view addSubview:aController.view];
+    [self.view addSubview:textController.view];
     
-    [aController.view setFrame:self.view.bounds];
-    [aController.view setAutoresizesSubviews:NSViewHeightSizable | NSViewWidthSizable];
-    [aController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
+    [textController.view setFrame:self.view.bounds];
+    [textController.view setAutoresizesSubviews:NSViewHeightSizable | NSViewWidthSizable];
+    [textController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
 }
 
 

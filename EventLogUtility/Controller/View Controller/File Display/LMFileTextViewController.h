@@ -13,6 +13,4 @@
 
 @property (nonatomic, readwrite, strong) IBOutlet NSTextView *textView;
 
--(void)unloadText;
-
 @end

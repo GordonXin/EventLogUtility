@@ -32,6 +32,9 @@
 // loading for on document
 -(void)loadViewForDocument:(NSString *)documentUUID;
 
+// unload
+-(void)unloadView;
+
 //
 // model accessment
 //

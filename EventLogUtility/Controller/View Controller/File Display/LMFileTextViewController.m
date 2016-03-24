@@ -38,11 +38,10 @@
     if (textStorage == nil)
         return;
     
-    [_textView.layoutManager setTextStorage:textStorage];
-    //[_textView.layoutManager replaceTextStorage:textStorage];
+    [_textView.layoutManager replaceTextStorage:textStorage];
 }
 
--(void)unloadText
+-(void)unloadView
 {
     NSTextStorage *textStorage = [[NSTextStorage alloc] initWithString:@""];
     [_textView.layoutManager replaceTextStorage:textStorage];

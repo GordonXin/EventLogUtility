@@ -183,4 +183,14 @@
     _document = doc;
 }
 
+-(void)unloadView
+{
+    for (LMBaseViewController *aController in _subviewControllersArray)
+    {
+        [aController unloadView];
+    }
+    
+    _subviewControllersArray = [NSMutableArray array];
+}
+
 @end
