@@ -37,7 +37,9 @@
     if (textController == nil)
     {
         textController = [[LMFileTextViewController alloc] initWithNibName:nil bundle:nil];
-        [textController loadView];
+        
+        [textController.view setFrame:self.view.bounds];
+        
         [textController loadViewForDocument:UUID];
         [self addSubviewController:textController];
     }
@@ -61,9 +63,8 @@
     }
     
     [self.view addSubview:textController.view];
-    
     [textController.view setFrame:self.view.bounds];
-    [textController.view setAutoresizesSubviews:NSViewHeightSizable | NSViewWidthSizable];
+    [textController.view setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
     [textController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
 }
 

@@ -16,7 +16,7 @@
 #import "LMDocumentViewController.h"
 
 
-@interface Document ()
+@interface Document () <NSWindowDelegate>
 
 @property (nonatomic, readwrite, strong) IBOutlet LMDocumentViewController *viewController;
 
@@ -113,5 +113,17 @@
     [self.viewController loadViewForDocument:self.documentUUID];
 }
 
+
+#pragma mark -
+#pragma mark        Window Delegate
+#pragma mark -
+
+-(void)windowWillClose:(NSNotification *)notification
+{
+    // window will close soon
+    // release all file storage attached
+    
+    [self.viewController ]
+}
 
 @end

@@ -34,15 +34,14 @@
     // init file display
     LMBaseViewController *displayController = [[LMFileDisplayViewController alloc] initWithNibName:nil
                                                                                             bundle:nil];
-    [self.contentView addSubviewController:displayController];
-
-    [displayController.view setFrame:self.contentView.bounds];
-    [displayController.view setAutoresizesSubviews:NSViewHeightSizable | NSViewWidthSizable];
-    [displayController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
-
-    [self.contentView addSubview: displayController.view];
     
+    [self.contentView addSubview:displayController.view];
+    [displayController.view setFrame:self.contentView.bounds];
+    [displayController.view setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
+    [displayController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
     [displayController loadViewForDocument:documentUUID];
+    
+    [self addSubviewController:displayController withIdentifier:@"FileDisplay"];
 }
 
 @end

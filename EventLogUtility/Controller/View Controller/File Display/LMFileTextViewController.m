@@ -21,14 +21,24 @@
     return @"FileTextViewController";
 }
 
-- (void)viewDidLoad
+- (void)initView
 {
-    [super viewDidLoad];
+    [_scrollView setHasHorizontalScroller:YES];
+    [_scrollView setHasVerticalScroller:YES];
+    
+    [_textView setVerticallyResizable:YES];
+    [_textView setHorizontallyResizable:YES];
+    //[_textView setMaxSize:NSMakeSize(CGFLOAT_MAX, CGFLOAT_MAX)];
+    
+    [_textView.textContainer setWidthTracksTextView:NO];
+    [_textView.textContainer setSize:NSMakeSize(CGFLOAT_MAX, CGFLOAT_MAX)];
 }
 
 -(void)loadViewForDocument:(NSString *)documentUUID
 {
     [super loadViewForDocument:documentUUID];
+    
+    [self initView];
     
     LMFileStorage *aStorage = [[LMFileStorageManager sharedManager] fileStorageWithUUID:documentUUID];
     if (aStorage == nil)

@@ -13,4 +13,6 @@
 
 @property (nonatomic, readwrite, strong) IBOutlet NSTextView *textView;
 
+@property (nonatomic, readwrite, strong) IBOutlet NSScrollView *scrollView;
+
 @end

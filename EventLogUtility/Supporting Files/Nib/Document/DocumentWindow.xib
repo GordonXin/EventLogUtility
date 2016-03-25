@@ -41,13 +41,17 @@
                                         </constraints>
                                         <animations/>
                                     </customView>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l2y-no-ylF" customClass="LMBaseView">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="l2y-no-ylF" customClass="LMBaseView">
                                         <rect key="frame" x="0.0" y="30" width="482" height="414"/>
                                         <animations/>
                                     </customView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="l2y-no-ylF" firstAttribute="leading" secondItem="2SF-yl-GGt" secondAttribute="leading" id="BQW-Fm-Lmw"/>
+                                    <constraint firstItem="Beq-DH-J7e" firstAttribute="top" secondItem="l2y-no-ylF" secondAttribute="bottom" id="Eqc-r2-qkz"/>
+                                    <constraint firstItem="l2y-no-ylF" firstAttribute="top" secondItem="2SF-yl-GGt" secondAttribute="top" id="Hk2-dn-4sN"/>
                                     <constraint firstAttribute="bottom" secondItem="Beq-DH-J7e" secondAttribute="bottom" id="a3n-T9-3Kj"/>
+                                    <constraint firstAttribute="trailing" secondItem="l2y-no-ylF" secondAttribute="trailing" id="db9-Q6-JgO"/>
                                     <constraint firstAttribute="trailing" secondItem="Beq-DH-J7e" secondAttribute="trailing" id="osZ-oP-mPA"/>
                                     <constraint firstItem="Beq-DH-J7e" firstAttribute="leading" secondItem="2SF-yl-GGt" secondAttribute="leading" id="uyD-fh-6gd"/>
                                 </constraints>
@@ -80,6 +84,7 @@
                 <outlet property="masterView" destination="x4i-g0-Wrx" id="dJT-bU-hP8"/>
                 <outlet property="splitView" destination="539-3M-D8t" id="P5k-ek-Y0A"/>
                 <outlet property="statusView" destination="Beq-DH-J7e" id="BDz-Gv-5B1"/>
+                <outlet property="view" destination="gIp-Ho-8D9" id="2dI-kU-C4h"/>
             </connections>
         </customObject>
     </objects>

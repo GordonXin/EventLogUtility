@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="LMFileTextViewController">
             <connections>
+                <outlet property="scrollView" destination="p2c-Eb-0vZ" id="wyu-2N-dWF"/>
                 <outlet property="textView" destination="w0v-nk-RbW" id="RAa-bC-cw7"/>
                 <outlet property="view" destination="dLI-PZ-kbP" id="4oY-MF-q1o"/>
             </connections>
@@ -16,45 +17,42 @@
             <rect key="frame" x="0.0" y="0.0" width="417" height="243"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2c-Eb-0vZ">
+                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="p2c-Eb-0vZ">
                     <rect key="frame" x="0.0" y="0.0" width="417" height="243"/>
-                    <clipView key="contentView" id="Ntz-eE-Y7Y">
-                        <rect key="frame" x="1" y="1" width="415" height="241"/>
+                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Ntz-eE-Y7Y">
+                        <rect key="frame" x="0.0" y="0.0" width="417" height="243"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="w0v-nk-RbW">
-                                <rect key="frame" x="0.0" y="0.0" width="415" height="241"/>
+                            <textView editable="NO" importsGraphics="NO" horizontallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="w0v-nk-RbW">
+                                <rect key="frame" x="0.0" y="0.0" width="417" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="415" height="241"/>
-                                <size key="maxSize" width="463" height="10000000"/>
+                                <size key="maxSize" width="1e+18" height="100000000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="415" height="241"/>
-                                <size key="maxSize" width="463" height="10000000"/>
+                                <size key="maxSize" width="1e+18" height="100000000000"/>
                             </textView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </clipView>
                     <animations/>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="A8X-Rd-APp">
-                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                    <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="A8X-Rd-APp">
+                        <rect key="frame" x="0.0" y="227" width="417" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ZOg-Yt-N1f">
-                        <rect key="frame" x="400" y="1" width="16" height="241"/>
+                        <rect key="frame" x="401" y="0.0" width="16" height="243"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </scroller>
                 </scrollView>
             </subviews>
             <constraints>
-                <constraint firstItem="p2c-Eb-0vZ" firstAttribute="leading" secondItem="dLI-PZ-kbP" secondAttribute="leading" id="Nzz-72-Mdv"/>
-                <constraint firstItem="p2c-Eb-0vZ" firstAttribute="top" secondItem="dLI-PZ-kbP" secondAttribute="top" id="OKO-PM-F24"/>
-                <constraint firstAttribute="trailing" secondItem="p2c-Eb-0vZ" secondAttribute="trailing" id="ZCc-iy-mfh"/>
-                <constraint firstAttribute="bottom" secondItem="p2c-Eb-0vZ" secondAttribute="bottom" id="Znf-GW-JMV"/>
+                <constraint firstItem="p2c-Eb-0vZ" firstAttribute="top" secondItem="dLI-PZ-kbP" secondAttribute="top" id="TOZ-AY-kBf"/>
+                <constraint firstItem="p2c-Eb-0vZ" firstAttribute="leading" secondItem="dLI-PZ-kbP" secondAttribute="leading" id="V4a-3E-9WT"/>
+                <constraint firstAttribute="trailing" secondItem="p2c-Eb-0vZ" secondAttribute="trailing" id="WzL-7k-haz"/>
+                <constraint firstAttribute="bottom" secondItem="p2c-Eb-0vZ" secondAttribute="bottom" id="hiW-Za-S6W"/>
             </constraints>
             <animations/>
             <point key="canvasLocation" x="362.5" y="191.5"/>
