@@ -13,9 +13,7 @@
 
 @interface LMDocumentViewController ()
 
-@property (nonatomic, readwrite, weak) IBOutlet LMBaseView *masterView;
-@property (nonatomic, readwrite, weak) IBOutlet LMBaseView *contentView;
-@property (nonatomic, readwrite, weak) IBOutlet LMBaseView *statusView;
+@property (nonatomic, readwrite, weak) IBOutlet LMFileDisplayViewController *fileDisplayController;
 
 @property (nonatomic, readwrite, weak) IBOutlet LMSplitView *splitView;
 
@@ -29,27 +27,13 @@
     
     [self.splitView setDividerThicknessIfCollapsed:30.0f];
     [self.splitView setDividerImageIfCollapsed:[NSImage imageNamed:@"SplitViewDivider"]];
-    
-    [self loadConentView];
 }
 
 -(void)loadViewForDocument:(NSDocument *)document
 {
     [super loadViewForDocument:document];
-}
-
--(void)loadConentView
-{
-    // init file display
-    LMBaseViewController *displayController = [[LMFileDisplayViewController alloc] initWithNibName:nil
-                                                                                            bundle:nil];
     
-    [displayController.view setFrame:self.contentView.bounds];
-    [displayController.view setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
-    [displayController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
-    
-    [self.contentView addSubview:displayController.view];
-    [self addSubviewController:displayController];
+    [self.fileDisplayController loadViewForDocument:document];
 }
 
 -(void)unloadView

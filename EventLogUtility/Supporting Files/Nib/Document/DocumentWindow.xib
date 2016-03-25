@@ -83,11 +83,14 @@
         </window>
         <customObject id="8KU-Hf-FNv" customClass="LMDocumentViewController">
             <connections>
-                <outlet property="contentView" destination="l2y-no-ylF" id="2jC-FB-EoO"/>
-                <outlet property="masterView" destination="x4i-g0-Wrx" id="dJT-bU-hP8"/>
+                <outlet property="fileDisplayController" destination="c09-Cn-zIT" id="pCy-tV-ERL"/>
                 <outlet property="splitView" destination="539-3M-D8t" id="P5k-ek-Y0A"/>
-                <outlet property="statusView" destination="Beq-DH-J7e" id="BDz-Gv-5B1"/>
                 <outlet property="view" destination="gIp-Ho-8D9" id="2dI-kU-C4h"/>
+            </connections>
+        </customObject>
+        <customObject id="c09-Cn-zIT" customClass="LMFileDisplayViewController">
+            <connections>
+                <outlet property="view" destination="l2y-no-ylF" id="Oes-zU-4Zx"/>
             </connections>
         </customObject>
     </objects>
