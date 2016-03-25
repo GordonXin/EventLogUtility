@@ -37,6 +37,7 @@
 		DC9DBD431CA3E8DB0066BA67 /* LMDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD421CA3E8DB0066BA67 /* LMDocumentViewController.m */; };
 		DC9DBD471CA52EDE0066BA67 /* LMSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD461CA52EDE0066BA67 /* LMSplitView.m */; };
 		DC9DBD4B1CA52F880066BA67 /* SplitViewDivider.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD4A1CA52F880066BA67 /* SplitViewDivider.png */; };
+		DC9DBD4F1CA53CCE0066BA67 /* LMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD4E1CA53CCE0066BA67 /* LMMasterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		DC9DBD451CA52EDE0066BA67 /* LMSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMSplitView.h; path = View/SplitView/LMSplitView.h; sourceTree = "<group>"; };
 		DC9DBD461CA52EDE0066BA67 /* LMSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMSplitView.m; path = View/SplitView/LMSplitView.m; sourceTree = "<group>"; };
 		DC9DBD4A1CA52F880066BA67 /* SplitViewDivider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplitViewDivider.png; path = "Supporting Files/Image/SplitView/SplitViewDivider.png"; sourceTree = "<group>"; };
+		DC9DBD4D1CA53CCE0066BA67 /* LMMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMMasterViewController.h; path = "Controller/View Controller/Master View/LMMasterViewController.h"; sourceTree = "<group>"; };
+		DC9DBD4E1CA53CCE0066BA67 /* LMMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMMasterViewController.m; path = "Controller/View Controller/Master View/LMMasterViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +459,8 @@
 		DC9DBD4C1CA53B130066BA67 /* MasterView */ = {
 			isa = PBXGroup;
 			children = (
+				DC9DBD4D1CA53CCE0066BA67 /* LMMasterViewController.h */,
+				DC9DBD4E1CA53CCE0066BA67 /* LMMasterViewController.m */,
 			);
 			name = MasterView;
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 				700C9C871C9FD5E90088488E /* LMFileStorage.m in Sources */,
 				709F46431C8FC51300728265 /* LMColorUtlity.m in Sources */,
 				DC9DBD401CA3CFDE0066BA67 /* LMFileTextViewController.m in Sources */,
+				DC9DBD4F1CA53CCE0066BA67 /* LMMasterViewController.m in Sources */,
 				DC9DBD301CA3C0360066BA67 /* LMFileDisplayViewController.m in Sources */,
 				709F46471C8FC65800728265 /* LMNotificationNames.m in Sources */,
 				709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */,

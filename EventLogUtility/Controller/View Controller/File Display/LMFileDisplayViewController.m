@@ -16,11 +16,6 @@
 
 @implementation LMFileDisplayViewController
 
--(NSString *)nibName
-{
-    return @"FileDisplayViewController";
-}
-
 -(void)viewDidLoad
 {
     [super viewDidLoad];

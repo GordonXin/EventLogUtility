@@ -7,13 +7,15 @@
 //
 
 #import "LMDocumentViewController.h"
-#import "LMBaseView.h"
-#import "LMFileDisplayViewController.h"
 #import "LMSplitView.h"
+#import "LMFileDisplayViewController.h"
+#import "LMMasterViewController.h"
 
 @interface LMDocumentViewController ()
 
 @property (nonatomic, readwrite, weak) IBOutlet LMFileDisplayViewController *fileDisplayController;
+
+@property (nonatomic, readwrite, weak) IBOutlet LMMasterViewController *masterController;
 
 @property (nonatomic, readwrite, weak) IBOutlet LMSplitView *splitView;
 
@@ -29,6 +31,7 @@
     [self.splitView setDividerImageIfCollapsed:[NSImage imageNamed:@"SplitViewDivider"]];
     
     [self addSubviewController:self.fileDisplayController];
+    [self addSubviewController:self.masterController];
 }
 
 -(void)loadViewForDocument:(NSDocument *)document
