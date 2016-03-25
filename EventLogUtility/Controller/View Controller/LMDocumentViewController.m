@@ -9,6 +9,7 @@
 #import "LMDocumentViewController.h"
 #import "LMBaseView.h"
 #import "LMFileDisplayViewController.h"
+#import "LMSplitView.h"
 
 @interface LMDocumentViewController ()
 
@@ -16,7 +17,7 @@
 @property (nonatomic, readwrite, weak) IBOutlet LMBaseView *contentView;
 @property (nonatomic, readwrite, weak) IBOutlet LMBaseView *statusView;
 
-@property (nonatomic, readwrite, weak) IBOutlet NSSplitView *splitView;
+@property (nonatomic, readwrite, weak) IBOutlet LMSplitView *splitView;
 
 @end
 
@@ -25,6 +26,8 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.splitView setDividerStyle:NSSplitViewDividerStylePaneSplitter];
     
     [self loadConentView];
 }
@@ -51,6 +54,35 @@
 -(void)unloadView
 {
     [super unloadView];
+}
+
+#pragma mark -
+#pragma mark        splive view delegate
+#pragma mark -
+
+-(CGFloat)splitView:(NSSplitView *)splitView constrainMaxCoordinate:(CGFloat)proposedMaximumPosition ofSubviewAt:(NSInteger)dividerIndex
+{
+    CGFloat constrainedCoordinate = proposedMaximumPosition;
+    if (dividerIndex == 0)
+    {
+        constrainedCoordinate = proposedMaximumPosition - 100.0f;
+    }
+    return constrainedCoordinate;
+}
+
+-(CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMinimumPosition ofSubviewAt:(NSInteger)dividerIndex
+{
+    CGFloat constrainedCoordinate = proposedMinimumPosition;
+    if (dividerIndex == 0)
+    {
+        constrainedCoordinate = proposedMinimumPosition + 100.0f;
+    }
+    return constrainedCoordinate;
+}
+
+-(BOOL)splitView:(NSSplitView *)splitView canCollapseSubview:(NSView *)subview
+{
+    return YES;
 }
 
 @end

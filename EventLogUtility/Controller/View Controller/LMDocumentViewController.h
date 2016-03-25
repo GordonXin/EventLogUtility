@@ -9,6 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "LMBaseViewController.h"
 
-@interface LMDocumentViewController : LMBaseViewController
+@interface LMDocumentViewController : LMBaseViewController <NSSplitViewDelegate>
 
 @end

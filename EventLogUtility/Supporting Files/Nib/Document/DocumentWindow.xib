@@ -22,7 +22,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="592" height="444"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="539-3M-D8t">
+                    <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="539-3M-D8t" customClass="LMSplitView">
                         <rect key="frame" x="0.0" y="0.0" width="592" height="444"/>
                         <subviews>
                             <customView fixedFrame="YES" id="x4i-g0-Wrx" customClass="LMBaseView">
@@ -63,6 +63,9 @@
                             <real value="250"/>
                             <real value="250"/>
                         </holdingPriorities>
+                        <connections>
+                            <outlet property="delegate" destination="8KU-Hf-FNv" id="TfN-Qx-U75"/>
+                        </connections>
                     </splitView>
                 </subviews>
                 <constraints>

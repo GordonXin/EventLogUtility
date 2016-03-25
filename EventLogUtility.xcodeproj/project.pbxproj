@@ -36,6 +36,8 @@
 		DC9DBD3D1CA3CFAF0066BA67 /* FileTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD3C1CA3CFAF0066BA67 /* FileTextViewController.xib */; };
 		DC9DBD401CA3CFDE0066BA67 /* LMFileTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD3F1CA3CFDE0066BA67 /* LMFileTextViewController.m */; };
 		DC9DBD431CA3E8DB0066BA67 /* LMDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD421CA3E8DB0066BA67 /* LMDocumentViewController.m */; };
+		DC9DBD471CA52EDE0066BA67 /* LMSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD461CA52EDE0066BA67 /* LMSplitView.m */; };
+		DC9DBD4B1CA52F880066BA67 /* SplitViewDivider.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD4A1CA52F880066BA67 /* SplitViewDivider.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,9 @@
 		DC9DBD3F1CA3CFDE0066BA67 /* LMFileTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileTextViewController.m; path = "Controller/View Controller/File Display/LMFileTextViewController.m"; sourceTree = "<group>"; };
 		DC9DBD411CA3E8DB0066BA67 /* LMDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMDocumentViewController.h; path = "Controller/View Controller/LMDocumentViewController.h"; sourceTree = "<group>"; };
 		DC9DBD421CA3E8DB0066BA67 /* LMDocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMDocumentViewController.m; path = "Controller/View Controller/LMDocumentViewController.m"; sourceTree = "<group>"; };
+		DC9DBD451CA52EDE0066BA67 /* LMSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMSplitView.h; path = View/SplitView/LMSplitView.h; sourceTree = "<group>"; };
+		DC9DBD461CA52EDE0066BA67 /* LMSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMSplitView.m; path = View/SplitView/LMSplitView.m; sourceTree = "<group>"; };
+		DC9DBD4A1CA52F880066BA67 /* SplitViewDivider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplitViewDivider.png; path = "Supporting Files/Image/SplitView/SplitViewDivider.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +187,7 @@
 		709F45ED1C8FC19300728265 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC9DBD481CA52F460066BA67 /* Image */,
 				709F46351C8FC32600728265 /* Nib */,
 				709F46341C8FC32000728265 /* Image */,
 				709F45F61C8FC19300728265 /* Assets.xcassets */,
@@ -234,6 +240,7 @@
 		709F461F1C8FC28C00728265 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DC9DBD441CA52EC10066BA67 /* SplitView */,
 				DC9DBD341CA3C27E0066BA67 /* LMBaseView.h */,
 				DC9DBD351CA3C27E0066BA67 /* LMBaseView.m */,
 				DC9DBD371CA3C7630066BA67 /* Document */,
@@ -423,6 +430,31 @@
 			name = "File Display";
 			sourceTree = "<group>";
 		};
+		DC9DBD441CA52EC10066BA67 /* SplitView */ = {
+			isa = PBXGroup;
+			children = (
+				DC9DBD451CA52EDE0066BA67 /* LMSplitView.h */,
+				DC9DBD461CA52EDE0066BA67 /* LMSplitView.m */,
+			);
+			name = SplitView;
+			sourceTree = "<group>";
+		};
+		DC9DBD481CA52F460066BA67 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				DC9DBD491CA52F4C0066BA67 /* Split View */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		DC9DBD491CA52F4C0066BA67 /* Split View */ = {
+			isa = PBXGroup;
+			children = (
+				DC9DBD4A1CA52F880066BA67 /* SplitViewDivider.png */,
+			);
+			name = "Split View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -528,6 +560,7 @@
 			files = (
 				DC9DBD2A1CA38FA30066BA67 /* EntranceDocument.xib in Resources */,
 				DC9DBD3D1CA3CFAF0066BA67 /* FileTextViewController.xib in Resources */,
+				DC9DBD4B1CA52F880066BA67 /* SplitViewDivider.png in Resources */,
 				709F46391C8FC39100728265 /* DocumentWindow.xib in Resources */,
 				709F45F71C8FC19300728265 /* Assets.xcassets in Resources */,
 				709F463B1C8FC3A500728265 /* MainMenu.xib in Resources */,
@@ -566,6 +599,7 @@
 				700C9C8B1C9FF2370088488E /* LMFileReaderFactory.m in Sources */,
 				709F466A1C901D6000728265 /* LMDataMonitorFileReader.m in Sources */,
 				709F462D1C8FC2C100728265 /* AppDelegate.m in Sources */,
+				DC9DBD471CA52EDE0066BA67 /* LMSplitView.m in Sources */,
 				709F464E1C8FD8E500728265 /* LMBaseViewController.m in Sources */,
 				700B0ADA1C99464A005FF81D /* LMFileHelper.m in Sources */,
 				700B0ADE1C994A1B005FF81D /* LMConstant.m in Sources */,
