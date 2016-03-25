@@ -268,7 +268,6 @@
 			children = (
 				709F46481C8FC7FD00728265 /* Base */,
 				DC9DBD2C1CA3BFD40066BA67 /* File Display */,
-				709F464F1C8FD92000728265 /* Document */,
 				DC9DBD411CA3E8DB0066BA67 /* LMDocumentViewController.h */,
 				DC9DBD421CA3E8DB0066BA67 /* LMDocumentViewController.m */,
 			);
@@ -278,7 +277,6 @@
 		709F46331C8FC2FB00728265 /* Window Controller */ = {
 			isa = PBXGroup;
 			children = (
-				709F46551C8FDB5800728265 /* Document */,
 			);
 			name = "Window Controller";
 			sourceTree = "<group>";
@@ -355,20 +353,6 @@
 				709F464D1C8FD8E500728265 /* LMBaseViewController.m */,
 			);
 			name = Base;
-			sourceTree = "<group>";
-		};
-		709F464F1C8FD92000728265 /* Document */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Document;
-			sourceTree = "<group>";
-		};
-		709F46551C8FDB5800728265 /* Document */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Document;
 			sourceTree = "<group>";
 		};
 		709F46591C8FF57300728265 /* File Storage */ = {

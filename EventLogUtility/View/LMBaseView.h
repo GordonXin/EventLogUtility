@@ -15,10 +15,4 @@
 // subview management
 -(NSView *)viewWithIdentifier:(NSString *)identifier;
 
-
-// subviewController management
--(void)addSubviewController:(LMBaseViewController *)aController;
--(NSArray *)subviewControllers;
--(LMBaseViewController *)firstViewController;
-
 @end

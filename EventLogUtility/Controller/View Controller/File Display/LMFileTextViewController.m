@@ -21,40 +21,43 @@
     return @"FileTextViewController";
 }
 
-- (void)initView
+-(void)viewDidLoad
 {
+    [super viewDidLoad];
+    
     [_scrollView setHasHorizontalScroller:YES];
     [_scrollView setHasVerticalScroller:YES];
     
     [_textView setVerticallyResizable:YES];
     [_textView setHorizontallyResizable:YES];
-    //[_textView setMaxSize:NSMakeSize(CGFLOAT_MAX, CGFLOAT_MAX)];
     
     [_textView.textContainer setWidthTracksTextView:NO];
     [_textView.textContainer setSize:NSMakeSize(CGFLOAT_MAX, CGFLOAT_MAX)];
 }
 
--(void)loadViewForDocument:(NSString *)documentUUID
+-(void)loadFileStorage:(NSString *)fileStorageUUID
 {
-    [super loadViewForDocument:documentUUID];
+    [self setIdentifier:fileStorageUUID];
     
-    [self initView];
+    [[self.textView undoManager] disableUndoRegistration];
     
-    LMFileStorage *aStorage = [[LMFileStorageManager sharedManager] fileStorageWithUUID:documentUUID];
-    if (aStorage == nil)
-        return;
+    LMFileStorage *aStorage = [[LMFileStorageManager sharedManager] fileStorageWithUUID:fileStorageUUID];
+    if (aStorage && aStorage.textStorage)
+    {
+        [_textView.layoutManager replaceTextStorage:aStorage.textStorage];
+    }
     
-    NSTextStorage *textStorage = aStorage.textStorage;
-    if (textStorage == nil)
-        return;
-    
-    [_textView.layoutManager replaceTextStorage:textStorage];
+    [[self.textView undoManager] enableUndoRegistration];
 }
 
 -(void)unloadView
 {
+    [[self.textView undoManager] disableUndoRegistration];
+    
     NSTextStorage *textStorage = [[NSTextStorage alloc] initWithString:@""];
     [_textView.layoutManager replaceTextStorage:textStorage];
+    
+    [[self.textView undoManager] enableUndoRegistration];
 }
 
 @end

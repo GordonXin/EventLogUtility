@@ -110,7 +110,8 @@
 {
     [super windowControllerDidLoadNib:aController];
     
-    [self.viewController loadViewForDocument:self.documentUUID];
+    [self.viewController view];
+    [self.viewController loadViewForDocument:self];
 }
 
 
@@ -122,8 +123,7 @@
 {
     // window will close soon
     // release all file storage attached
-    
-    [self.viewController ]
+    [self.viewController unloadView];
 }
 
 @end

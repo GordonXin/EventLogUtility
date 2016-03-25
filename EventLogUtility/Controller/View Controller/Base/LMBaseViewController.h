@@ -8,36 +8,38 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class Document;
-
 @interface LMBaseViewController : NSViewController
 
-//
-// handle subview controllers
-//
+#pragma mark -
+#pragma mark        manage subview controllers
+#pragma mark -
+
 -(void)addSubviewController:(LMBaseViewController *)aController;
--(void)addSubviewController:(LMBaseViewController *)aController withIdentifier:(NSString *)identifier;
 -(void)removeSubviewController:(LMBaseViewController *)aContoller;
 -(void)removeSubviewControllerWithIdentifier:(NSString *)identifer;
--(void)removeSubviewControllerAtIndex:(NSUInteger)index;
 -(LMBaseViewController *)subviewControllerWithIdentifier:(NSString *)identifier;
--(LMBaseViewController *)subviewControllerAtIndex:(NSUInteger)index;
 
 @property (nonatomic, readonly, assign) NSUInteger   subviewControllerCount;
 @property (nonatomic, readonly, copy)   NSArray     *subviewControllers;
 @property (nonatomic, readonly, copy)   NSArray     *subviewControllerIdentifiers;
-@property (nonatomic, readwrite, weak)  LMBaseViewController *superviewController;
-@property (nonatomic, readwrite, copy)  NSString    *documentUuid;
 
-// loading for on document
--(void)loadViewForDocument:(NSString *)documentUUID;
+#pragma mark -
+#pragma mark        view behaviour
+#pragma mark -
 
-// unload
+// init
+-(void)loadViewForDocument:(NSDocument *)document; // all veiw controller should be on a NSDocument window
+
+// dealloc
 -(void)unloadView;
 
-//
-// model accessment
-//
-@property (nonatomic, readonly, weak)   Document    *document;
+#pragma mark -
+#pragma mark        model accessing
+#pragma mark -
+
+@property (nonatomic, readonly, weak)   NSDocument    *document;
+
+// convinient method for data accessing
+-(id)documentForType:(Class)documentType;
 
 @end

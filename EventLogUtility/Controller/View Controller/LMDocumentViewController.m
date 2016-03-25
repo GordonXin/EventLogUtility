@@ -22,26 +22,35 @@
 
 @implementation LMDocumentViewController
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self loadConentView];
 }
 
--(void)loadViewForDocument:(NSString *)documentUUID
+-(void)loadViewForDocument:(NSDocument *)document
 {
-    [super loadViewForDocument:documentUUID];
-    
+    [super loadViewForDocument:document];
+}
+
+-(void)loadConentView
+{
     // init file display
     LMBaseViewController *displayController = [[LMFileDisplayViewController alloc] initWithNibName:nil
                                                                                             bundle:nil];
     
-    [self.contentView addSubview:displayController.view];
     [displayController.view setFrame:self.contentView.bounds];
     [displayController.view setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
     [displayController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
-    [displayController loadViewForDocument:documentUUID];
     
-    [self addSubviewController:displayController withIdentifier:@"FileDisplay"];
+    [self.contentView addSubview:displayController.view];
+    [self addSubviewController:displayController];
+}
+
+-(void)unloadView
+{
+    [super unloadView];
 }
 
 @end

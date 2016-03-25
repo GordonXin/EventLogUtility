@@ -36,45 +36,4 @@
     return nil;
 }
 
-
-#pragma mark -
-#pragma mark        subviewController management
-#pragma mark -
-
--(void)initSubviewControllerArray
-{
-    if (_subviewControllers == nil)
-    {
-        _subviewControllers = [NSMutableArray array];
-    }
-}
-
--(void)addSubviewController:(LMBaseViewController *)aController
-{
-    [self initSubviewControllerArray];
-    
-    if ([_subviewControllers containsObject:aController] == NO)
-    {
-        [_subviewControllers addObject:aController];
-    }
-}
-
--(NSArray *)subviewControllers
-{
-    [self initSubviewControllerArray];
-    
-    return [NSArray arrayWithArray:_subviewControllers];
-}
-
--(LMBaseViewController *)firstViewController
-{
-    [self initSubviewControllerArray];
-    
-    if (_subviewControllers.count > 0)
-    {
-        return [_subviewControllers objectAtIndex:0];
-    }
-    return nil;
-}
-
 @end

@@ -15,4 +15,6 @@
 
 @property (nonatomic, readwrite, strong) IBOutlet NSScrollView *scrollView;
 
+-(void)loadFileStorage:(NSString *)fileStorageUUID;
+
 @end

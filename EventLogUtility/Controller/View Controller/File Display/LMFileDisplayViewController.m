@@ -8,6 +8,7 @@
 
 #import "LMFileDisplayViewController.h"
 #import "LMFileTextViewController.h"
+#import "Document.h"
 
 @interface LMFileDisplayViewController()
 
@@ -20,14 +21,23 @@
     return @"FileDisplayViewController";
 }
 
--(void)loadViewForDocument:(NSString *)documentUUID
+-(void)viewDidLoad
 {
-    [super loadViewForDocument:documentUUID];
+    [super viewDidLoad];
+}
+
+-(void)loadViewForDocument:(NSDocument *)document
+{
+    [super loadViewForDocument:document];
     
-    LMFileTextViewController *textController = [self textControllerWithUUID:documentUUID];
-    if (textController)
+    Document *myDoc = [self documentForType:[document class]];
+    if (myDoc)
     {
-        [self displayTextController:textController];
+        LMFileTextViewController *textController = [self textControllerWithUUID:myDoc.documentUUID];
+        if (textController)
+        {
+            [self displayTextController:textController];
+        }
     }
 }
 
@@ -37,10 +47,9 @@
     if (textController == nil)
     {
         textController = [[LMFileTextViewController alloc] initWithNibName:nil bundle:nil];
-        
-        [textController.view setFrame:self.view.bounds];
-        
-        [textController loadViewForDocument:UUID];
+        [textController view]; // force to call loadView
+        [textController loadViewForDocument:self.document];
+        [textController loadFileStorage:UUID];
         [self addSubviewController:textController];
     }
     return textController;

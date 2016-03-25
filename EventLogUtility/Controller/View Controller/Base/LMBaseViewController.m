@@ -10,25 +10,19 @@
 #import "Document.h"
 #import "DocumentController.h"
 
-#pragma mark -
 @interface LMBaseViewController ()
-#pragma mark -
 {
     NSMutableArray      *_subviewControllersArray;
 }
 
 @end
 
-#pragma mark -
 @implementation LMBaseViewController
 
 @dynamic subviewControllerCount;
 @dynamic subviewControllers;
 @dynamic subviewControllerIdentifiers;
 
-#pragma mark -
-#pragma mark        init methods
-#pragma mark -
 -(instancetype)init
 {
     if (self = [super init])
@@ -59,46 +53,24 @@
 -(void)baseViewControlerInit
 {
     _subviewControllersArray = [NSMutableArray array];
-    _superviewController = nil;
-    _documentUuid = [[NSUUID UUID] UUIDString];
-}
-
-#pragma mark -
-#pragma mark        view controller overide methods
-#pragma mark -
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
 }
 
 #pragma mark -
 #pragma mark        subview controller handlers
 #pragma mark -
+
 -(void)addSubviewController:(LMBaseViewController *)aController
 {
-    if (aController && [aController.identifier length] > 0 && ![_subviewControllersArray containsObject:aController])
+    if (aController && ![_subviewControllersArray containsObject:aController])
     {
         [_subviewControllersArray addObject:aController];
-        [aController setSuperviewController:self];
-        [aController setDocumentUuid:_documentUuid];
     }
-}
-
--(void)addSubviewController:(LMBaseViewController *)aController withIdentifier:(NSString *)identifier
-{
-    if (!aController || ![identifier length])
-    {
-        return;
-    }
-    [aController setIdentifier:identifier];
-    [self addSubviewController:aController];
 }
 
 -(void)removeSubviewController:(LMBaseViewController *)aContoller
 {
     if (aContoller && [_subviewControllersArray containsObject:aContoller])
     {
-        [aContoller setSuperviewController:nil];
         [_subviewControllersArray removeObject:aContoller];
     }
 }
@@ -107,23 +79,6 @@
 {
     LMBaseViewController *aController = [self subviewControllerWithIdentifier:identifer];
     [self removeSubviewController:aController];
-    // reset the uuid to a random value after removed
-    [aController setDocumentUuid:[[NSUUID UUID] UUIDString]];
-}
-
--(void)removeSubviewControllerAtIndex:(NSUInteger)index
-{
-    LMBaseViewController *aController = [self subviewControllerAtIndex:index];
-    [self removeSubviewController:aController];
-}
-
--(LMBaseViewController *)subviewControllerAtIndex:(NSUInteger)index
-{
-    if (index < [_subviewControllersArray count])
-    {
-        return [_subviewControllersArray objectAtIndex:index];
-    }
-    return nil;
 }
 
 -(LMBaseViewController *)subviewControllerWithIdentifier:(NSString *)identifier
@@ -132,7 +87,7 @@
     {
         for (LMBaseViewController *aController in _subviewControllersArray)
         {
-            if ([[aController identifier] isEqualToString:identifier])
+            if (aController.identifier && [aController.identifier isEqualToString:identifier])
             {
                 return aController;
             }
@@ -154,33 +109,30 @@
 -(NSArray *)subviewControllerIdentifiers
 {
     NSMutableArray *ary = [NSMutableArray array];
+    
     for (LMBaseViewController *aController in _subviewControllersArray)
     {
-        [ary addObject:[aController identifier]];
+        if (aController.identifier && aController.identifier.length)
+        {
+            [ary addObject:[aController identifier]];
+        }
     }
     return [NSArray arrayWithArray:ary];
 }
 
--(void)setDocumentUuid:(NSString *)documentUuid
+
+#pragma mark -
+#pragma mark        view behaviour
+#pragma mark -
+
+-(void)loadViewForDocument:(NSDocument *)document;
 {
-    _documentUuid = [documentUuid copy];
+    _document = document;
     
     for (LMBaseViewController *aController in _subviewControllersArray)
     {
-        [aController setDocumentUuid:documentUuid];
+        [aController loadViewForDocument:document];
     }
-}
-
-
-#pragma mark -
-#pragma mark        model accessing
-#pragma mark -
-
--(void)loadViewForDocument:(NSString *)documentUUID
-{
-    Document *doc = [(DocumentController*)[DocumentController sharedDocumentController] documentWithUUID:documentUUID];
-    
-    _document = doc;
 }
 
 -(void)unloadView
@@ -191,6 +143,20 @@
     }
     
     _subviewControllersArray = [NSMutableArray array];
+    _document = nil;
+}
+
+#pragma mark -
+#pragma mark        model accessing
+#pragma mark -
+
+-(id)documentForType:(Class)documentType
+{
+    if ([_document isKindOfClass:documentType])
+    {
+        return _document;
+    }
+    return nil;
 }
 
 @end
