@@ -10,4 +10,8 @@
 
 @interface LMSplitView : NSSplitView
 
+@property (nonatomic, readwrite, strong) NSImage *dividerImageIfCollapsed;
+
+@property (nonatomic, readwrite, assign) NSInteger dividerThicknessIfCollapsed;
+
 @end

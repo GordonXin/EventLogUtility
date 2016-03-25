@@ -27,7 +27,8 @@
 {
     [super viewDidLoad];
     
-    [self.splitView setDividerStyle:NSSplitViewDividerStylePaneSplitter];
+    [self.splitView setDividerThicknessIfCollapsed:30.0f];
+    [self.splitView setDividerImageIfCollapsed:[NSImage imageNamed:@"SplitViewDivider"]];
     
     [self loadConentView];
 }

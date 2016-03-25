@@ -10,50 +10,44 @@
 
 @interface LMSplitView ()
 
-@property (nonatomic, readwrite, strong) NSImage *dividerImage;
-
 @end
 
 @implementation LMSplitView
 
--(void)awakeFromNib
-{
-    _dividerImage = [NSImage imageNamed:@"SplitViewDivider"];
-}
-
 -(CGFloat)dividerThickness
 {
-    if (self.isVertical)
+    if (self.dividerThicknessIfCollapsed > 0)
     {
         NSInteger collapsed = [self collapsedSubviewIndex];
-        if (collapsed >=0)
+        if (collapsed >= 0)
         {
-            return 30.0f;
-        }
-        else
-        {
-            return 20.0f;
+            return self.dividerThicknessIfCollapsed;
         }
     }
+    
     return [super dividerThickness];
 }
 
 -(void)drawDividerInRect:(NSRect)rect
 {
-    if (self.isVertical)
+    NSInteger collapsed = [self collapsedSubviewIndex];
+    if (collapsed >= 0)
     {
-        NSRect targetRect = NSMakeRect(0, 0, rect.size.width, rect.size.height);
-        targetRect.origin.y -= (rect.size.height - self.dividerImage.size.height) / 2;
-        targetRect.origin.x -= (rect.size.width - self.dividerImage.size.width) / 2;
-        
-        [self lockFocus];
-        [self.dividerImage drawInRect:rect fromRect:targetRect operation:NSCompositeSourceOver fraction:1.0];
-        [self unlockFocus];
+        if (self.dividerImageIfCollapsed)
+        {
+            NSRect targetRect = NSMakeRect(0, 0, rect.size.width, rect.size.height);
+            targetRect.origin.y -= (rect.size.height - self.dividerImageIfCollapsed.size.height) / 2;
+            targetRect.origin.x -= (rect.size.width - self.dividerImageIfCollapsed.size.width) / 2;
+            
+            [self lockFocus];
+            [self.dividerImageIfCollapsed drawInRect:rect fromRect:targetRect operation:NSCompositeSourceOver fraction:1.0];
+            [self unlockFocus];
+            
+            return;
+        }
     }
-    else
-    {
-        [super drawDividerInRect:rect];
-    }
+    
+    [super drawDividerInRect:rect];
 }
 
 -(NSInteger)collapsedSubviewIndex
