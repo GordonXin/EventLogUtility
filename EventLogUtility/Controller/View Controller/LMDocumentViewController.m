@@ -27,13 +27,13 @@
     
     [self.splitView setDividerThicknessIfCollapsed:30.0f];
     [self.splitView setDividerImageIfCollapsed:[NSImage imageNamed:@"SplitViewDivider"]];
+    
+    [self addSubviewController:self.fileDisplayController];
 }
 
 -(void)loadViewForDocument:(NSDocument *)document
 {
     [super loadViewForDocument:document];
-    
-    [self.fileDisplayController loadViewForDocument:document];
 }
 
 -(void)unloadView
