@@ -14,9 +14,14 @@
 
 @implementation LMMasterViewController
 
-- (void)viewDidLoad {
+-(NSString *)nibName
+{
+    return @"MasterViewController";
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do view setup here.
 }
 
 @end

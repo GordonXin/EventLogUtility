@@ -25,7 +25,7 @@
                     <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="539-3M-D8t" customClass="LMSplitView">
                         <rect key="frame" x="0.0" y="0.0" width="592" height="444"/>
                         <subviews>
-                            <customView fixedFrame="YES" id="x4i-g0-Wrx" customClass="LMBaseView">
+                            <customView fixedFrame="YES" id="x4i-g0-Wrx">
                                 <rect key="frame" x="0.0" y="0.0" width="109" height="444"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
@@ -34,14 +34,14 @@
                                 <rect key="frame" x="110" y="0.0" width="482" height="444"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Beq-DH-J7e" customClass="LMBaseView">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Beq-DH-J7e">
                                         <rect key="frame" x="0.0" y="0.0" width="482" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="O6E-ea-O9Z"/>
                                         </constraints>
                                         <animations/>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="l2y-no-ylF" customClass="LMBaseView">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="l2y-no-ylF">
                                         <rect key="frame" x="0.0" y="30" width="482" height="414"/>
                                         <animations/>
                                     </customView>
@@ -83,20 +83,11 @@
         </window>
         <customObject id="8KU-Hf-FNv" customClass="LMDocumentViewController">
             <connections>
-                <outlet property="fileDisplayController" destination="c09-Cn-zIT" id="pCy-tV-ERL"/>
-                <outlet property="masterController" destination="umg-uC-MAm" id="wMZ-cb-lBY"/>
+                <outlet property="contentView" destination="l2y-no-ylF" id="Gdo-xv-4mP"/>
+                <outlet property="masterView" destination="x4i-g0-Wrx" id="o6X-hx-vrD"/>
                 <outlet property="splitView" destination="539-3M-D8t" id="P5k-ek-Y0A"/>
+                <outlet property="statusView" destination="Beq-DH-J7e" id="bvR-fA-P0N"/>
                 <outlet property="view" destination="gIp-Ho-8D9" id="2dI-kU-C4h"/>
-            </connections>
-        </customObject>
-        <customObject id="c09-Cn-zIT" customClass="LMFileDisplayViewController">
-            <connections>
-                <outlet property="view" destination="l2y-no-ylF" id="Oes-zU-4Zx"/>
-            </connections>
-        </customObject>
-        <customObject id="umg-uC-MAm" customClass="LMMasterViewController">
-            <connections>
-                <outlet property="view" destination="x4i-g0-Wrx" id="Koi-rP-Nzt"/>
             </connections>
         </customObject>
     </objects>

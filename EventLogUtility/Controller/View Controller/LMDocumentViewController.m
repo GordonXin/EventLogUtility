@@ -13,9 +13,11 @@
 
 @interface LMDocumentViewController ()
 
-@property (nonatomic, readwrite, weak) IBOutlet LMFileDisplayViewController *fileDisplayController;
+@property (nonatomic, readwrite, weak) IBOutlet NSView *masterView;
 
-@property (nonatomic, readwrite, weak) IBOutlet LMMasterViewController *masterController;
+@property (nonatomic, readwrite, weak) IBOutlet NSView *contentView;
+
+@property (nonatomic, readwrite, weak) IBOutlet NSView *statusView;
 
 @property (nonatomic, readwrite, weak) IBOutlet LMSplitView *splitView;
 
@@ -30,8 +32,11 @@
     [self.splitView setDividerThicknessIfCollapsed:30.0f];
     [self.splitView setDividerImageIfCollapsed:[NSImage imageNamed:@"SplitViewDivider"]];
     
-    [self addSubviewController:self.fileDisplayController];
-    [self addSubviewController:self.masterController];
+    [self loadViewController:[[LMFileDisplayViewController alloc] initWithNibName:nil bundle:nil]
+                      onView:self.contentView];
+    
+    [self loadViewController:[[LMMasterViewController alloc] initWithNibName:nil bundle:nil]
+                      onView:self.masterView];
 }
 
 -(void)loadViewForDocument:(NSDocument *)document
@@ -42,6 +47,16 @@
 -(void)unloadView
 {
     [super unloadView];
+}
+
+-(void)loadViewController:(LMBaseViewController *)aController onView:(NSView *)aView
+{
+    [aController.view setFrame:aView.bounds];
+    [aController.view setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
+    [aController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
+    
+    [aView addSubview:aController.view];
+    [self addSubviewController:aController];
 }
 
 #pragma mark -

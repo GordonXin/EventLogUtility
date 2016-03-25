@@ -38,6 +38,8 @@
 		DC9DBD471CA52EDE0066BA67 /* LMSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD461CA52EDE0066BA67 /* LMSplitView.m */; };
 		DC9DBD4B1CA52F880066BA67 /* SplitViewDivider.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD4A1CA52F880066BA67 /* SplitViewDivider.png */; };
 		DC9DBD4F1CA53CCE0066BA67 /* LMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD4E1CA53CCE0066BA67 /* LMMasterViewController.m */; };
+		DC9DBD521CA53EB50066BA67 /* FileDisplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD501CA53EB50066BA67 /* FileDisplayViewController.xib */; };
+		DC9DBD531CA53EB50066BA67 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD511CA53EB50066BA67 /* MasterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		DC9DBD4A1CA52F880066BA67 /* SplitViewDivider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplitViewDivider.png; path = "Supporting Files/Image/SplitView/SplitViewDivider.png"; sourceTree = "<group>"; };
 		DC9DBD4D1CA53CCE0066BA67 /* LMMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMMasterViewController.h; path = "Controller/View Controller/Master View/LMMasterViewController.h"; sourceTree = "<group>"; };
 		DC9DBD4E1CA53CCE0066BA67 /* LMMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMMasterViewController.m; path = "Controller/View Controller/Master View/LMMasterViewController.m"; sourceTree = "<group>"; };
+		DC9DBD501CA53EB50066BA67 /* FileDisplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FileDisplayViewController.xib; path = "Supporting Files/Nib/Document/FileDisplayViewController.xib"; sourceTree = "<group>"; };
+		DC9DBD511CA53EB50066BA67 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterViewController.xib; path = "Supporting Files/Nib/Document/MasterViewController.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,7 +323,9 @@
 			children = (
 				DC9DBD291CA38FA30066BA67 /* EntranceDocument.xib */,
 				709F46381C8FC39100728265 /* DocumentWindow.xib */,
+				DC9DBD501CA53EB50066BA67 /* FileDisplayViewController.xib */,
 				DC9DBD3C1CA3CFAF0066BA67 /* FileTextViewController.xib */,
+				DC9DBD511CA53EB50066BA67 /* MasterViewController.xib */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -568,9 +574,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9DBD521CA53EB50066BA67 /* FileDisplayViewController.xib in Resources */,
 				DC9DBD2A1CA38FA30066BA67 /* EntranceDocument.xib in Resources */,
 				DC9DBD3D1CA3CFAF0066BA67 /* FileTextViewController.xib in Resources */,
 				DC9DBD4B1CA52F880066BA67 /* SplitViewDivider.png in Resources */,
+				DC9DBD531CA53EB50066BA67 /* MasterViewController.xib in Resources */,
 				709F46391C8FC39100728265 /* DocumentWindow.xib in Resources */,
 				709F45F71C8FC19300728265 /* Assets.xcassets in Resources */,
 				709F463B1C8FC3A500728265 /* MainMenu.xib in Resources */,
