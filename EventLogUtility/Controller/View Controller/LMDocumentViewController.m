@@ -10,6 +10,11 @@
 #import "LMSplitView.h"
 #import "LMFileDisplayViewController.h"
 #import "LMMasterViewController.h"
+#import "LMBaseView.h"
+
+static NSString * const kLMMasterViewKey = @"MasterView";
+static NSString * const kLMContentViewKey = @"ContentView";
+static NSString * const kLMStatusViewKey = @"StatusView";
 
 @interface LMDocumentViewController ()
 
@@ -29,8 +34,13 @@
 {
     [super viewDidLoad];
     
+    [self.masterView setIdentifier:kLMMasterViewKey];
+    [self.contentView setIdentifier:kLMContentViewKey];
+    [self.statusView setIdentifier:kLMStatusViewKey];
+    
     [self.splitView setDividerThicknessIfCollapsed:30.0f];
     [self.splitView setDividerImageIfCollapsed:[NSImage imageNamed:@"SplitViewDivider"]];
+    [self.splitView adjustSubviews];
     
     [self loadViewController:[[LMFileDisplayViewController alloc] initWithNibName:nil bundle:nil]
                       onView:self.contentView];
@@ -54,6 +64,8 @@
     [aController.view setFrame:aView.bounds];
     [aController.view setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
     [aController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
+    
+    [aController setIdentifier:[aView identifier]];
     
     [aView addSubview:aController.view];
     [self addSubviewController:aController];

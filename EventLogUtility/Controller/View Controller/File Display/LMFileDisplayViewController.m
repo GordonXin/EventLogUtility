@@ -18,7 +18,7 @@
 
 -(NSString *)nibName
 {
-    return @"FileDisplayViewController";
+    return @"FileDisplayView";
 }
 
 -(void)viewDidLoad

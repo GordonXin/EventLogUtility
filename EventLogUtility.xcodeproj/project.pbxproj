@@ -22,24 +22,30 @@
 		709F463B1C8FC3A500728265 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709F463A1C8FC3A500728265 /* MainMenu.xib */; };
 		709F46431C8FC51300728265 /* LMColorUtlity.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46421C8FC51300728265 /* LMColorUtlity.m */; };
 		709F46471C8FC65800728265 /* LMNotificationNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46461C8FC65800728265 /* LMNotificationNames.m */; };
-		709F464E1C8FD8E500728265 /* LMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F464D1C8FD8E500728265 /* LMBaseViewController.m */; };
 		709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46621C900FFF00728265 /* LMErrorDifinition.m */; };
 		709F46671C90180600728265 /* LMFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46661C90180600728265 /* LMFileReader.m */; };
 		709F466A1C901D6000728265 /* LMDataMonitorFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F46691C901D6000728265 /* LMDataMonitorFileReader.m */; };
 		70A444131CA0DE8F00AACE1D /* LMLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A444121CA0DE8F00AACE1D /* LMLog.m */; };
+		DC3C30021CA90B5B0070BCB1 /* LMMasterFileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3C30011CA90B5B0070BCB1 /* LMMasterFileListViewController.m */; };
+		DC3C30041CA90C4A0070BCB1 /* MasterFileListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC3C30031CA90C4A0070BCB1 /* MasterFileListView.xib */; };
+		DC3C30071CA90E230070BCB1 /* LMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3C30061CA90E230070BCB1 /* LMBaseViewController.m */; };
 		DC9DBD211CA3835C0066BA67 /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD201CA3835C0066BA67 /* DocumentController.m */; };
 		DC9DBD241CA38F070066BA67 /* EntranceDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD231CA38F070066BA67 /* EntranceDocument.m */; };
 		DC9DBD2A1CA38FA30066BA67 /* EntranceDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD291CA38FA30066BA67 /* EntranceDocument.xib */; };
 		DC9DBD301CA3C0360066BA67 /* LMFileDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD2E1CA3C0360066BA67 /* LMFileDisplayViewController.m */; };
 		DC9DBD361CA3C27E0066BA67 /* LMBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD351CA3C27E0066BA67 /* LMBaseView.m */; };
-		DC9DBD3D1CA3CFAF0066BA67 /* FileTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD3C1CA3CFAF0066BA67 /* FileTextViewController.xib */; };
+		DC9DBD3D1CA3CFAF0066BA67 /* FileTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD3C1CA3CFAF0066BA67 /* FileTextView.xib */; };
 		DC9DBD401CA3CFDE0066BA67 /* LMFileTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD3F1CA3CFDE0066BA67 /* LMFileTextViewController.m */; };
 		DC9DBD431CA3E8DB0066BA67 /* LMDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD421CA3E8DB0066BA67 /* LMDocumentViewController.m */; };
 		DC9DBD471CA52EDE0066BA67 /* LMSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD461CA52EDE0066BA67 /* LMSplitView.m */; };
 		DC9DBD4B1CA52F880066BA67 /* SplitViewDivider.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD4A1CA52F880066BA67 /* SplitViewDivider.png */; };
 		DC9DBD4F1CA53CCE0066BA67 /* LMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD4E1CA53CCE0066BA67 /* LMMasterViewController.m */; };
-		DC9DBD521CA53EB50066BA67 /* FileDisplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD501CA53EB50066BA67 /* FileDisplayViewController.xib */; };
-		DC9DBD531CA53EB50066BA67 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD511CA53EB50066BA67 /* MasterViewController.xib */; };
+		DC9DBD521CA53EB50066BA67 /* FileDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD501CA53EB50066BA67 /* FileDisplayView.xib */; };
+		DC9DBD531CA53EB50066BA67 /* MasterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD511CA53EB50066BA67 /* MasterView.xib */; };
+		DC9DBD581CA8D65F0066BA67 /* LMMasterNavigateView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD571CA8D65F0066BA67 /* LMMasterNavigateView.m */; };
+		DC9DBD5C1CA8FAAF0066BA67 /* MasterNavigateFile.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD5B1CA8FAAF0066BA67 /* MasterNavigateFile.png */; };
+		DC9DBD5F1CA8FABD0066BA67 /* MasterNavigateResult.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD5D1CA8FABD0066BA67 /* MasterNavigateResult.png */; };
+		DC9DBD601CA8FABD0066BA67 /* MasterNavigateSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD5E1CA8FABD0066BA67 /* MasterNavigateSearch.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,8 +96,6 @@
 		709F46421C8FC51300728265 /* LMColorUtlity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMColorUtlity.m; path = Utility/Color/LMColorUtlity.m; sourceTree = "<group>"; };
 		709F46451C8FC65800728265 /* LMNotificationNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMNotificationNames.h; path = Utility/Notification/LMNotificationNames.h; sourceTree = "<group>"; };
 		709F46461C8FC65800728265 /* LMNotificationNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMNotificationNames.m; path = Utility/Notification/LMNotificationNames.m; sourceTree = "<group>"; };
-		709F464C1C8FD8E500728265 /* LMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMBaseViewController.h; path = "Controller/View Controller/Base/LMBaseViewController.h"; sourceTree = "<group>"; };
-		709F464D1C8FD8E500728265 /* LMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMBaseViewController.m; path = "Controller/View Controller/Base/LMBaseViewController.m"; sourceTree = "<group>"; };
 		709F46611C900FFF00728265 /* LMErrorDifinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMErrorDifinition.h; path = Utility/Error/LMErrorDifinition.h; sourceTree = "<group>"; };
 		709F46621C900FFF00728265 /* LMErrorDifinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMErrorDifinition.m; path = Utility/Error/LMErrorDifinition.m; sourceTree = "<group>"; };
 		709F46651C90180600728265 /* LMFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileReader.h; path = "Model/File Reader/LMFileReader.h"; sourceTree = "<group>"; };
@@ -100,6 +104,11 @@
 		709F46691C901D6000728265 /* LMDataMonitorFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMDataMonitorFileReader.m; path = "Model/File Reader/LMDataMonitorFileReader.m"; sourceTree = "<group>"; };
 		70A444111CA0DE8F00AACE1D /* LMLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMLog.h; path = Utility/Log/LMLog.h; sourceTree = "<group>"; };
 		70A444121CA0DE8F00AACE1D /* LMLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMLog.m; path = Utility/Log/LMLog.m; sourceTree = "<group>"; };
+		DC3C30001CA90B5B0070BCB1 /* LMMasterFileListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMMasterFileListViewController.h; path = "Controller/View Controller/Master View/File List/LMMasterFileListViewController.h"; sourceTree = "<group>"; };
+		DC3C30011CA90B5B0070BCB1 /* LMMasterFileListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMMasterFileListViewController.m; path = "Controller/View Controller/Master View/File List/LMMasterFileListViewController.m"; sourceTree = "<group>"; };
+		DC3C30031CA90C4A0070BCB1 /* MasterFileListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterFileListView.xib; path = "Supporting Files/Nib/Document/MasterFileListView.xib"; sourceTree = "<group>"; };
+		DC3C30051CA90E230070BCB1 /* LMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMBaseViewController.h; path = "Controller/View Controller/LMBaseViewController.h"; sourceTree = "<group>"; };
+		DC3C30061CA90E230070BCB1 /* LMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMBaseViewController.m; path = "Controller/View Controller/LMBaseViewController.m"; sourceTree = "<group>"; };
 		DC9DBD1F1CA3835C0066BA67 /* DocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentController.h; path = Controller/Document/DocumentController.h; sourceTree = "<group>"; };
 		DC9DBD201CA3835C0066BA67 /* DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentController.m; path = Controller/Document/DocumentController.m; sourceTree = "<group>"; };
 		DC9DBD221CA38F070066BA67 /* EntranceDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntranceDocument.h; path = Controller/Document/EntranceDocument.h; sourceTree = "<group>"; };
@@ -109,7 +118,7 @@
 		DC9DBD2E1CA3C0360066BA67 /* LMFileDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileDisplayViewController.m; path = "Controller/View Controller/File Display/LMFileDisplayViewController.m"; sourceTree = "<group>"; };
 		DC9DBD341CA3C27E0066BA67 /* LMBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMBaseView.h; path = View/LMBaseView.h; sourceTree = "<group>"; };
 		DC9DBD351CA3C27E0066BA67 /* LMBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMBaseView.m; path = View/LMBaseView.m; sourceTree = "<group>"; };
-		DC9DBD3C1CA3CFAF0066BA67 /* FileTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FileTextViewController.xib; path = "Supporting Files/Nib/Document/FileTextViewController.xib"; sourceTree = "<group>"; };
+		DC9DBD3C1CA3CFAF0066BA67 /* FileTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FileTextView.xib; path = "Supporting Files/Nib/Document/FileTextView.xib"; sourceTree = "<group>"; };
 		DC9DBD3E1CA3CFDE0066BA67 /* LMFileTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMFileTextViewController.h; path = "Controller/View Controller/File Display/LMFileTextViewController.h"; sourceTree = "<group>"; };
 		DC9DBD3F1CA3CFDE0066BA67 /* LMFileTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMFileTextViewController.m; path = "Controller/View Controller/File Display/LMFileTextViewController.m"; sourceTree = "<group>"; };
 		DC9DBD411CA3E8DB0066BA67 /* LMDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMDocumentViewController.h; path = "Controller/View Controller/LMDocumentViewController.h"; sourceTree = "<group>"; };
@@ -119,8 +128,13 @@
 		DC9DBD4A1CA52F880066BA67 /* SplitViewDivider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplitViewDivider.png; path = "Supporting Files/Image/SplitView/SplitViewDivider.png"; sourceTree = "<group>"; };
 		DC9DBD4D1CA53CCE0066BA67 /* LMMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMMasterViewController.h; path = "Controller/View Controller/Master View/LMMasterViewController.h"; sourceTree = "<group>"; };
 		DC9DBD4E1CA53CCE0066BA67 /* LMMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMMasterViewController.m; path = "Controller/View Controller/Master View/LMMasterViewController.m"; sourceTree = "<group>"; };
-		DC9DBD501CA53EB50066BA67 /* FileDisplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FileDisplayViewController.xib; path = "Supporting Files/Nib/Document/FileDisplayViewController.xib"; sourceTree = "<group>"; };
-		DC9DBD511CA53EB50066BA67 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterViewController.xib; path = "Supporting Files/Nib/Document/MasterViewController.xib"; sourceTree = "<group>"; };
+		DC9DBD501CA53EB50066BA67 /* FileDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FileDisplayView.xib; path = "Supporting Files/Nib/Document/FileDisplayView.xib"; sourceTree = "<group>"; };
+		DC9DBD511CA53EB50066BA67 /* MasterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterView.xib; path = "Supporting Files/Nib/Document/MasterView.xib"; sourceTree = "<group>"; };
+		DC9DBD561CA8D65F0066BA67 /* LMMasterNavigateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMMasterNavigateView.h; path = "View/Master View/Navigate/LMMasterNavigateView.h"; sourceTree = "<group>"; };
+		DC9DBD571CA8D65F0066BA67 /* LMMasterNavigateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMMasterNavigateView.m; path = "View/Master View/Navigate/LMMasterNavigateView.m"; sourceTree = "<group>"; };
+		DC9DBD5B1CA8FAAF0066BA67 /* MasterNavigateFile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MasterNavigateFile.png; path = "Supporting Files/Image/MasterView/Navigate/MasterNavigateFile.png"; sourceTree = "<group>"; };
+		DC9DBD5D1CA8FABD0066BA67 /* MasterNavigateResult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MasterNavigateResult.png; path = "Supporting Files/Image/MasterView/Navigate/MasterNavigateResult.png"; sourceTree = "<group>"; };
+		DC9DBD5E1CA8FABD0066BA67 /* MasterNavigateSearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MasterNavigateSearch.png; path = "Supporting Files/Image/MasterView/Navigate/MasterNavigateSearch.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +208,6 @@
 			children = (
 				DC9DBD481CA52F460066BA67 /* Image */,
 				709F46351C8FC32600728265 /* Nib */,
-				709F46341C8FC32000728265 /* Image */,
 				709F45F61C8FC19300728265 /* Assets.xcassets */,
 				709F45FB1C8FC19300728265 /* Info.plist */,
 				709F45EE1C8FC19300728265 /* main.m */,
@@ -245,10 +258,10 @@
 		709F461F1C8FC28C00728265 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DC9DBD441CA52EC10066BA67 /* SplitView */,
 				DC9DBD341CA3C27E0066BA67 /* LMBaseView.h */,
 				DC9DBD351CA3C27E0066BA67 /* LMBaseView.m */,
-				DC9DBD371CA3C7630066BA67 /* Document */,
+				DC9DBD541CA8D6390066BA67 /* Master View */,
+				DC9DBD441CA52EC10066BA67 /* SplitView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -278,11 +291,12 @@
 		709F46321C8FC2ED00728265 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				709F46481C8FC7FD00728265 /* Base */,
-				DC9DBD2C1CA3BFD40066BA67 /* File Display */,
-				DC9DBD4C1CA53B130066BA67 /* MasterView */,
+				DC3C30051CA90E230070BCB1 /* LMBaseViewController.h */,
+				DC3C30061CA90E230070BCB1 /* LMBaseViewController.m */,
 				DC9DBD411CA3E8DB0066BA67 /* LMDocumentViewController.h */,
 				DC9DBD421CA3E8DB0066BA67 /* LMDocumentViewController.m */,
+				DC9DBD4C1CA53B130066BA67 /* MasterView */,
+				DC9DBD2C1CA3BFD40066BA67 /* File Display */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -292,13 +306,6 @@
 			children = (
 			);
 			name = "Window Controller";
-			sourceTree = "<group>";
-		};
-		709F46341C8FC32000728265 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Image;
 			sourceTree = "<group>";
 		};
 		709F46351C8FC32600728265 /* Nib */ = {
@@ -323,9 +330,10 @@
 			children = (
 				DC9DBD291CA38FA30066BA67 /* EntranceDocument.xib */,
 				709F46381C8FC39100728265 /* DocumentWindow.xib */,
-				DC9DBD501CA53EB50066BA67 /* FileDisplayViewController.xib */,
-				DC9DBD3C1CA3CFAF0066BA67 /* FileTextViewController.xib */,
-				DC9DBD511CA53EB50066BA67 /* MasterViewController.xib */,
+				DC9DBD501CA53EB50066BA67 /* FileDisplayView.xib */,
+				DC9DBD3C1CA3CFAF0066BA67 /* FileTextView.xib */,
+				DC9DBD511CA53EB50066BA67 /* MasterView.xib */,
+				DC3C30031CA90C4A0070BCB1 /* MasterFileListView.xib */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -358,15 +366,6 @@
 				709F46461C8FC65800728265 /* LMNotificationNames.m */,
 			);
 			name = Notification;
-			sourceTree = "<group>";
-		};
-		709F46481C8FC7FD00728265 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				709F464C1C8FD8E500728265 /* LMBaseViewController.h */,
-				709F464D1C8FD8E500728265 /* LMBaseViewController.m */,
-			);
-			name = Base;
 			sourceTree = "<group>";
 		};
 		709F46591C8FF57300728265 /* File Storage */ = {
@@ -411,6 +410,15 @@
 			name = Log;
 			sourceTree = "<group>";
 		};
+		DC3C2FFF1CA90B3E0070BCB1 /* File List */ = {
+			isa = PBXGroup;
+			children = (
+				DC3C30001CA90B5B0070BCB1 /* LMMasterFileListViewController.h */,
+				DC3C30011CA90B5B0070BCB1 /* LMMasterFileListViewController.m */,
+			);
+			name = "File List";
+			sourceTree = "<group>";
+		};
 		DC9DBD2C1CA3BFD40066BA67 /* File Display */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,21 +426,6 @@
 				DC9DBD2E1CA3C0360066BA67 /* LMFileDisplayViewController.m */,
 				DC9DBD3E1CA3CFDE0066BA67 /* LMFileTextViewController.h */,
 				DC9DBD3F1CA3CFDE0066BA67 /* LMFileTextViewController.m */,
-			);
-			name = "File Display";
-			sourceTree = "<group>";
-		};
-		DC9DBD371CA3C7630066BA67 /* Document */ = {
-			isa = PBXGroup;
-			children = (
-				DC9DBD381CA3C76C0066BA67 /* File Display */,
-			);
-			name = Document;
-			sourceTree = "<group>";
-		};
-		DC9DBD381CA3C76C0066BA67 /* File Display */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			name = "File Display";
 			sourceTree = "<group>";
@@ -449,6 +442,7 @@
 		DC9DBD481CA52F460066BA67 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				DC9DBD591CA8FA9A0066BA67 /* Master View */,
 				DC9DBD491CA52F4C0066BA67 /* Split View */,
 			);
 			name = Image;
@@ -467,8 +461,44 @@
 			children = (
 				DC9DBD4D1CA53CCE0066BA67 /* LMMasterViewController.h */,
 				DC9DBD4E1CA53CCE0066BA67 /* LMMasterViewController.m */,
+				DC3C2FFF1CA90B3E0070BCB1 /* File List */,
 			);
 			name = MasterView;
+			sourceTree = "<group>";
+		};
+		DC9DBD541CA8D6390066BA67 /* Master View */ = {
+			isa = PBXGroup;
+			children = (
+				DC9DBD551CA8D6400066BA67 /* Navigate */,
+			);
+			name = "Master View";
+			sourceTree = "<group>";
+		};
+		DC9DBD551CA8D6400066BA67 /* Navigate */ = {
+			isa = PBXGroup;
+			children = (
+				DC9DBD561CA8D65F0066BA67 /* LMMasterNavigateView.h */,
+				DC9DBD571CA8D65F0066BA67 /* LMMasterNavigateView.m */,
+			);
+			name = Navigate;
+			sourceTree = "<group>";
+		};
+		DC9DBD591CA8FA9A0066BA67 /* Master View */ = {
+			isa = PBXGroup;
+			children = (
+				DC9DBD5A1CA8FAA20066BA67 /* Navigate */,
+			);
+			name = "Master View";
+			sourceTree = "<group>";
+		};
+		DC9DBD5A1CA8FAA20066BA67 /* Navigate */ = {
+			isa = PBXGroup;
+			children = (
+				DC9DBD5D1CA8FABD0066BA67 /* MasterNavigateResult.png */,
+				DC9DBD5E1CA8FABD0066BA67 /* MasterNavigateSearch.png */,
+				DC9DBD5B1CA8FAAF0066BA67 /* MasterNavigateFile.png */,
+			);
+			name = Navigate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -574,14 +604,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC9DBD521CA53EB50066BA67 /* FileDisplayViewController.xib in Resources */,
+				DC9DBD521CA53EB50066BA67 /* FileDisplayView.xib in Resources */,
 				DC9DBD2A1CA38FA30066BA67 /* EntranceDocument.xib in Resources */,
-				DC9DBD3D1CA3CFAF0066BA67 /* FileTextViewController.xib in Resources */,
+				DC9DBD5C1CA8FAAF0066BA67 /* MasterNavigateFile.png in Resources */,
+				DC9DBD3D1CA3CFAF0066BA67 /* FileTextView.xib in Resources */,
 				DC9DBD4B1CA52F880066BA67 /* SplitViewDivider.png in Resources */,
-				DC9DBD531CA53EB50066BA67 /* MasterViewController.xib in Resources */,
+				DC9DBD531CA53EB50066BA67 /* MasterView.xib in Resources */,
+				DC3C30041CA90C4A0070BCB1 /* MasterFileListView.xib in Resources */,
+				DC9DBD601CA8FABD0066BA67 /* MasterNavigateSearch.png in Resources */,
 				709F46391C8FC39100728265 /* DocumentWindow.xib in Resources */,
 				709F45F71C8FC19300728265 /* Assets.xcassets in Resources */,
 				709F463B1C8FC3A500728265 /* MainMenu.xib in Resources */,
+				DC9DBD5F1CA8FABD0066BA67 /* MasterNavigateResult.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,19 +640,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9DBD581CA8D65F0066BA67 /* LMMasterNavigateView.m in Sources */,
 				700C9C871C9FD5E90088488E /* LMFileStorage.m in Sources */,
 				709F46431C8FC51300728265 /* LMColorUtlity.m in Sources */,
 				DC9DBD401CA3CFDE0066BA67 /* LMFileTextViewController.m in Sources */,
 				DC9DBD4F1CA53CCE0066BA67 /* LMMasterViewController.m in Sources */,
 				DC9DBD301CA3C0360066BA67 /* LMFileDisplayViewController.m in Sources */,
 				709F46471C8FC65800728265 /* LMNotificationNames.m in Sources */,
+				DC3C30021CA90B5B0070BCB1 /* LMMasterFileListViewController.m in Sources */,
 				709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */,
 				709F46311C8FC2D600728265 /* Document.m in Sources */,
 				700C9C8B1C9FF2370088488E /* LMFileReaderFactory.m in Sources */,
 				709F466A1C901D6000728265 /* LMDataMonitorFileReader.m in Sources */,
 				709F462D1C8FC2C100728265 /* AppDelegate.m in Sources */,
 				DC9DBD471CA52EDE0066BA67 /* LMSplitView.m in Sources */,
-				709F464E1C8FD8E500728265 /* LMBaseViewController.m in Sources */,
 				700B0ADA1C99464A005FF81D /* LMFileHelper.m in Sources */,
 				700B0ADE1C994A1B005FF81D /* LMConstant.m in Sources */,
 				DC9DBD361CA3C27E0066BA67 /* LMBaseView.m in Sources */,
@@ -627,6 +662,7 @@
 				700C9C881C9FD5E90088488E /* LMFileStorageManager.m in Sources */,
 				DC9DBD241CA38F070066BA67 /* EntranceDocument.m in Sources */,
 				709F45EF1C8FC19300728265 /* main.m in Sources */,
+				DC3C30071CA90E230070BCB1 /* LMBaseViewController.m in Sources */,
 				70A444131CA0DE8F00AACE1D /* LMLog.m in Sources */,
 				DC9DBD211CA3835C0066BA67 /* DocumentController.m in Sources */,
 			);

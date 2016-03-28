@@ -7,8 +7,14 @@
 //
 
 #import "LMMasterViewController.h"
+#import "LMMasterNavigateView.h"
+#import "LMMasterFileListViewController.h"
 
 @interface LMMasterViewController ()
+
+@property (nonatomic, readwrite, weak) IBOutlet LMMasterNavigateView *navigateView;
+
+@property (nonatomic, readwrite, weak) IBOutlet LMBaseView *contentView;
 
 @end
 
@@ -16,12 +22,21 @@
 
 -(NSString *)nibName
 {
-    return @"MasterViewController";
+    return @"MasterView";
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+}
+
+-(void)loadViewForDocument:(NSDocument *)document
+{
+    [super loadViewForDocument:document];
+    
+    
 }
 
 @end

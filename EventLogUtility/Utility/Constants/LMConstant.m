@@ -7,3 +7,7 @@
 //
 
 #import "LMConstant.h"
+
+NSString * const kLMMasterNavigateListActionKey = @"listButton";
+NSString * const kLMMasterNavigateSearchActionKey = @"searchButton";
+NSString * const kLMMasterNavigateResultActionKey = @"resultButton";

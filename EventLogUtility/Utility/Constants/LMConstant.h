@@ -7,3 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
+extern NSString * const kLMMasterNavigateListActionKey;
+extern NSString * const kLMMasterNavigateSearchActionKey;
+extern NSString * const kLMMasterNavigateResultActionKey;

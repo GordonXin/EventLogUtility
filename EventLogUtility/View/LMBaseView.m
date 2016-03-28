@@ -36,4 +36,32 @@
     return nil;
 }
 
+#pragma mark -
+#pragma mark        view size
+#pragma mark -
+
+-(CGFloat)minHeight
+{
+    return 0.0f;
+}
+
+-(CGFloat)minWidth
+{
+    CGFloat min = 0.0f;
+    
+    for (NSView *aView in self.subviews)
+    {
+        if ([aView isKindOfClass:[LMBaseView class]])
+        {
+            CGFloat new = [(LMBaseView *)aView minWidth];
+            if (new > min)
+            {
+                min = new;
+            }
+        }
+    }
+    
+    return min;
+}
+
 @end

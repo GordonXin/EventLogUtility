@@ -28,8 +28,10 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="417" height="243"/>
                                 <size key="maxSize" width="1e+18" height="100000000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="417" height="243"/>
                                 <size key="maxSize" width="1e+18" height="100000000000"/>
                             </textView>
                         </subviews>
@@ -42,7 +44,7 @@
                         <animations/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ZOg-Yt-N1f">
-                        <rect key="frame" x="401" y="0.0" width="16" height="243"/>
+                        <rect key="frame" x="402" y="0.0" width="15" height="243"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </scroller>

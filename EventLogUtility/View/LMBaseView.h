@@ -15,4 +15,8 @@
 // subview management
 -(NSView *)viewWithIdentifier:(NSString *)identifier;
 
+// view size
+-(CGFloat)minWidth;
+-(CGFloat)minHeight;
+
 @end
