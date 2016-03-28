@@ -132,6 +132,25 @@
     [self setNeedsDisplay:YES];
 }
 
+-(NSString *)currentSelected
+{
+    for (LMMasterNavigateButton *aButton in _buttonArray)
+    {
+        if ([aButton isSelected])
+        {
+            return [aButton title];
+        }
+    }
+    
+    if (_buttonArray.count)
+    {
+        LMMasterNavigateButton *aButton = [_buttonArray objectAtIndex:0];
+        [aButton setIsSelected:YES];
+        return aButton.title;
+    }
+    return @"";
+}
+
 -(void)clearSelection
 {
     for (LMMasterNavigateButton *aButton in _buttonArray)

@@ -30,4 +30,6 @@
 
 -(void)setButtons:(NSArray *)buttonArray;
 
+-(NSString *)currentSelected;
+
 @end
