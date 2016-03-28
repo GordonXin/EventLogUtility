@@ -9,6 +9,7 @@
 #import "LMMasterViewController.h"
 #import "LMMasterNavigateView.h"
 #import "LMMasterFileListViewController.h"
+#import "LMConstant.h"
 
 @interface LMMasterViewController ()
 
@@ -29,6 +30,23 @@
 {
     [super viewDidLoad];
     
+    SEL action = @selector(naviageButtonClicked:);
+    
+    NSArray *buttonArray = @[
+                             [[LMMasterNavigateButton alloc] initWithName:kLMMasterNavigateListActionKey
+                                                                    image:@"MasterNavigateFile"
+                                                                   action:action
+                                                                   target:self],
+                             [[LMMasterNavigateButton alloc] initWithName:kLMMasterNavigateSearchActionKey
+                                                                    image:@"MasterNavigateSearch"
+                                                                   action:action
+                                                                   target:self],
+                             [[LMMasterNavigateButton alloc] initWithName:kLMMasterNavigateResultActionKey
+                                                                    image:@"MasterNavigateResult"
+                                                                   action:action
+                                                                   target:self],
+                             ];
+    [self.navigateView setButtons:buttonArray];
     
 }
 
@@ -37,6 +55,11 @@
     [super loadViewForDocument:document];
     
     
+}
+
+-(void)naviageButtonClicked:(id)sender
+{
+
 }
 
 @end

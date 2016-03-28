@@ -9,8 +9,25 @@
 #import <Cocoa/Cocoa.h>
 #import "LMBaseView.h"
 
+@interface LMMasterNavigateButton : NSButton
+
+-(instancetype)initWithName:(NSString *)buttonName
+                      image:(NSString *)buttonImage
+                     action:(SEL)action
+                     target:(id)target;
+
+-(instancetype)initWithName:(NSString *)buttonName
+                      image:(NSString *)buttonImage
+                     action:(SEL)action
+                     target:(id)target
+              imagePosition:(NSCellImagePosition)imagePositon;
+
+@end
+
 @interface LMMasterNavigateView : LMBaseView
 
--(void)setAction:(SEL)action target:(id)target forKey:(NSString *)key;
+@property (nonatomic, readwrite, assign) NSTextLayoutOrientation orientation;
+
+-(void)setButtons:(NSArray *)buttonArray;
 
 @end

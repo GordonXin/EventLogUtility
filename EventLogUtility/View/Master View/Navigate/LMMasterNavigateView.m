@@ -9,19 +9,58 @@
 #import "LMMasterNavigateView.h"
 #import "LMConstant.h"
 
-@interface LMMasterNavigateButton : NSButton
+@interface LMMasterNavigateButton ()
 
 @property (nonatomic, readwrite, strong) NSImage *buttonImage;
 
 @property (nonatomic, readwrite, assign) SEL      buttonAction;
 
-@property (nonatomic, readwrite, weak) id         buttonTarget;
+@property (nonatomic, readwrite, weak)   id       buttonTarget;
 
 @property (nonatomic, readwrite, assign) BOOL     isSelected;
 
 @end
 
 @implementation LMMasterNavigateButton
+
+-(instancetype)initWithName:(NSString *)buttonName image:(NSString *)buttonImage action:(SEL)action target:(id)target
+{
+    if (self = [self initWithName:buttonName
+                            image:buttonImage
+                           action:action
+                           target:target
+                    imagePosition:NSImageOnly])
+    {
+    
+    }
+    return self;
+}
+
+-(instancetype)initWithName:(NSString *)buttonName
+                      image:(NSString *)buttonImage
+                     action:(SEL)action
+                     target:(id)target
+              imagePosition:(NSCellImagePosition)imagePositon
+{
+    if (self = [super initWithFrame:NSZeroRect])
+    {
+        [self setButtonType:NSMomentaryPushInButton];
+        [self setBezelStyle:NSShadowlessSquareBezelStyle];
+        [self setState:NSOffState];
+        [self setBordered:NO];
+        [self setTitle:buttonName];
+        [self setImagePosition:imagePositon];
+        [(NSButtonCell*)self.cell setImageScaling:NSImageScaleProportionallyUpOrDown];
+        
+        _isSelected = NO;
+        _buttonAction = action;
+        _buttonTarget = target;
+        _buttonImage = [NSImage imageNamed:buttonImage];
+        
+        [self setImage:self.buttonImage];
+    }
+    return self;
+}
 
 -(void)setIsSelected:(BOOL)isSelected
 {
@@ -64,58 +103,33 @@
     NSArray *_buttonArray;
 }
 
-@property (nonatomic, readwrite, weak) IBOutlet LMMasterNavigateButton *listButton;
-
-@property (nonatomic, readwrite, weak) IBOutlet LMMasterNavigateButton *searchButton;
-
-@property (nonatomic, readwrite, weak) IBOutlet LMMasterNavigateButton *resultButton;
-
 @end
 
 @implementation LMMasterNavigateView
 
 -(void)awakeFromNib
 {
-    NSMutableArray *array = [NSMutableArray array];
-    
-    [self.listButton setIdentifier:kLMMasterNavigateListActionKey];
-    [self.listButton setButtonImage:[NSImage imageNamed:@"MasterNavigateFile"]];
-    [array addObject:self.listButton];
-    
-    [self.searchButton setIdentifier:kLMMasterNavigateSearchActionKey];
-    [self.searchButton setButtonImage:[NSImage imageNamed:@"MasterNavigateSearch"]];
-    [array addObject:self.searchButton];
-    
-    [self.resultButton setIdentifier:kLMMasterNavigateResultActionKey];
-    [self.resultButton setButtonImage:[NSImage imageNamed:@"MasterNavigateResult"]];
-    [array addObject:self.resultButton];
-    
-    _buttonArray = [NSArray arrayWithArray:array];
-    
-    [self.listButton setIsSelected:YES];
+    _orientation = NSTextLayoutOrientationHorizontal;
 }
 
--(LMMasterNavigateButton *)buttonWithIdentifier:(NSString *)identifier
+-(void)setButtons:(NSArray *)buttonArray
 {
+    _buttonArray = [NSArray arrayWithArray:buttonArray];
+    
     for (LMMasterNavigateButton *aButton in _buttonArray)
     {
-        if ([[aButton identifier] isEqualToString:identifier])
-        {
-            return aButton;
-        }
+        [self addSubview:aButton];
+        [aButton setTarget:self];
+        [aButton setAction:@selector(navigateButtonClicked:)];
     }
     
-    return nil;
-}
-
--(void)setAction:(SEL)action target:(id)target forKey:(NSString *)key
-{
-    LMMasterNavigateButton *aButton = [self buttonWithIdentifier:key];
-    if (aButton)
+    if (_buttonArray.count > 0)
     {
-        [aButton setButtonAction:action];
-        [aButton setButtonTarget:target];
+        LMMasterNavigateButton *aButton = [_buttonArray objectAtIndex:0];
+        [aButton setIsSelected:YES];
     }
+    
+    [self setNeedsDisplay:YES];
 }
 
 -(void)clearSelection
@@ -142,6 +156,56 @@
         
         [aButton setIsSelected:YES];
     }
+}
+-(void)resizeSubviewsWithOldSize:(NSSize)oldSize
+{
+    [super resizeSubviewsWithOldSize:oldSize];
+    
+    if (_buttonArray.count <= 0)
+    {
+        return;
+    }
+    
+    NSRect dirtyRect = [self bounds];
+    CGFloat width = NSWidth(dirtyRect);
+    CGFloat height = NSHeight(dirtyRect);
+    
+    if (_orientation == NSTextLayoutOrientationHorizontal)
+    {
+        CGFloat size = ceilf(height * 15 / 35);
+        CGFloat y = ceilf(NSMinY(dirtyRect) + (height - size) / 2);
+        CGFloat offset = size;
+        CGFloat start = ceilf((width - size * _buttonArray.count - offset * _buttonArray.count + offset) / 2);
+        
+        for (NSInteger i = 0; i < _buttonArray.count; ++i)
+        {
+            LMMasterNavigateButton *aButton = [_buttonArray objectAtIndex:i];
+            [aButton setFrame:NSMakeRect(start, y, size, size)];
+                        
+            start += size + offset;
+        }
+    }
+    else
+    {
+        CGFloat size = ceilf(width * 15 / 35);
+        CGFloat x = ceilf(NSMinX(dirtyRect) + (width - size) / 2);
+        CGFloat offset = size;
+        CGFloat start = ceilf((height - size * _buttonArray.count - offset * _buttonArray.count + offset) / 2);
+        
+        for (NSInteger i = 0; i < _buttonArray.count; ++i)
+        {
+            LMMasterNavigateButton *aButton = [_buttonArray objectAtIndex:i];
+            [aButton setFrame:NSMakeRect(x, start, size, size)];
+            
+            start += size + offset;
+        }
+        
+    }
+}
+
+-(void)drawRect:(NSRect)dirtyRect
+{
+    [super drawRect:dirtyRect];
 }
 
 @end

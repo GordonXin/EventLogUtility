@@ -20,51 +20,6 @@
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="k0H-iS-g8L" customClass="LMMasterNavigateView">
                     <rect key="frame" x="0.0" y="435" width="163" height="35"/>
                     <subviews>
-                        <button translatesAutoresizingMaskIntoConstraints="NO" id="wuK-mu-71E" customClass="LMMasterNavigateButton">
-                            <rect key="frame" x="74" y="10" width="15" height="15"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="15" id="JWu-YN-DXT"/>
-                                <constraint firstAttribute="width" constant="15" id="eup-li-Xah"/>
-                            </constraints>
-                            <animations/>
-                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="MasterNavigateSearch" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="dII-JF-5AR">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="navigateButtonClicked:" target="k0H-iS-g8L" id="1VS-k8-Ajx"/>
-                            </connections>
-                        </button>
-                        <button translatesAutoresizingMaskIntoConstraints="NO" id="Psb-em-DOw" customClass="LMMasterNavigateButton">
-                            <rect key="frame" x="44" y="10" width="15" height="15"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="15" id="PAy-lh-d7j"/>
-                                <constraint firstAttribute="height" constant="15" id="i0D-Xf-35n"/>
-                            </constraints>
-                            <animations/>
-                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="MasterNavigateFile" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="T46-7N-2DO">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="navigateButtonClicked:" target="k0H-iS-g8L" id="Zqu-8d-lVe"/>
-                            </connections>
-                        </button>
-                        <button translatesAutoresizingMaskIntoConstraints="NO" id="78W-CM-XqS" customClass="LMMasterNavigateButton">
-                            <rect key="frame" x="104" y="10" width="15" height="15"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="15" id="110-CD-SPc"/>
-                                <constraint firstAttribute="width" constant="15" id="n2M-Js-zgq"/>
-                            </constraints>
-                            <animations/>
-                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="MasterNavigateResult" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="p45-t1-MBd">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="navigateButtonClicked:" target="k0H-iS-g8L" id="Boo-Tl-1DG"/>
-                            </connections>
-                        </button>
                         <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Pas-ol-F8f">
                             <rect key="frame" x="0.0" y="1" width="163" height="5"/>
                             <constraints>
@@ -77,23 +32,12 @@
                         </box>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="78W-CM-XqS" firstAttribute="leading" secondItem="wuK-mu-71E" secondAttribute="trailing" constant="15" id="48H-pw-9VB"/>
-                        <constraint firstItem="wuK-mu-71E" firstAttribute="leading" secondItem="Psb-em-DOw" secondAttribute="trailing" constant="15" id="BN3-HO-d14"/>
                         <constraint firstAttribute="trailing" secondItem="Pas-ol-F8f" secondAttribute="trailing" id="Cx9-to-pj9"/>
                         <constraint firstItem="Pas-ol-F8f" firstAttribute="leading" secondItem="k0H-iS-g8L" secondAttribute="leading" id="J3Q-YB-WEj"/>
-                        <constraint firstItem="wuK-mu-71E" firstAttribute="centerY" secondItem="k0H-iS-g8L" secondAttribute="centerY" id="Jj8-nS-mGs"/>
-                        <constraint firstItem="78W-CM-XqS" firstAttribute="centerY" secondItem="k0H-iS-g8L" secondAttribute="centerY" id="b9t-WR-xuZ"/>
                         <constraint firstAttribute="bottom" secondItem="Pas-ol-F8f" secondAttribute="bottom" constant="3" id="gXj-53-G1j"/>
                         <constraint firstAttribute="height" constant="35" id="r25-xL-beX"/>
-                        <constraint firstItem="Psb-em-DOw" firstAttribute="centerY" secondItem="k0H-iS-g8L" secondAttribute="centerY" id="xB7-ff-pSA"/>
-                        <constraint firstItem="wuK-mu-71E" firstAttribute="centerX" secondItem="k0H-iS-g8L" secondAttribute="centerX" id="yif-4H-bNN"/>
                     </constraints>
                     <animations/>
-                    <connections>
-                        <outlet property="listButton" destination="Psb-em-DOw" id="Q02-n1-HHP"/>
-                        <outlet property="resultButton" destination="78W-CM-XqS" id="o7j-Ca-Te6"/>
-                        <outlet property="searchButton" destination="wuK-mu-71E" id="Epb-7l-qmc"/>
-                    </connections>
                 </customView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="clH-ls-rpm" customClass="LMBaseView">
                     <rect key="frame" x="0.0" y="0.0" width="163" height="435"/>
@@ -113,9 +57,4 @@
             <point key="canvasLocation" x="86.5" y="415"/>
         </customView>
     </objects>
-    <resources>
-        <image name="MasterNavigateFile" width="760" height="798"/>
-        <image name="MasterNavigateResult" width="327" height="232"/>
-        <image name="MasterNavigateSearch" width="598" height="612"/>
-    </resources>
 </document>
