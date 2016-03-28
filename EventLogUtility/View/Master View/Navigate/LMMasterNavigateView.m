@@ -89,6 +89,10 @@
     [self.resultButton setIdentifier:kLMMasterNavigateResultActionKey];
     [self.resultButton setButtonImage:[NSImage imageNamed:@"MasterNavigateResult"]];
     [array addObject:self.resultButton];
+    
+    _buttonArray = [NSArray arrayWithArray:array];
+    
+    [self.listButton setIsSelected:YES];
 }
 
 -(LMMasterNavigateButton *)buttonWithIdentifier:(NSString *)identifier
