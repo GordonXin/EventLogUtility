@@ -108,10 +108,13 @@
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
+    _fileStorageArray = @[@"1231"];
+    
     [super windowControllerDidLoadNib:aController];
     
     [self.viewController view];
     [self.viewController loadViewForDocument:self];
+    
 }
 
 

@@ -12,5 +12,7 @@
 
 @property (nonatomic, readonly, copy) NSString *documentUUID;
 
+@property (nonatomic, readonly, copy) NSArray<NSString *> *fileStorageArray;
+
 @end
 

@@ -29,6 +29,7 @@
 		DC3C30021CA90B5B0070BCB1 /* LMMasterFileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3C30011CA90B5B0070BCB1 /* LMMasterFileListViewController.m */; };
 		DC3C30041CA90C4A0070BCB1 /* MasterFileListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC3C30031CA90C4A0070BCB1 /* MasterFileListView.xib */; };
 		DC3C30071CA90E230070BCB1 /* LMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3C30061CA90E230070BCB1 /* LMBaseViewController.m */; };
+		DC3C300B1CAA4B7D0070BCB1 /* LMMasterFileListTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3C300A1CAA4B7D0070BCB1 /* LMMasterFileListTableRowView.m */; };
 		DC9DBD211CA3835C0066BA67 /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD201CA3835C0066BA67 /* DocumentController.m */; };
 		DC9DBD241CA38F070066BA67 /* EntranceDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9DBD231CA38F070066BA67 /* EntranceDocument.m */; };
 		DC9DBD2A1CA38FA30066BA67 /* EntranceDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9DBD291CA38FA30066BA67 /* EntranceDocument.xib */; };
@@ -109,6 +110,8 @@
 		DC3C30031CA90C4A0070BCB1 /* MasterFileListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterFileListView.xib; path = "Supporting Files/Nib/Document/MasterFileListView.xib"; sourceTree = "<group>"; };
 		DC3C30051CA90E230070BCB1 /* LMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMBaseViewController.h; path = "Controller/View Controller/LMBaseViewController.h"; sourceTree = "<group>"; };
 		DC3C30061CA90E230070BCB1 /* LMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMBaseViewController.m; path = "Controller/View Controller/LMBaseViewController.m"; sourceTree = "<group>"; };
+		DC3C30091CAA4B7D0070BCB1 /* LMMasterFileListTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMMasterFileListTableRowView.h; path = "View/Master View/File List/LMMasterFileListTableRowView.h"; sourceTree = "<group>"; };
+		DC3C300A1CAA4B7D0070BCB1 /* LMMasterFileListTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMMasterFileListTableRowView.m; path = "View/Master View/File List/LMMasterFileListTableRowView.m"; sourceTree = "<group>"; };
 		DC9DBD1F1CA3835C0066BA67 /* DocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentController.h; path = Controller/Document/DocumentController.h; sourceTree = "<group>"; };
 		DC9DBD201CA3835C0066BA67 /* DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentController.m; path = Controller/Document/DocumentController.m; sourceTree = "<group>"; };
 		DC9DBD221CA38F070066BA67 /* EntranceDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntranceDocument.h; path = Controller/Document/EntranceDocument.h; sourceTree = "<group>"; };
@@ -419,6 +422,15 @@
 			name = "File List";
 			sourceTree = "<group>";
 		};
+		DC3C30081CAA4B5D0070BCB1 /* File List */ = {
+			isa = PBXGroup;
+			children = (
+				DC3C30091CAA4B7D0070BCB1 /* LMMasterFileListTableRowView.h */,
+				DC3C300A1CAA4B7D0070BCB1 /* LMMasterFileListTableRowView.m */,
+			);
+			name = "File List";
+			sourceTree = "<group>";
+		};
 		DC9DBD2C1CA3BFD40066BA67 /* File Display */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +481,7 @@
 		DC9DBD541CA8D6390066BA67 /* Master View */ = {
 			isa = PBXGroup;
 			children = (
+				DC3C30081CAA4B5D0070BCB1 /* File List */,
 				DC9DBD551CA8D6400066BA67 /* Navigate */,
 			);
 			name = "Master View";
@@ -649,6 +662,7 @@
 				709F46471C8FC65800728265 /* LMNotificationNames.m in Sources */,
 				DC3C30021CA90B5B0070BCB1 /* LMMasterFileListViewController.m in Sources */,
 				709F46631C900FFF00728265 /* LMErrorDifinition.m in Sources */,
+				DC3C300B1CAA4B7D0070BCB1 /* LMMasterFileListTableRowView.m in Sources */,
 				709F46311C8FC2D600728265 /* Document.m in Sources */,
 				700C9C8B1C9FF2370088488E /* LMFileReaderFactory.m in Sources */,
 				709F466A1C901D6000728265 /* LMDataMonitorFileReader.m in Sources */,

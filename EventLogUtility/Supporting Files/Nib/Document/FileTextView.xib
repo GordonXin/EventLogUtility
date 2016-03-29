@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView editable="NO" importsGraphics="NO" horizontallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="w0v-nk-RbW">
-                                <rect key="frame" x="0.0" y="0.0" width="417" height="0.0"/>
+                                <rect key="frame" x="0.0" y="0.0" width="417" height="243"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,7 +44,7 @@
                         <animations/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ZOg-Yt-N1f">
-                        <rect key="frame" x="402" y="0.0" width="15" height="243"/>
+                        <rect key="frame" x="401" y="0.0" width="16" height="243"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </scroller>

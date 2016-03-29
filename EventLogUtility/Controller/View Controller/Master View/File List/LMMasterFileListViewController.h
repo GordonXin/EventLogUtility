@@ -9,6 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "LMBaseViewController.h"
 
-@interface LMMasterFileListViewController : LMBaseViewController
+@interface LMMasterFileListViewController : LMBaseViewController <NSTableViewDataSource, NSTableViewDelegate>
 
 @end

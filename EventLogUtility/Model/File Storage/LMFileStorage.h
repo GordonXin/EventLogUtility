@@ -17,6 +17,8 @@
 
 @property (nonatomic, readonly, copy)   NSString            *UUID;
 
+@property (nonatomic, readonly, copy)   NSString            *prettyName;
+
 @property (nonatomic, readonly, strong) NSTextStorage       *textStorage;
 
 @property (nonatomic, readonly, copy)   NSDictionary        *fileAttributes;

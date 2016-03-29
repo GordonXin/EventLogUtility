@@ -65,6 +65,8 @@
         
         _alowsWriting = NO;
         
+        _prettyName = [[_originURL.lastPathComponent pathComponents] lastObject];
+        
         [self initReader];
     }
     return self;

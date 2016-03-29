@@ -7,6 +7,7 @@
 //
 
 #import "LMBaseView.h"
+#import "LMColorUtlity.h"
 
 @interface LMBaseView ()
 {
@@ -62,6 +63,62 @@
     }
     
     return min;
+}
+
+
+#pragma mark -
+#pragma mark        color
+#pragma mark -
+
+-(void)setBackgroundColor:(NSColor *)backgroundColor
+{
+    _backgroundColor = [backgroundColor copy];
+    [self setNeedsDisplay:YES];
+}
+
+#pragma mark -
+#pragma mark        draw
+#pragma mark -
+
+-(void)drawRect:(NSRect)dirtyRect
+{
+    [super drawRect:dirtyRect];
+    
+    if (_backgroundColor == nil)
+    {
+        _backgroundColor = [LMColorUtlity commonBackgroundColor];
+    }
+    
+    
+    
+    
+    
+}
+
+-(void)drawBackgroundColorInRect:(NSRect)dirtyRect
+{
+    [self saveContext];
+    
+    if (_backgroundColor == nil)
+    {
+        _backgroundColor = [LMColorUtlity commonBackgroundColor];
+    }
+    
+    [_backgroundColor set];
+    NSRectFill(dirtyRect);
+    
+    [self restoreContext];
+}
+
+-(void)saveContext
+{
+    [[NSGraphicsContext currentContext] saveGraphicsState];
+    [[NSGraphicsContext currentContext] setShouldAntialias:YES];
+}
+
+-(void)restoreContext
+{
+    [[NSGraphicsContext currentContext] restoreGraphicsState];
 }
 
 @end

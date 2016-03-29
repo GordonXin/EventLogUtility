@@ -19,4 +19,6 @@
 -(CGFloat)minWidth;
 -(CGFloat)minHeight;
 
+@property (nonatomic, readwrite, copy) NSColor *backgroundColor;
+
 @end
