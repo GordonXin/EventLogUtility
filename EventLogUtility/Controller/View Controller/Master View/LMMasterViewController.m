@@ -6,10 +6,10 @@
 //  Copyright © 2016 Sapphire. All rights reserved.
 //
 
+#import "LMConstant.h"
 #import "LMMasterViewController.h"
 #import "LMMasterNavigateView.h"
 #import "LMMasterFileListViewController.h"
-#import "LMConstant.h"
 
 @interface LMMasterViewController ()
 
@@ -30,6 +30,9 @@
 {
     [super viewDidLoad];
     
+    //
+    // set up navigate view
+    //
     SEL action = @selector(naviageButtonClicked:);
     
     NSArray *buttonArray = @[
@@ -48,6 +51,15 @@
                              ];
     [self.navigateView setButtons:buttonArray];
     
+    //
+    // set up file list view
+    //
+    LMMasterFileListViewController *aController = [[LMMasterFileListViewController alloc] initWithNibName:nil bundle:nil];
+    [aController.view setFrame:self.contentView.bounds];
+    [aController.view setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
+    [aController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
+    [self.contentView addSubview:aController.view];
+    [self addSubviewController:aController];
 }
 
 -(void)loadViewForDocument:(NSDocument *)document
