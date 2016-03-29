@@ -118,8 +118,8 @@
 
 -(BOOL)tableView:(NSTableView *)tableView isGroupRow:(NSInteger)row
 {
-    if (row == 0)
-        return YES;
+    //if (row == 0)
+     //   return YES;
     
     return NO;
 }
