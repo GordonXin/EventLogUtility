@@ -10,6 +10,7 @@
 #import "LMMasterViewController.h"
 #import "LMMasterNavigateView.h"
 #import "LMMasterFileListViewController.h"
+#import "LMMasterResultViewController.h"
 
 @interface LMMasterViewController ()
 
@@ -60,6 +61,12 @@
     [aController.view setTranslatesAutoresizingMaskIntoConstraints:YES];
     [self.contentView addSubview:aController.view];
     [self addSubviewController:aController];
+    
+    //
+    // set up result view
+    //
+    LMMasterResultViewController *resultViewController = [[LMMasterResultViewController alloc] initWithNibName:nil bundle:nil];
+    [self addSubviewController:resultViewController];
 }
 
 -(void)loadViewForDocument:(NSDocument *)document
